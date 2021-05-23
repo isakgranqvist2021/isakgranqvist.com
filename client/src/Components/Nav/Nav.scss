@@ -1,7 +1,7 @@
 @import '../../variables';
 
 nav.open {
-    width: $navWidth;
+    width: 380px;
 }
 
 nav {
@@ -9,22 +9,21 @@ nav {
     height: 100%;
     position: fixed;
     overflow-x: hidden;
-    background-color: #333;
+    background-color: $color1;
     top: 0;
     z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
-    // transition: width 200ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-
 
     .nav-content {
         position: relative;
         height: 60%;
-        width: $navWidth;
+        width: 380px;
+
 
         img {
-            width: calc(#{$navWidth} * .65);
+            width: 65%;
             margin: 0 auto 3.5rem auto;
             display: block;
         }
@@ -35,8 +34,8 @@ nav {
 
             a {
                 display: block;
-                color: #dadada;
-                background-color: #2e2e2e;
+                color: $color4;
+                background-color: $color2;
                 text-transform: capitalize;
                 text-align: center;
                 font-size: 1rem;
@@ -46,7 +45,7 @@ nav {
                 border-radius: .5rem;
 
                 &:hover {
-                    background-color: #2e2e2e83;
+                    background-color: $color3;
                 }
 
                 &:not(:last-of-type) {
@@ -71,4 +70,16 @@ nav {
 .filler.open {
     pointer-events: auto;
     background-color: rgba(0, 0, 0, 0.473);
+}
+
+@media only screen and(max-width: 390px) {
+    nav.open {
+        width: 295px;
+    }
+
+    nav {
+        .nav-content {
+            width: 295px;
+        }
+    }
 }

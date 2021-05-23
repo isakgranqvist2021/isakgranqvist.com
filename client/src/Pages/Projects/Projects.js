@@ -1,9 +1,12 @@
 import React from 'react';
+import './Projects.scss';
 
 class Projects extends React.Component {
     render() {
         return (
-            <h1>Projects</h1>
+            <div className="container">
+                <h1>Projects</h1>
+            </div>
         );
     }
 }

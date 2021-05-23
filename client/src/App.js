@@ -6,7 +6,7 @@ import './App.scss';
 import Home from './Pages/Home/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
-import Projects from './Pages/Projects';
+import Projects from './Pages/Projects/Projects';
 
 import {
   BrowserRouter,
@@ -29,10 +29,10 @@ class Outlet extends React.Component {
   render() {
     return (
       <div className="container">
-        <div onClick={() => navStore.dispatch({ type: 'toggle' })} className={`${this.state.open ? 'bars open' : 'bars'}`}>
-          <span></span>
-          <span></span>
-          <span></span>
+        <div onClick={() => navStore.dispatch({ type: 'toggle' })} className={this.state.open ? 'menu open' : 'menu'}>
+          <span className="material-icons">
+            {this.state.open ? 'close' : 'menu'}
+          </span>
         </div>
 
         <main>

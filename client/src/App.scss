@@ -1,29 +1,11 @@
 @import './variables';
 
 .container {
-    .bars.open {
-        left: calc(#{$navWidth} - 35px - 1rem);
-
-        span {
-            &:nth-child(1) {
-                transform: rotate(36deg);
-                transform-origin: top left;
-            }
-
-            &:nth-child(2) {
-                opacity: 0;
-            }
-
-            &:nth-child(3) {
-                transform: rotate(-36deg);
-                transform-origin: bottom left;
-            }
-        }
+    .menu.open {
+        left: calc(380px - 1rem - 48px);
     }
 
-    .bars {
-        width: 35px;
-        height: 40px;
+    .menu {
         position: fixed;
         top: 1rem;
         left: 1rem;
@@ -31,15 +13,16 @@
         cursor: pointer;
 
         span {
-            background-color: #757575;
-            width: 100%;
-            height: 2px;
-            display: block;
-
-            &:not(:first-of-type) {
-                margin-top: .5rem;
-            }
+            font-size: 3rem;
+            color: $color4;
         }
     }
+}
 
+@media only screen and(max-width: 390px) {
+    .container {
+        .menu.open {
+            left: calc(295px - 1rem - 48px);
+        }
+    }
 }

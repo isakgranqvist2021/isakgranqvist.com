@@ -1,4 +1,5 @@
 @import 'layout';
+@import 'variables';
 
 * {
   box-sizing: border-box;
@@ -12,6 +13,7 @@ body,
   font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
   line-height: 1.5;
+  background-color: $color3;
 }
 
 body {
