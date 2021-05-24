@@ -1,6 +1,6 @@
 @import './variables';
 
-.container {
+.wrapper {
     .menu.open {
         left: calc(380px - 1rem - 48px);
     }
@@ -11,6 +11,11 @@
         left: 1rem;
         z-index: 3;
         cursor: pointer;
+        transition: transform 210ms ease;
+
+        &:hover {
+            transform: scale(.81);
+        }
 
         span {
             font-size: 3rem;
@@ -20,7 +25,7 @@
 }
 
 @media only screen and(max-width: 390px) {
-    .container {
+    .wrapper {
         .menu.open {
             left: calc(295px - 1rem - 48px);
         }

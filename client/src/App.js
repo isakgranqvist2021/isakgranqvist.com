@@ -28,7 +28,7 @@ class Outlet extends React.Component {
 
   render() {
     return (
-      <div className="container">
+      <div className="wrapper">
         <div onClick={() => navStore.dispatch({ type: 'toggle' })} className={this.state.open ? 'menu open' : 'menu'}>
           <span className="material-icons">
             {this.state.open ? 'close' : 'menu'}

@@ -65,6 +65,7 @@ nav {
     background-color: rgba(0, 0, 0, 0);
     z-index: 1;
     pointer-events: none;
+    cursor: url('./icons8-close-window-16.png'), pointer;
 }
 
 .filler.open {

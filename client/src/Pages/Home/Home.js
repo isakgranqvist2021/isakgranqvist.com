@@ -24,11 +24,8 @@ class Home extends React.Component {
                     <div className="content">
                         <div className="content-inner">
                             <h1>swedish software developer</h1>
-                            <p>
-                                Are you looking for a software developer who loves learning new technologies? <br />
-                                I love working on new and challenging problems and come up with creative and innovative solutions.
-                            </p>
-
+                            <p>Are you looking for a software developer who loves learning new technologies?</p>
+                            <p>I love working on new and challenging problems and come up with creative and innovative solutions.</p>
                             <div className="actions">
                                 <Link to="/projects">Projects</Link>
                                 <a href="https://github.com/isakgranqvist2021">Github</a>
