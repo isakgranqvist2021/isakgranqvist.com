@@ -4,14 +4,17 @@ import navStore from './State/nav.reducer';
 import './App.scss';
 
 import Home from './Pages/Home/Home';
-import About from './Pages/About';
-import Contact from './Pages/Contact';
+import About from './Pages/About/About';
+import Contact from './Pages/Contact/Contact';
 import Projects from './Pages/Projects/Projects';
+
+import { AnimatePresence } from 'framer-motion';
 
 import {
   BrowserRouter,
   Switch,
-  Route
+  Route,
+  useLocation
 } from 'react-router-dom';
 
 class Outlet extends React.Component {
@@ -37,25 +40,27 @@ class Outlet extends React.Component {
 
         <main>
           <div className="content">
-            <Switch>
-              <Route path="/" exact>
-                <Home />
-              </Route>
-              <Route path="/about" exact>
-                <About />
-              </Route>
-              <Route path="/projects" exact>
-                <Projects />
-              </Route>
-              <Route path="/contact" exact>
-                <Contact />
-              </Route>
-            </Switch>
+            <RouterSwitch></RouterSwitch>
           </div>
         </main>
       </div >
     );
   }
+}
+
+function RouterSwitch() {
+  const location = useLocation();
+
+  return (
+    <AnimatePresence exitBeforeEnter>
+      <Switch location={location} key={location.pathname}>
+        <Route path="/" component={Home} exact />
+        <Route path="/about" component={About} exact />
+        <Route path="/projects" component={Projects} exact />
+        <Route path="/contact" component={Contact} exact />
+      </Switch>
+    </AnimatePresence>
+  );
 }
 
 class App extends React.Component {

@@ -1,7 +1,32 @@
+@import 'variables';
+
 .container {
     margin: 0 auto;
     width: 1320px;
+    padding: 1rem;
+
+    header {
+        padding: 2rem;
+        background-color: $color3;
+        text-align: center;
+
+        h1 {
+            margin: 0;
+            font-size: 6rem;
+            color: $color4;
+        }
+
+        p {
+            color: $color4;
+            margin: 0;
+
+            a {
+                color: inherit;
+            }
+        }
+    }
 }
+
 
 @media only screen and(max-width: 1400px) and (min-width: 1200px) {
     .container {

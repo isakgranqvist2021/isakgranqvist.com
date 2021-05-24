@@ -43,6 +43,7 @@ nav {
                 margin: 0 auto;
                 padding: 1rem 1rem;
                 border-radius: .5rem;
+                text-decoration: none;
 
                 &:hover {
                     background-color: $color3;
@@ -65,7 +66,7 @@ nav {
     background-color: rgba(0, 0, 0, 0);
     z-index: 1;
     pointer-events: none;
-    cursor: url('./icons8-close-window-16.png'), pointer;
+    cursor: url('https://static.isakgranqvist.com/img/cross-square.png'), pointer;
 }
 
 .filler.open {

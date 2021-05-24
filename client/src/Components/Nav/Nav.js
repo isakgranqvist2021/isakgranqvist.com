@@ -1,7 +1,6 @@
 import React from 'react';
 import './Nav.scss';
 import { Link } from "react-router-dom";
-import Logo from './logo.svg';
 import navStore from '../../State/nav.reducer';
 
 class Nav extends React.Component {
@@ -36,7 +35,7 @@ class Nav extends React.Component {
                 <nav className={this.state.open ? 'open' : null}>
                     <div className="nav-content">
                         <Link onClick={() => navStore.dispatch({ type: 'close' })} to="/">
-                            <img src={Logo} alt="site logo" />
+                            <img src="https://static.isakgranqvist.com/svg/logo.svg" alt="site logo" />
                         </Link>
 
                         <div className="link-group">

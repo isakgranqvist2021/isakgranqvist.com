@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.scss';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 class Home extends React.Component {
     constructor(props) {
@@ -15,11 +16,18 @@ class Home extends React.Component {
             'react.svg',
             'vue.svg'
         ]
+
+        window.document.title = 'Isak Granqvist - Swedish Software Developer';
     }
 
     render() {
+        const variants = {
+            hidden: { opacity: 0, scale: .8 },
+            visible: { opacity: 1, scale: 1 }
+        }
+
         return (
-            <div>
+            <motion.div initial="hidden" animate="visible" variants={variants}>
                 <div className="hero-section">
                     <div className="content">
                         <div className="content-inner">
@@ -34,7 +42,7 @@ class Home extends React.Component {
                     </div>
                     <div className="img"></div>
                 </div>
-            </div>
+            </motion.div>
         );
     }
 }

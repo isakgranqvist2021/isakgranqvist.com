@@ -1,6 +1,7 @@
 import React from 'react';
 import './Projects.scss';
 import projects from './data';
+import { motion } from 'framer-motion';
 
 class Project extends React.Component {
     constructor(props) {
@@ -10,6 +11,8 @@ class Project extends React.Component {
             focused: props.data.focused,
             data: props.data
         };
+
+        window.document.title = 'Isak Granqvist - My Projects';
     }
 
 
@@ -21,7 +24,7 @@ class Project extends React.Component {
 
     render() {
         return (
-            <div className="project">
+            <motion.div className="project">
                 <h2>{this.state.data.label}</h2>
                 <div className="images">
                     {this.state.data.images.map((img, i) => {
@@ -44,7 +47,7 @@ class Project extends React.Component {
                     <a href={this.state.data.href}>website</a>
                     {this.state.data.github != null ? <a href={this.state.data.github}>github repository</a> : ''}
                 </div>
-            </div>
+            </motion.div>
         );
     }
 }
@@ -57,12 +60,21 @@ class Projects extends React.Component {
     }
 
     render() {
+        const variants = {
+            visible: { y: 0 },
+            hidden: { y: 200 }
+        }
+
         return (
-            <div className="container">
+            <motion.div className="container" initial="hidden" animate="visible" variants={variants}>
+                <header>
+                    <h1>Projects</h1>
+                    <p>These are some of my most recent projects, you can view all of my projects on my <a href="https://github.com/isakgranqvist2021">github</a></p>
+                </header>
                 <div className="projects">
                     {this.projects.map((project, i) => <Project data={project} key={i}></Project>)}
                 </div>
-            </div>
+            </motion.div>
         );
     }
 }
