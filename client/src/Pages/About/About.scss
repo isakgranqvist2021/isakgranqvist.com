@@ -1,0 +1,59 @@
+@import '../../variables';
+
+.block.hide {
+    opacity: 0;
+}
+
+.block {
+    position: relative;
+    transition: opacity 200ms ease;
+
+    h2 {
+        font-size: 2.5rem;
+        color: $color5;
+    }
+
+    p {
+        color: $color4;
+        margin: 0;
+        max-width: 85ch;
+    }
+
+    .circle-toggle {
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 25px;
+        height: 25px;
+        background-color: $color7;
+        border-radius: 50%;
+        z-index: 4;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color5;
+        }
+    }
+}
+
+footer {
+    margin-top: 80px;
+    color: $color7;
+
+    p {
+        max-width: 85ch;
+    }
+
+    a {
+        color: $color4;
+    }
+}
+
+@media only screen and(max-width: 995px) {
+    .block {
+        .circle-toggle {
+            display: none;
+        }
+    }
+}
