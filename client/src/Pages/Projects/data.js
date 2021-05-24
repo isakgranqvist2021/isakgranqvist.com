@@ -1,7 +1,9 @@
+import text from '../../State/text';
+
 const projects = [
     {
         label: 'Bobbabean App',
-        description: `This project was initially given to me as a single html file with the purpose of re-building the navigation system but I ended up rebuilding the whole webpage. I chose Angular 11 as my framework and I am quite happy with my work. The source code can be provided if you would be interested in that. In retrospect I would have chosen React rather than Angular due to project size. React seems more suitable for building smaller projects in my opinion.`,
+        description: text.bobbabean,
         focused: 0,
         images: [
             { src: 'https://static.isakgranqvist.com/projects/bobbabean_a.png', alt: 'Landing Page' },
@@ -13,8 +15,21 @@ const projects = [
         github: null
     },
     {
+        label: 'Administration Dashboard',
+        description: text.admin_dashboard,
+        focused: 0,
+        images: [
+            { src: 'https://static.isakgranqvist.com/projects/admin_a.png', alt: 'Sign In Screen' },
+            { src: 'https://static.isakgranqvist.com/projects/admin_b.png', alt: 'Dashboard Screen' },
+            { src: 'https://static.isakgranqvist.com/projects/admin_c.png', alt: 'Modify Account Screen' },
+            { src: 'https://static.isakgranqvist.com/projects/admin_d.png', alt: 'Accounts Screen' }
+        ],
+        href: null,
+        github: 'https://github.com/isakgranqvist2021/Administration-UI'
+    },
+    {
         label: 'Restaurant App',
-        description: `This project was presented to me as - build a restaurant app like uber-eats. This was a school project and I used two different API's in the development process. Documenu for fetching restaurant data and MapboxGL for the map integration. If given the same project today there are a lot of things I would have done differently. There was a restriction on the project as well which was to not use a SPA framework. Which obviously made the process a lot more challenging.`,
+        description: text.restaurant_app,
         focused: 0,
         images: [
             { src: 'https://static.isakgranqvist.com/projects/restaurant_a.png', alt: 'Landing Page' },
@@ -27,7 +42,7 @@ const projects = [
     },
     {
         label: 'Calendar App',
-        description: `The project was presented as a specification list and I have developed most of the things with moderate success. The restrictions were not to use a SPA framework which of course made things a lot more challenging. The backend was built in Node.js + Express and the client in pure JavaScript. The project also makes use of sessions to enable the sign-in and sign-up features which was a requirement.`,
+        description: text.calendar_app,
         focused: 0,
         images: [
             { src: 'https://static.isakgranqvist.com/projects/calendar_a.png', alt: 'Calendar View' },

@@ -4,9 +4,23 @@
     opacity: 0;
 }
 
+.block.focused {
+
+    h2,
+    p {
+        transform: translateX(200px) scale(1.1);
+    }
+
+}
+
 .block {
     position: relative;
     transition: opacity 200ms ease;
+
+    h2,
+    p {
+        transition: all 200ms ease;
+    }
 
     h2 {
         font-size: 2.5rem;
@@ -38,7 +52,7 @@
 }
 
 footer {
-    margin-top: 80px;
+    margin-top: 200px;
     color: $color7;
 
     p {

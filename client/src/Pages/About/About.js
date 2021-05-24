@@ -3,10 +3,21 @@ import './About.scss';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import aboutStore from '../../State/about.reducer';
+import text from '../../State/text';
 
 function Block(props) {
+    let classList = ['block'];
+
+    if (!props.data.visible) {
+        classList.push('hide');
+    }
+
+    if (props.data.focused) {
+        classList.push('focused');
+    }
+
     return (
-        <div className={props.data.visible ? 'block' : 'block hide'}>
+        <div className={classList.map(c => c).join(' ')}>
             <h2>{props.data.title}</h2>
             <p>{props.data.body}</p>
             <div
@@ -26,18 +37,21 @@ class About extends React.Component {
             blocks: [
                 {
                     title: 'Who am I?',
-                    body: 'I am a 23 year old technology enthusiast and  “mostly” self-taught software developer. I have always been interested in computers and technology. I have mostly been interested in video games throughout my childhood like most young guys are. I was especially into the competitive aspect of video games. I played titles like World Of Warcraft and League Of Legends. I am still interested in video games but more ones that challenge my brain like chess.',
-                    visible: true
+                    body: text.who_am_i,
+                    visible: true,
+                    focused: false
                 },
                 {
-                    title: 'Development Career',
-                    body: 'At the age of eighteen I began watching youtube videos and searching online for programming related content and ended up learning HTML, CSS, JavaScript. Since the age of 18 I have been programming a lot and have been trying several programming languages. I would consider myself a JavaScript developer but I have moderate expertise in Golang, TypeScript, Python, C# - in order from best to worst. I have since built countless crud applications, mostly with the MEAN-stack but also with other stacks. Like this application your currently browsing is built with React and C#.',
-                    visible: true
+                    title: 'Development Journey',
+                    body: text.development_journey,
+                    visible: true,
+                    focused: false
                 },
                 {
                     title: 'My Goals',
-                    body: 'My number one goal for the foreseeable future is to become a hireable software developer where I can devote my drive to produce excellent software. Outside of work/study life I have very minimal goals like improving at chess. Being in a community or company where excellent software is being produced and where learning is happening on a daily basis would be a dream come true.',
-                    visible: true
+                    body: text.goals,
+                    visible: true,
+                    focused: false
                 }
             ]
         }
@@ -50,11 +64,17 @@ class About extends React.Component {
             aboutStore.getState().type === 'enter' && aboutStore.getState().value != null
                 ? this.setState({
                     blocks: this.state.blocks.map((block, i) => {
+
+                        if (aboutStore.getState().value === i) {
+                            block.focused = true;
+                        }
+
                         block.visible = i !== aboutStore.getState().value ? false : true;
                         return block;
                     })
                 }) : this.setState({
                     blocks: this.state.blocks.map(block => {
+                        block.focused = false;
                         block.visible = true;
                         return block;
                     })

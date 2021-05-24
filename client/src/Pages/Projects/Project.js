@@ -41,7 +41,7 @@ class Project extends React.Component {
                 </div>
 
                 <div className="actions">
-                    <a href={this.state.data.href}>website</a>
+                    {this.state.data.href != null ? <a href={this.state.data.href}>website</a> : ''}
                     {this.state.data.github != null ? <a href={this.state.data.github}>github repository</a> : ''}
                 </div>
             </div>
