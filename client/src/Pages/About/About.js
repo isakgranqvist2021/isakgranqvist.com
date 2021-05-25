@@ -89,7 +89,7 @@ class About extends React.Component {
         }
 
         return (
-            <motion.div className="container" initial="hidden" animate="visible" variants={variants}>
+            <motion.div className="container about-page" initial="hidden" animate="visible" variants={variants}>
                 <header>
                     <h1>About</h1>
                 </header>

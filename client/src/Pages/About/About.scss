@@ -1,73 +1,72 @@
 @import '../../variables';
 
-.block.hide {
-    opacity: 0;
-}
-
-.block.focused {
-
-    h2,
-    p {
-        transform: translateX(200px) scale(1.1);
+.about-page {
+    .block.hide {
+        opacity: 0;
     }
 
-}
+    .block {
+        position: relative;
+        transition: opacity 200ms ease;
 
-.block {
-    position: relative;
-    transition: opacity 200ms ease;
+        h2,
+        p {
+            transition: all 200ms ease;
+        }
 
-    h2,
-    p {
-        transition: all 200ms ease;
+        h2 {
+            font-size: 2.5rem;
+            color: $color5;
+        }
+
+        p {
+            color: $color4;
+            margin: 0;
+            max-width: 85ch;
+        }
+
+        .circle-toggle {
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 25px;
+            height: 25px;
+            background-color: $color7;
+            border-radius: 50%;
+            z-index: 4;
+            cursor: pointer;
+
+            &:hover {
+                background-color: $color5;
+            }
+        }
     }
 
-    h2 {
-        font-size: 2.5rem;
-        color: $color5;
-    }
+    footer {
+        padding: 200px 0 100px 0;
+        color: $color7;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
 
-    p {
-        color: $color4;
-        margin: 0;
-        max-width: 85ch;
-    }
+        p {
+            max-width: 75ch;
+        }
 
-    .circle-toggle {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 25px;
-        height: 25px;
-        background-color: $color7;
-        border-radius: 50%;
-        z-index: 4;
-        cursor: pointer;
-
-        &:hover {
-            background-color: $color5;
+        a {
+            color: $color4;
         }
     }
 }
 
-footer {
-    margin-top: 200px;
-    color: $color7;
-
-    p {
-        max-width: 85ch;
-    }
-
-    a {
-        color: $color4;
-    }
-}
-
 @media only screen and(max-width: 995px) {
-    .block {
-        .circle-toggle {
-            display: none;
+    .about-page {
+        .block {
+            .circle-toggle {
+                display: none;
+            }
         }
     }
 }

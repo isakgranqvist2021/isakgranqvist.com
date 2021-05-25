@@ -1,0 +1,85 @@
+@import '../../variables';
+
+.contact-page {
+    form {
+        padding: 2rem 0;
+        margin: 2rem auto;
+
+        fieldset {
+            border: none;
+            padding: 0;
+            margin: 3rem 0;
+
+            &:first-of-type {
+                margin-top: 0;
+            }
+
+            legend {
+                color: #fff;
+                margin-bottom: 1rem;
+            }
+
+            input,
+            textarea {
+                background-color: $color3;
+                border: 1px solid rgba($color4, .2);
+                border-radius: .5rem;
+                outline: none;
+                color: $color7;
+                padding: .6rem;
+
+            }
+
+            input {
+                height: 40px;
+                width: 100%;
+            }
+
+            textarea {
+                width: 100%;
+                height: 120px;
+            }
+        }
+
+        button {
+            margin: 0 0 0 auto;
+            display: block;
+            padding: .6rem 1.2rem;
+            border: 1px solid $color4;
+            border-radius: .5rem;
+            background-color: $color7;
+            color: $color1;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+    }
+
+    footer {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+        padding: 50px 0;
+
+        p {
+            margin: 1rem;
+            color: $color6;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            img {
+                width: 40px;
+                height: 40px;
+                margin-right: .75rem;
+            }
+        }
+    }
+}
+
+@media only screen and(min-width: 1000px) {
+    .contact-page {
+        form {
+            width: 50%;
+        }
+    }
+}

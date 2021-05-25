@@ -12,15 +12,15 @@ class Projects extends React.Component {
 
     render() {
         const variants = {
-            visible: { y: 0 },
-            hidden: { y: 200 }
+            visible: { opacity: 1 },
+            hidden: { opacity: 0 }
         }
 
         return (
-            <motion.div className="container" initial="hidden" animate="visible" variants={variants}>
+            <motion.div className="container projects-page" initial="hidden" animate="visible" variants={variants}>
                 <header>
                     <h1>Projects</h1>
-                    <p>These are some of my most recent projects, you can view all of my projects on my <a href="https://github.com/isakgranqvist2021">github</a></p>
+                    <p>These are some of my most recent projects, <br /> you can view all of my projects on my <a href="https://github.com/isakgranqvist2021">github</a></p>
                 </header>
                 <div className="projects">
                     {this.projects.map((project, i) => <Project data={project} key={i}></Project>)}

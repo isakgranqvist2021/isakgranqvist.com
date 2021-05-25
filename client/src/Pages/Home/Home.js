@@ -27,7 +27,7 @@ class Home extends React.Component {
         }
 
         return (
-            <motion.div initial="hidden" animate="visible" variants={variants}>
+            <motion.div className="home-page" initial="hidden" animate="visible" variants={variants}>
                 <div className="hero-section">
                     <div className="content">
                         <div className="content-inner">
