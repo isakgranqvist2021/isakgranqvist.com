@@ -1,7 +1,9 @@
 package controllers
 
 import (
+	"fmt"
 	"server/models"
+	"server/utils"
 
 	"github.com/gofiber/fiber/v2"
 )
@@ -17,7 +19,33 @@ func SendMail(c *fiber.Ctx) error {
 		})
 	}
 
+	if !utils.CheckEmail(mail.Email) {
+		return c.JSON(Response{
+			"please enter a valid email",
+			false,
+			nil,
+		})
+	}
+
+	if len(mail.Message) < 15 {
+		return c.JSON(Response{
+			"please include a message",
+			false,
+			nil,
+		})
+	}
+
+	if len(mail.Name) < 2 {
+		return c.JSON(Response{
+			"please include a name",
+			false,
+			nil,
+		})
+	}
+
 	if err := mail.SaveMail(); err != nil {
+		fmt.Println(err)
+
 		return c.JSON(Response{
 			"unable to send mail",
 			false,

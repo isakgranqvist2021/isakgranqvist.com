@@ -33,3 +33,9 @@ body {
 p {
   line-height: 1.8;
 }
+
+@media only screen and(max-width: 576px) {
+  p {
+    font-size: .8rem;
+  }
+}

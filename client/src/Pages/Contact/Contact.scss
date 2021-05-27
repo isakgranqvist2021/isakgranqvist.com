@@ -5,6 +5,7 @@
         padding: 2rem 0;
         margin: 2rem auto;
 
+
         fieldset {
             border: none;
             padding: 0;
@@ -38,19 +39,51 @@
             textarea {
                 width: 100%;
                 height: 120px;
+                resize: none;
             }
         }
 
-        button {
-            margin: 0 0 0 auto;
-            display: block;
-            padding: .6rem 1.2rem;
-            border: 1px solid $color4;
-            border-radius: .5rem;
-            background-color: $color7;
-            color: $color1;
-            text-transform: uppercase;
-            cursor: pointer;
+        .form-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: relative;
+
+            .alert {
+                opacity: 0;
+                transition: all 1s ease;
+                transform: translateY(200px);
+                position: absolute;
+                left: 0;
+
+                p {
+                    text-transform: capitalize;
+
+                }
+
+                &.error {
+                    opacity: 1;
+                    color: rgb(236, 143, 143);
+                    transform: translateY(0);
+                }
+
+                &.success {
+                    opacity: 1;
+                    color: rgb(43, 105, 43);
+                    transform: translateY(0);
+                }
+            }
+
+            button {
+                margin: 0 0 0 auto;
+                padding: .6rem 1.2rem;
+                border: 1px solid $color4;
+                border-radius: .5rem;
+                background-color: $color7;
+                color: $color1;
+                text-transform: uppercase;
+                cursor: pointer;
+            }
         }
     }
 
@@ -67,10 +100,8 @@
             align-items: center;
             justify-content: center;
 
-            img {
-                width: 40px;
-                height: 40px;
-                margin-right: .75rem;
+            i {
+                margin-right: 1rem;
             }
         }
     }
@@ -80,6 +111,30 @@
     .contact-page {
         form {
             width: 50%;
+        }
+    }
+}
+
+@media only screen and(max-width: 768px) {
+    .contact-page {
+
+        form {
+            .form-footer {
+                button {
+                    width: 100%;
+                }
+            }
+        }
+
+        footer {
+            p {
+                flex-direction: column;
+
+                i {
+                    margin-right: 0;
+                    margin-bottom: .66rem;
+                }
+            }
         }
     }
 }

@@ -12,8 +12,6 @@ import (
 	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
-// mongodb+srv://windows_user:<password>@cluster0.mebkn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
-
 type MailModel interface {
 	SaveMail() error
 }
@@ -34,7 +32,7 @@ func (m *Mail) SaveMail() error {
 		"mongodb+srv://%s:%s@cluster0.mebkn.mongodb.net/%s?retryWrites=true&w=majority",
 		os.Getenv("DB_USER"),
 		os.Getenv("DB_PW"),
-		os.Getenv("DB"),
+		os.Getenv("DB_DATABASE"),
 	)
 
 	clientOptions := options.Client().ApplyURI(DB_URI)
@@ -49,7 +47,7 @@ func (m *Mail) SaveMail() error {
 		return err
 	}
 
-	collection := client.Database(os.Getenv("DB")).Collection("mails")
+	collection := client.Database(os.Getenv("DB_DATABASE")).Collection("mails")
 	_, err = collection.InsertOne(context.TODO(), bson.M{
 		"email":   m.Email,
 		"name":    m.Name,

@@ -41,6 +41,9 @@ class Home extends React.Component {
                         </div>
                     </div>
                     <div className="img"></div>
+                    <div className="img-m">
+                        <img src="https://static.isakgranqvist.com/svg/logo.svg" alt="site logo" />
+                    </div>
                 </div>
             </motion.div>
         );

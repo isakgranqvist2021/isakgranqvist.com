@@ -36,7 +36,6 @@
                 .picker {
                     display: flex;
                     flex-flow: row wrap;
-                    gap: .5rem;
                     margin: 1rem 0;
 
                     img {
@@ -44,6 +43,10 @@
                         height: 64px;
                         border-radius: 50%;
                         cursor: pointer;
+
+                        &:not(:last-of-type) {
+                            margin-right: 1rem;
+                        }
 
                         &.focused {
                             opacity: .1;
@@ -62,6 +65,29 @@
 
                     &:not(:last-of-type) {
                         margin-right: 1.4rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media only screen and(max-width: 768px) {
+    .projects-page {
+        .projects {
+            .project {
+                padding: 2.6rem 0;
+
+                h2 {
+                    font-size: 2rem;
+                }
+
+                .images {
+                    .picker {
+                        img {
+                            width: 32px;
+                            height: 32px;
+                        }
                     }
                 }
             }

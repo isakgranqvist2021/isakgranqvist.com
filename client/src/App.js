@@ -33,9 +33,7 @@ class Outlet extends React.Component {
     return (
       <div className="wrapper">
         <div onClick={() => navStore.dispatch({ type: 'toggle' })} className={this.state.open ? 'menu open' : 'menu'}>
-          <span className="material-icons">
-            {this.state.open ? 'close' : 'menu'}
-          </span>
+          <i className={`fas ${this.state.open ? 'fa-times' : 'fa-bars'}`}></i>
         </div>
 
         <main>
@@ -43,7 +41,7 @@ class Outlet extends React.Component {
             <RouterSwitch></RouterSwitch>
           </div>
         </main>
-      </div >
+      </div>
     );
   }
 }
