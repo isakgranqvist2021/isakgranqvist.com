@@ -7,14 +7,12 @@ import Home from './Pages/Home/Home';
 import About from './Pages/About/About';
 import Contact from './Pages/Contact/Contact';
 import Projects from './Pages/Projects/Projects';
-
-import { AnimatePresence } from 'framer-motion';
+import Transition from './Components/Transition/Transition';
 
 import {
   BrowserRouter,
   Switch,
-  Route,
-  useLocation
+  Route
 } from 'react-router-dom';
 
 class Outlet extends React.Component {
@@ -47,17 +45,15 @@ class Outlet extends React.Component {
 }
 
 function RouterSwitch() {
-  const location = useLocation();
-
   return (
-    <AnimatePresence exitBeforeEnter>
-      <Switch location={location} key={location.pathname}>
+    <Transition>
+      <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/about" component={About} exact />
         <Route path="/projects" component={Projects} exact />
         <Route path="/contact" component={Contact} exact />
       </Switch>
-    </AnimatePresence>
+    </Transition>
   );
 }
 

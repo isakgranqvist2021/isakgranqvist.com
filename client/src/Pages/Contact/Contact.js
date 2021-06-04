@@ -1,6 +1,5 @@
 import React from 'react';
 import './Contact.scss';
-import { motion } from 'framer-motion';
 
 async function SendMail(data) {
     return fetch('http://localhost:8081/api/send-mail', {
@@ -49,13 +48,8 @@ class Contact extends React.Component {
     }
 
     render() {
-        const variants = {
-            visible: { x: '0' },
-            hidden: { x: '100%' }
-        }
-
         return (
-            <motion.div className="container contact-page" initial="hidden" animate="visible" variants={variants}>
+            <div className="container contact-page">
                 <header>
                     <h1>Contact</h1>
                 </header>
@@ -85,7 +79,7 @@ class Contact extends React.Component {
                     <p title="email"><i className="far fa-envelope fa-2x"></i> isakwebdev@gmail.com</p>
                     <p title="discord"><i className="fab fa-discord fa-2x"></i> IsakGranqvist#6926</p>
                 </footer>
-            </motion.div>
+            </div>
         );
     }
 }

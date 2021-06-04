@@ -12,6 +12,7 @@
         z-index: 3;
         cursor: pointer;
         transition: transform 210ms ease;
+        transition: all 320ms ease;
 
         &:hover {
             transform: scale(.81);

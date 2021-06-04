@@ -15,6 +15,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: all 320ms ease;
 
     .nav-content {
         position: relative;
@@ -23,13 +24,13 @@ nav {
 
 
         img {
-            width: 65%;
+            width: calc(380px * .65);
             margin: 0 auto 3.5rem auto;
             display: block;
         }
 
         .link-group {
-            width: 75%;
+            width: calc(380px * .75);
             margin: 0 auto;
 
             a {
@@ -67,6 +68,7 @@ nav {
     z-index: 1;
     pointer-events: none;
     cursor: url('https://static.isakgranqvist.com/img/cross-square.png'), pointer;
+    transition: all 320ms ease;
 }
 
 .filler.open {

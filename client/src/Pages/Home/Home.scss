@@ -16,6 +16,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            animation: text 1.4s cubic-bezier(0.455, 0.03, 0.515, 0.955) 1 normal forwards;
 
             .content-inner {
                 width: 50%;
@@ -38,10 +39,13 @@
                     display: flex;
 
                     a {
-                        display: inline-block;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
                         text-align: center;
                         margin-top: 1rem;
                         width: 13rem;
+                        height: 3rem;
                         padding: 1rem;
                         background-color: $color1;
                         border: 1px solid $color4;
@@ -49,12 +53,66 @@
                         color: $color6;
                         cursor: pointer;
                         text-decoration: none;
+                        position: relative;
+
+                        span {
+                            position: absolute;
+                            left: 50%;
+                            transform: translateX(-50%);
+                            display: block;
+                            transition: color 250ms ease-in;
+                        }
 
                         &:nth-child(1) {
                             margin-right: 1rem;
                             background-color: $color7;
-                            color: $color3;
+                            color: $color1;
                             border-color: $color7;
+                            position: relative;
+                            text-align: center;
+
+                            &:hover {
+                                span {
+                                    color: $color7;
+                                }
+
+                                &::before {
+                                    height: 100%;
+                                }
+                            }
+
+                            &::before {
+                                content: '';
+                                position: absolute;
+                                width: 100%;
+                                height: 0;
+                                bottom: 0;
+                                left: 0;
+                                background-color: $color1;
+                                transition: height 250ms ease-in;
+                            }
+                        }
+
+
+                        &:nth-child(2) {
+                            &:hover {
+                                color: $color1;
+
+                                &::before {
+                                    height: 100%;
+                                }
+                            }
+
+                            &::before {
+                                content: '';
+                                bottom: 0;
+                                left: 0;
+                                position: absolute;
+                                width: 100%;
+                                height: 0;
+                                background-color: $color7;
+                                transition: height 250ms ease-in;
+                            }
                         }
                     }
                 }
@@ -165,5 +223,25 @@
                 }
             }
         }
+    }
+}
+
+
+@keyframes text {
+
+    0% {
+        transform: translateX(-100%);
+    }
+
+    33% {
+        transform: translateX(50%);
+    }
+
+    66% {
+        transform: translateX(-10%);
+    }
+
+    99% {
+        transform: translateX(0);
     }
 }

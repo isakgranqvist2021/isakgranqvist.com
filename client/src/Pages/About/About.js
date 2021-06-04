@@ -1,6 +1,5 @@
 import React from 'react';
 import './About.scss';
-import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import aboutStore from '../../State/about.reducer';
 import text from '../../State/text';
@@ -83,13 +82,8 @@ class About extends React.Component {
     }
 
     render() {
-        const variants = {
-            visible: { x: '0' },
-            hidden: { x: '-100%' }
-        }
-
         return (
-            <motion.div className="container about-page" initial="hidden" animate="visible" variants={variants}>
+            <div className="container about-page">
                 <header>
                     <h1>About</h1>
                 </header>
@@ -103,7 +97,7 @@ class About extends React.Component {
                 <footer>
                     <p>If you would like to have a longer chat about programming or potentially hiring me, you can reach me via mail or the <Link to="/contact">contact form</Link></p>
                 </footer>
-            </motion.div>
+            </div>
         );
     }
 }
