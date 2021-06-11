@@ -13,7 +13,7 @@ function About(props) {
         initial: { rotate: -25, opacity: 0, x: '-100%', scale: .2 },
         animate: { rotate: 0, opacity: 1, x: 0, scale: 1 },
         exit: { rotate: 25, x: '100%', scale: .2 },
-        transition: { duration: .75 }
+        transition: { duration: .5 }
     }
 
     const [blocks, setBlocks] = React.useState([
@@ -31,7 +31,7 @@ function About(props) {
     });
 
     return (
-        <motion.div {...animation} className="container about-page">
+        <motion.div {...animation} className="container aboutPage">
             <header>
                 <h1>About</h1>
             </header>
@@ -43,8 +43,8 @@ function About(props) {
             </footer>
 
             <div className="nav-f-actions">
-                <Link to="/projects"><i class="fas fa-arrow-left"></i> Projects</Link>
-                <Link to="/contact">Contact <i class="fas fa-arrow-right"></i></Link>
+                <Link to="/projects"><i className="fas fa-arrow-left"></i> Projects</Link>
+                <Link to="/contact">Contact <i className="fas fa-arrow-right"></i></Link>
             </div>
         </motion.div>
     );

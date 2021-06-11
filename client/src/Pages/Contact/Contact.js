@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 async function sendMail(data) {
-    const response = await fetch('http://localhost:8081/api/send-mail', {
+    const response = await fetch('https://isakgranqvist.com/api/send-mail', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -36,7 +36,7 @@ function Contact(props) {
         initial: { scaleY: 0 },
         animate: { scaleY: 1 },
         exit: { scaleY: 0 },
-        transition: { duration: 0.3 }
+        transition: { duration: .5 }
     }
 
     const submit = async () => {
@@ -58,7 +58,7 @@ function Contact(props) {
     }
 
     return (
-        <motion.div {...animation} className="container contact-page">
+        <motion.div {...animation} className="container contactPage">
             <header>
                 <h1>Contact</h1>
             </header>
@@ -90,8 +90,8 @@ function Contact(props) {
             </footer>
 
             <div className="nav-f-actions">
-                <Link to="/about"><i class="fas fa-arrow-left"></i> About</Link>
-                <Link to="/">Home <i class="fas fa-arrow-right"></i></Link>
+                <Link to="/about"><i className="fas fa-arrow-left"></i> About</Link>
+                <Link to="/">Home <i className="fas fa-arrow-right"></i></Link>
             </div>
         </motion.div>
     );

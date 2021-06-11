@@ -10,11 +10,11 @@ function Home(props) {
         initial: { scaleY: 0 },
         animate: { scaleY: 1 },
         exit: { scaleY: 0 },
-        transition: { duration: 0.3 }
+        transition: { duration: .5 }
     }
 
     return (
-        <motion.div {...animation} className="home-page">
+        <motion.div {...animation} className="homePage">
             <div className="hero-section">
                 <div className="content">
                     <div className="content-inner">

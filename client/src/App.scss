@@ -1,5 +1,3 @@
-@import './variables';
-
 .wrapper {
     .menu.open {
         left: calc(380px - 1rem - 48px);
@@ -20,7 +18,7 @@
 
         i {
             font-size: 3rem;
-            color: $color4;
+            color: var(--color4);
         }
     }
 }

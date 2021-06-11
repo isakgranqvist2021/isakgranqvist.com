@@ -1,4 +1,5 @@
 import React from 'react';
+import './Block.scss';
 import aboutStore from '../../State/about.reducer';
 
 function Block(props) {
