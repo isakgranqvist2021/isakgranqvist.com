@@ -1,6 +1,6 @@
 import React from 'react';
 import navStore from '../../State/nav.reducer';
-import Router from '../Router/Router';
+import Router from '../Router';
 import Home from '../../Pages/Home/Home';
 import About from '../../Pages/About/About';
 import Contact from '../../Pages/Contact/Contact';

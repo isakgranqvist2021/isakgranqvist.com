@@ -17,20 +17,15 @@ function setThemeVariables(theme) {
   themes[theme].forEach((color, i) => {
     root.style.setProperty(`--color${i + 1}`, color);
   });
-
 }
 
 function App(props) {
   const [theme, setTheme] = React.useState('dark');
   setThemeVariables(theme);
 
-  const onUpdate = (val) => {
-    setTheme(val);
-  }
-
   return (
     <BrowserRouter>
-      <Nav setTheme={onUpdate.bind(this)}></Nav>
+      <Nav setTheme={setTheme.bind(this)}></Nav>
       <Outlet></Outlet>
     </BrowserRouter>
   );
