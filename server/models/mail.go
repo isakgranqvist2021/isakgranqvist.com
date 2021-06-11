@@ -29,7 +29,7 @@ func (m *Mail) SaveMail() error {
 	}
 
 	DB_URI := fmt.Sprintf(
-		"mongodb+srv://%s:%s@cluster0.mebkn.mongodb.net/%s?retryWrites=true&w=majority",
+		"mongodb+srv://%s:%s@bigandimportantcluster.mebkn.mongodb.net/%s?retryWrites=true&w=majority",
 		os.Getenv("DB_USER"),
 		os.Getenv("DB_PW"),
 		os.Getenv("DB_DATABASE"),

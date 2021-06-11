@@ -1,4 +1,4 @@
-import text from '../../State/text';
+import text from './text';
 
 const projects = [
     {

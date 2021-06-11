@@ -2,104 +2,52 @@ import React from 'react';
 import './About.scss';
 import { Link } from 'react-router-dom';
 import aboutStore from '../../State/about.reducer';
-import text from '../../State/text';
+import text from '../../Data/text';
+import Block from '../../Components/Block/Block';
+import { motion } from 'framer-motion';
 
-function Block(props) {
-    let classList = ['block'];
+function About(props) {
+    window.document.title = 'Isak Granqvist - About Me';
 
-    if (!props.data.visible) {
-        classList.push('hide');
+    const animation = {
+        initial: { rotate: -25, opacity: 0, x: '-100%', scale: .2 },
+        animate: { rotate: 0, opacity: 1, x: 0, scale: 1 },
+        exit: { rotate: 25, x: '100%', scale: .2 },
+        transition: { duration: .75 }
     }
 
-    if (props.data.focused) {
-        classList.push('focused');
-    }
+    const [blocks, setBlocks] = React.useState([
+        { title: 'Who am I?', body: text.who_am_i, visible: true, focused: false },
+        { title: 'Development Journey', body: text.development_journey, visible: true, focused: false },
+        { title: 'My Goals', body: text.goals, visible: true, focused: false }
+    ]);
+
+    aboutStore.subscribe(() => {
+        const newState = aboutStore.getState();
+
+        newState.type === 'enter' && newState.value != null
+            ? setBlocks(blocks.map((block, i) => ({ ...block, visible: i === newState.value, focused: newState.value === i })))
+            : setBlocks(blocks.map(block => ({ ...block, focused: false, visible: true })));
+    });
 
     return (
-        <div className={classList.map(c => c).join(' ')}>
-            <h2>{props.data.title}</h2>
-            <p>{props.data.body}</p>
-            <div
-                onMouseEnter={() => aboutStore.dispatch({ type: 'enter', value: props.data.i })}
-                onMouseLeave={() => aboutStore.dispatch({ type: 'leave' })}
-                className="circle-toggle">
+        <motion.div {...animation} className="container about-page">
+            <header>
+                <h1>About</h1>
+            </header>
+
+            {blocks.map((block, i) => <Block key={i} i={i} {...block}></Block>)}
+
+            <footer>
+                <p>If you would like to have a longer chat about programming or potentially hiring me, you can reach me via mail or the <Link to="/contact">contact form</Link></p>
+            </footer>
+
+            <div className="nav-f-actions">
+                <Link to="/projects"><i class="fas fa-arrow-left"></i> Projects</Link>
+                <Link to="/contact">Contact <i class="fas fa-arrow-right"></i></Link>
             </div>
-        </div>
+        </motion.div>
     );
-}
-
-class About extends React.Component {
-    constructor(props) {
-        super();
-
-        this.state = {
-            blocks: [
-                {
-                    title: 'Who am I?',
-                    body: text.who_am_i,
-                    visible: true,
-                    focused: false
-                },
-                {
-                    title: 'Development Journey',
-                    body: text.development_journey,
-                    visible: true,
-                    focused: false
-                },
-                {
-                    title: 'My Goals',
-                    body: text.goals,
-                    visible: true,
-                    focused: false
-                }
-            ]
-        }
-
-        window.document.title = 'Isak Granqvist - About Me';
-    }
-
-    componentDidMount() {
-        aboutStore.subscribe(() => {
-            aboutStore.getState().type === 'enter' && aboutStore.getState().value != null
-                ? this.setState({
-                    blocks: this.state.blocks.map((block, i) => {
-
-                        if (aboutStore.getState().value === i) {
-                            block.focused = true;
-                        }
-
-                        block.visible = i !== aboutStore.getState().value ? false : true;
-                        return block;
-                    })
-                }) : this.setState({
-                    blocks: this.state.blocks.map(block => {
-                        block.focused = false;
-                        block.visible = true;
-                        return block;
-                    })
-                });
-        });
-    }
-
-    render() {
-        return (
-            <div className="container about-page">
-                <header>
-                    <h1>About</h1>
-                </header>
-
-                {
-                    this.state.blocks.map((block, i) => {
-                        return <Block key={i} data={{ i, ...block }}></Block>;
-                    })
-                }
-
-                <footer>
-                    <p>If you would like to have a longer chat about programming or potentially hiring me, you can reach me via mail or the <Link to="/contact">contact form</Link></p>
-                </footer>
-            </div>
-        );
-    }
 }
 
 export default About;

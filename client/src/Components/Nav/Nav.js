@@ -3,54 +3,40 @@ import './Nav.scss';
 import { Link } from "react-router-dom";
 import navStore from '../../State/nav.reducer';
 
-class Nav extends React.Component {
+function Nav(props) {
+    const [open, setOpen] = React.useState(false);
 
-    constructor(props) {
-        super();
-        this.state = {
-            open: false
-        };
+    const links = [
+        { to: '/', text: 'home', icon: 'roofing' },
+        { to: '/about', text: 'about', icon: 'help_outline' },
+        { to: '/contact', text: 'contact', icon: 'mail_outline' },
+        { to: '/projects', text: 'projects', icon: 'work_outline' }
+    ];
 
-        this.links = [
-            { to: '/', text: 'home', icon: 'roofing' },
-            { to: '/about', text: 'about', icon: 'help_outline' },
-            { to: '/contact', text: 'contact', icon: 'mail_outline' },
-            { to: '/projects', text: 'projects', icon: 'work_outline' }
-        ];
-    }
+    navStore.subscribe(() => setOpen(navStore.getState().open));
 
-    componentDidMount() {
-        navStore.subscribe(() => this.setState({
-            open: navStore.getState().open
-        }));
-    }
+    // const toggle = () => this.setState({ open: !this.state.open ? true : false });
 
-    toggle() {
-        this.setState({ open: !this.state.open ? true : false });
-    }
+    return (
+        <div>
+            <nav className={open ? 'open' : null}>
+                <div className="nav-content">
+                    <Link onClick={() => navStore.dispatch({ type: 'close' })} to="/">
+                        <img src="https://static.isakgranqvist.com/svg/logo.svg" alt="site logo" />
+                    </Link>
 
-    render() {
-        return (
-            <div>
-                <nav className={this.state.open ? 'open' : null}>
-                    <div className="nav-content">
-                        <Link onClick={() => navStore.dispatch({ type: 'close' })} to="/">
-                            <img src="https://static.isakgranqvist.com/svg/logo.svg" alt="site logo" />
-                        </Link>
-
-                        <div className="link-group">
-                            {
-                                this.links.map((link, i) =>
-                                    <Link onClick={() => navStore.dispatch({ type: 'close' })} to={link.to} key={i}>{link.text}</Link>)
-                            }
-                        </div>
+                    <div className="link-group">
+                        {
+                            links.map((link, i) =>
+                                <Link onClick={() => navStore.dispatch({ type: 'close' })} to={link.to} key={i}>{link.text}</Link>)
+                        }
                     </div>
-                </nav>
+                </div>
+            </nav>
 
-                <div onClick={() => navStore.dispatch({ type: 'close' })} className={this.state.open ? 'filler open' : 'filler'}></div>
-            </div>
-        );
-    }
+            <div onClick={() => navStore.dispatch({ type: 'close' })} className={open ? 'filler open' : 'filler'}></div>
+        </div>
+    );
 }
 
 export default Nav;

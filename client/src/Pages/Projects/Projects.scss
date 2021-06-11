@@ -1,74 +1,9 @@
 @import '../../variables';
 
-
 .projects-page {
     .projects {
         padding: 1rem 0 5rem 0;
         width: 100%;
-
-        .project {
-            width: 100%;
-            padding: 4rem 0;
-
-
-            &:not(:last-of-type) {
-                border-bottom: 1px solid rgba($color4, .18);
-            }
-
-            h2 {
-                color: $color5;
-                font-size: 3rem;
-                margin: 1rem 0;
-            }
-
-            p {
-                color: $color7;
-                max-width: 85ch;
-            }
-
-            .images {
-                width: 100%;
-
-                .in-focus {
-                    max-width: 100%;
-                }
-
-                .picker {
-                    display: flex;
-                    flex-flow: row wrap;
-                    margin: 1rem 0;
-
-                    img {
-                        width: 64px;
-                        height: 64px;
-                        border-radius: 50%;
-                        cursor: pointer;
-
-                        &:not(:last-of-type) {
-                            margin-right: 1rem;
-                        }
-
-                        &.focused {
-                            opacity: .1;
-                        }
-                    }
-                }
-            }
-
-            .actions {
-                margin-top: 1rem;
-                display: flex;
-                flex-flow: row wrap;
-
-                a {
-                    color: $color4;
-
-                    &:not(:last-of-type) {
-                        margin-right: 1.4rem;
-                    }
-                }
-            }
-        }
     }
 }
 

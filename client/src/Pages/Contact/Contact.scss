@@ -16,7 +16,7 @@
             }
 
             legend {
-                color: #fff;
+                color: $color7;
                 margin-bottom: 1rem;
             }
 
@@ -28,6 +28,12 @@
                 outline: none;
                 color: $color7;
                 padding: .6rem;
+                transition: border-color 215ms ease-in;
+
+                &:focus {
+                    color: $color7;
+                    border-color: $color7;
+                }
 
             }
 
@@ -83,6 +89,11 @@
                 color: $color1;
                 text-transform: uppercase;
                 cursor: pointer;
+                transition: transform 215ms;
+
+                &:hover, &:focus {
+                    transform: scale(.92);
+                }
             }
         }
     }

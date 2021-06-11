@@ -1,14 +1,18 @@
 import React from 'react';
 import './Contact.scss';
+import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-async function SendMail(data) {
-    return fetch('http://localhost:8081/api/send-mail', {
+async function sendMail(data) {
+    const response = await fetch('http://localhost:8081/api/send-mail', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
         },
         body: JSON.stringify(data)
-    }).then(response => response.json())
+    });
+
+    return await response.json();
 }
 
 function Alert(props) {
@@ -18,69 +22,78 @@ function Alert(props) {
     return <div className="alert"></div>
 }
 
-class Contact extends React.Component {
-    constructor(props) {
-        super();
+function Contact(props) {
+    window.document.title = 'Isak Granqvist - Contact Me';
+    const [email, setEmail] = React.useState('');
+    const [name, setName] = React.useState('');
+    const [message, setMessage] = React.useState('');
+    const [alert, setAlert] = React.useState({
+        type: '',
+        text: ''
+    });
 
-        this.state = {
-            email: '',
-            name: '',
-            message: '',
-            alert: {
-                type: '',
-                text: ''
-            }
-        };
-
-        window.document.title = 'Isak Granqvist - Contact Me';
+    const animation = {
+        initial: { scaleY: 0 },
+        animate: { scaleY: 1 },
+        exit: { scaleY: 0 },
+        transition: { duration: 0.3 }
     }
 
-    submit() {
-        SendMail({
-            email: this.state.email,
-            name: this.state.name,
-            message: this.state.message
-        }).then(response =>
-            response.success
-                ? this.setState({ alert: { type: 'success', text: response.message }, email: '', name: '', message: '' })
-                : this.setState({ alert: { type: 'error', text: response.message } }))
-            .catch(_ => this.setState({ alert: { type: 'error', text: 'unable to send mail' } }));
+    const submit = async () => {
+        try {
+            const response = await sendMail({
+                email: email,
+                name: name,
+                message: message
+            });
+
+            setAlert({ type: 'success', text: response.message });
+            setEmail('');
+            setName('');
+            setMessage('');
+
+        } catch (err) {
+            setAlert({ type: 'error', text: err });
+        }
     }
 
-    render() {
-        return (
-            <div className="container contact-page">
-                <header>
-                    <h1>Contact</h1>
-                </header>
+    return (
+        <motion.div {...animation} className="container contact-page">
+            <header>
+                <h1>Contact</h1>
+            </header>
 
-                <form>
-                    <fieldset>
-                        <legend>E-mail</legend>
-                        <input placeholder="peter-smith@email.com" value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} />
-                    </fieldset>
-                    <fieldset>
-                        <legend>What should I call you?</legend>
-                        <input placeholder="Peter Smith" value={this.state.name} onChange={(e) => this.setState({ name: e.target.value })} />
-                    </fieldset>
-                    <fieldset>
-                        <legend>Message</legend>
-                        <textarea placeholder="Message" value={this.state.message} onChange={(e) => this.setState({ message: e.target.value })}></textarea>
-                    </fieldset>
+            <form>
+                <fieldset>
+                    <legend>E-mail</legend>
+                    <input placeholder="peter-smith@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                </fieldset>
+                <fieldset>
+                    <legend>What should I call you?</legend>
+                    <input placeholder="Peter Smith" value={name} onChange={(e) => setName(e.target.value)} />
+                </fieldset>
+                <fieldset>
+                    <legend>Message</legend>
+                    <textarea placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                </fieldset>
 
-                    <div className="form-footer">
-                        <Alert type={this.state.alert.type} text={this.state.alert.text}></Alert>
-                        <span></span>
-                        <button type="button" onClick={() => this.submit()}>Send Message</button>
-                    </div>
-                </form>
+                <div className="form-footer">
+                    <Alert type={alert.type} text={alert.text}></Alert>
+                    <span></span>
+                    <button type="button" onClick={submit}>Send Message</button>
+                </div>
+            </form>
 
-                <footer>
-                    <p title="email"><i className="far fa-envelope fa-2x"></i> isakwebdev@gmail.com</p>
-                    <p title="discord"><i className="fab fa-discord fa-2x"></i> IsakGranqvist#6926</p>
-                </footer>
+            <footer>
+                <p title="email"><i className="far fa-envelope fa-2x"></i> isakwebdev@gmail.com</p>
+                <p title="discord"><i className="fab fa-discord fa-2x"></i> IsakGranqvist#6926</p>
+            </footer>
+
+            <div className="nav-f-actions">
+                <Link to="/about"><i class="fas fa-arrow-left"></i> About</Link>
+                <Link to="/">Home <i class="fas fa-arrow-right"></i></Link>
             </div>
-        );
-    }
+        </motion.div>
+    );
 }
 export default Contact;

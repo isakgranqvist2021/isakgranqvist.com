@@ -228,20 +228,11 @@
 
 
 @keyframes text {
-
-    0% {
-        transform: translateX(-100%);
+    from {
+        opacity: 0;
     }
 
-    33% {
-        transform: translateX(50%);
-    }
-
-    66% {
-        transform: translateX(-10%);
-    }
-
-    99% {
-        transform: translateX(0);
+    to {
+        opacity: 1;
     }
 }

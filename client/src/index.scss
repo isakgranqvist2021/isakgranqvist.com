@@ -34,6 +34,45 @@ p {
   line-height: 1.8;
 }
 
+.nav-f-actions {
+  display: flex;
+  justify-content: space-between;
+  padding: 1.5rem 0;
+  a {
+    color: $color7;
+    text-decoration: none;
+    
+    &:nth-child(1) {
+      &:hover {
+        .fas.fa-arrow-left {
+          transform: translateX(-10px);
+        }
+      }
+    }
+
+    &:nth-child(2) {
+      &:hover {
+        .fas.fa-arrow-right {
+          transform: translateX(10px);
+        }
+      }
+    }
+
+    .fas.fa-arrow-left,
+    .fas.fa-arrow-right {
+      transition: transform 200ms;
+    }
+
+    .fas.fa-arrow-left {
+      margin-right: .72rem;
+    }
+    
+    .fas.fa-arrow-right {
+      margin-left: .72rem;
+    }
+  }
+}
+
 @media only screen and(max-width: 576px) {
   p {
     font-size: .8rem;
