@@ -2,34 +2,16 @@ import React from 'react';
 import './Contact.scss';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-
-async function sendMail(data) {
-    const response = await fetch('https://isakgranqvist.com/api/send-mail', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(data)
-    });
-
-    return await response.json();
-}
-
-function Alert(props) {
-    if (props.text.length > 0)
-        return <div className={`alert ${props.type}`}><p>{props.text}</p></div>
-
-    return <div className="alert"></div>
-}
+import http from '../../Utils/http';
+import alertsReducer from '../../Store/alerts.reducer';
 
 function Contact(props) {
     window.document.title = 'Isak Granqvist - Contact Me';
-    const [email, setEmail] = React.useState('');
-    const [name, setName] = React.useState('');
-    const [message, setMessage] = React.useState('');
-    const [alert, setAlert] = React.useState({
-        type: '',
-        text: ''
+
+    const [formData, setFormData] = React.useState({
+        email: '',
+        name: '',
+        message: ''
     });
 
     const animation = {
@@ -41,19 +23,14 @@ function Contact(props) {
 
     const submit = async () => {
         try {
-            const response = await sendMail({
-                email: email,
-                name: name,
-                message: message
-            });
+            const response = await http.POST('/contact', formData);
 
-            setAlert({ type: 'success', text: response.message });
-            setEmail('');
-            setName('');
-            setMessage('');
-
+            alertsReducer.dispatch({
+                message: response.message,
+                type: `${response.success ? 'success' : 'error'}`
+            })
         } catch (err) {
-            setAlert({ type: 'error', text: err });
+
         }
     }
 
@@ -66,20 +43,20 @@ function Contact(props) {
             <form>
                 <fieldset>
                     <legend>E-mail</legend>
-                    <input placeholder="peter-smith@email.com" value={email} onChange={(e) => setEmail(e.target.value)} />
+                    <input placeholder="peter-smith@email.com" value={formData.email} onChange={(e) => setFormData({ ...formData, email: e.target.value })} />
                 </fieldset>
+
                 <fieldset>
                     <legend>What should I call you?</legend>
-                    <input placeholder="Peter Smith" value={name} onChange={(e) => setName(e.target.value)} />
+                    <input placeholder="Peter Smith" value={formData.name} onChange={(e) => setFormData({ ...formData, name: e.target.value })} />
                 </fieldset>
+
                 <fieldset>
                     <legend>Message</legend>
-                    <textarea placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)}></textarea>
+                    <textarea placeholder="Message" value={formData.message} onChange={(e) => setFormData({ ...formData, message: e.target.value })}></textarea>
                 </fieldset>
 
                 <div className="form-footer">
-                    <Alert type={alert.type} text={alert.text}></Alert>
-                    <span></span>
                     <button type="button" onClick={submit}>Send Message</button>
                 </div>
             </form>

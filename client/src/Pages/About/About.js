@@ -1,34 +1,37 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import './About.scss';
+
 import { Link } from 'react-router-dom';
-import aboutStore from '../../State/about.reducer';
-import text from '../../Data/text';
-import Block from '../../Components/Block/Block';
 import { motion } from 'framer-motion';
+
+import Block from '../../Components/Block/Block';
+import http from '../../Utils/http';
 
 function About(props) {
     window.document.title = 'Isak Granqvist - About Me';
+    const [blocks, setBlocks] = React.useState([]);
 
     const animation = {
         initial: { rotate: -25, opacity: 0, x: '-100%', scale: .2 },
         animate: { rotate: 0, opacity: 1, x: 0, scale: 1 },
         exit: { rotate: 25, x: '100%', scale: .2 },
         transition: { duration: .5 }
-    }
+    };
 
-    const [blocks, setBlocks] = React.useState([
-        { title: 'Who am I?', body: text.who_am_i, visible: true, focused: false },
-        { title: 'Development Journey', body: text.development_journey, visible: true, focused: false },
-        { title: 'My Goals', body: text.goals, visible: true, focused: false }
-    ]);
+    const fetchText = React.useCallback(async () => {
+        const abortController = new AbortController();
+        const response = await http.GET("/about");
 
-    aboutStore.subscribe(() => {
-        const newState = aboutStore.getState();
+        if (response.success) {
+            setBlocks(response.data);
+        }
 
-        newState.type === 'enter' && newState.value != null
-            ? setBlocks(blocks.map((block, i) => ({ ...block, visible: i === newState.value, focused: newState.value === i })))
-            : setBlocks(blocks.map(block => ({ ...block, focused: false, visible: true })));
-    });
+        return abortController.abort();
+    }, []);
+
+    useEffect(() => {
+        fetchText();
+    }, [fetchText])
 
     return (
         <motion.div {...animation} className="container aboutPage">

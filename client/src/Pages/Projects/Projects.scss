@@ -1,4 +1,12 @@
 .projectsPage {
+
+    header {
+        p {
+            margin: 1rem auto;
+            max-width: 75ch;
+        }
+    }
+
     .projects {
         padding: 1rem 0 5rem 0;
         width: 100%;
@@ -7,6 +15,13 @@
 
 @media only screen and(max-width: 768px) {
     .projectsPage {
+
+        header {
+            p {
+                max-width: 43ch;
+            }
+        }
+
         .projects {
             .project {
                 padding: 2.6rem 0;

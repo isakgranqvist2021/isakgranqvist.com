@@ -1,5 +1,5 @@
 import React from 'react';
-import navStore from '../../State/nav.reducer';
+import navStore from '../../Store/nav.reducer';
 import Router from '../Router';
 import Home from '../../Pages/Home/Home';
 import About from '../../Pages/About/About';

@@ -15,7 +15,9 @@ func main() {
 	app.Static("/static", "./static")
 
 	api := app.Group("/api")
-	api.Post("/send-mail", controllers.SendMail)
+	api.Post("/contact", controllers.SendMail)
+	api.Get("/about", controllers.About)
+	api.Get("/projects", controllers.Projects)
 
 	app.Get("*", func(c *fiber.Ctx) error {
 		return c.SendFile("./public/index.html", true)

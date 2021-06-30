@@ -1,6 +1,3 @@
-.block.hide {
-    opacity: 0;
-}
 
 .block {
     position: relative;
@@ -20,22 +17,5 @@
         color: var(--color7);
         margin: 0;
         max-width: 85ch;
-    }
-
-    .circle-toggle {
-        position: absolute;
-        right: 0;
-        top: 50%;
-        transform: translateY(-50%);
-        width: 25px;
-        height: 25px;
-        background-color: var(--color7);
-        border-radius: 50%;
-        z-index: 4;
-        cursor: pointer;
-
-        &:hover {
-            background-color: var(--color5);
-        }
     }
 }

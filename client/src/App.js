@@ -1,6 +1,7 @@
 import React from 'react';
 import Nav from './Components/Nav/Nav';
 import Outlet from './Components/Outlet/Outlet';
+import Alert from './Components/Alert/Alert';
 import { BrowserRouter } from 'react-router-dom';
 import './App.scss';
 
@@ -26,6 +27,7 @@ function App(props) {
   return (
     <BrowserRouter>
       <Nav setTheme={setTheme.bind(this)}></Nav>
+      <Alert />
       <Outlet></Outlet>
     </BrowserRouter>
   );

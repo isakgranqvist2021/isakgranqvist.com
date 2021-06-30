@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import './Nav.scss';
 import { Link } from "react-router-dom";
-import navStore from '../../State/nav.reducer';
+import navStore from '../../Store/nav.reducer';
 import Logo from '../Logo';
 
 function Nav(props) {

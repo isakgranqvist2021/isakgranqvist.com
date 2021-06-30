@@ -1,7 +1,6 @@
 package controllers
 
 import (
-	"fmt"
 	"server/models"
 	"server/utils"
 
@@ -29,7 +28,7 @@ func SendMail(c *fiber.Ctx) error {
 
 	if len(mail.Message) < 15 {
 		return c.JSON(Response{
-			"please include a message",
+			"message must be at least 15 characters long",
 			false,
 			nil,
 		})
@@ -44,8 +43,6 @@ func SendMail(c *fiber.Ctx) error {
 	}
 
 	if err := mail.SaveMail(); err != nil {
-		fmt.Println(err)
-
 		return c.JSON(Response{
 			"unable to send mail",
 			false,

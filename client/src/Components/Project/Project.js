@@ -11,7 +11,7 @@ function Project(props) {
 
                 <div className="picker">
                     {props.images.map((img, i) =>
-                        <img loading="lazy" className={focused === i ? 'focused' : null} src={img.src} alt={img.alt} key={i} onClick={() => setFocused(i)} />)}
+                        <img loading="lazy" src={img.src} alt={img.alt} key={i} onClick={() => setFocused(i)} />)}
                 </div>
 
                 <h2>{props.label}</h2>
