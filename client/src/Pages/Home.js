@@ -47,7 +47,8 @@ function Home(props) {
 	return (
 		<motion.div
 			{...animation}
-			className='uk-flex uk-flex-center uk-flex-middle'
+			className='uk-margin-xlarge-top'
+			id='home-page'
 			style={{ height: '100vh' }}>
 			<div className='uk-container'>
 				<div

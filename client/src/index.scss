@@ -80,8 +80,14 @@ body {
 	}
 
 	.blob {
-		bottom: -200px;
-		left: -100px;
+		display: none;
+	}
+}
+
+@media (max-width: 400px) {
+	.lwm {
+		width: 100%;
+		flex-grow: 1;
 	}
 }
 

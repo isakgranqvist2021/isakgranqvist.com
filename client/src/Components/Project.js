@@ -36,18 +36,18 @@ function Project(props) {
 			<h2 className='uk-heading-small'>{props.label}</h2>
 			<p>{props.description}</p>
 			<div className='actions'>
-				{props.href != null ? (
+				{props.href !== null ? (
 					<a
-						className='uk-button uk-button-default uk-margin-right'
+						className='uk-button uk-button-default uk-margin-right uk-margin-small-bottom lwm'
 						href={props.href}>
 						website
 					</a>
 				) : (
 					''
 				)}
-				{props.github != null ? (
+				{props.github !== null ? (
 					<a
-						className='uk-button uk-button-primary'
+						className='uk-button uk-button-primary uk-margin-small-bottom lwm'
 						href={props.github}>
 						github repository
 					</a>

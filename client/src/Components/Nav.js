@@ -1,7 +1,7 @@
 /** @format */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 
 function Nav(props) {
 	const links = [
@@ -10,6 +10,13 @@ function Nav(props) {
 		{ to: '/contact', text: 'contact', icon: 'mail_outline' },
 		{ to: '/projects', text: 'projects', icon: 'work_outline' },
 	];
+	const history = useHistory();
+
+	React.useEffect(() => {
+		history.listen(() => {
+			window.UIkit.offcanvas(document.querySelector('#offcanvas')).hide();
+		});
+	}, []);
 
 	return (
 		<div>
