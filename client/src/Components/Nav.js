@@ -25,7 +25,7 @@ function Nav(props) {
 		<div id='main-nav'>
 			<div
 				uk-sticky='media: 960'
-				className='uk-navbar-container tm-navbar-container uk-sticky'>
+				className='uk-navbar-container tm-navbar-container uk-sticky navbar'>
 				<div className='uk-container uk-container-expand'>
 					<nav className='uk-navbar uk-container'>
 						<div className='uk-navbar-left'>

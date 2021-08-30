@@ -12,11 +12,14 @@ function Alert(props) {
 
 	React.useEffect(() => {
 		let ar = alertsReducer.subscribe(() => {
-			console.log(alertsReducer.getState());
 			setAlert({
 				...alertsReducer.getState(),
 				show: true,
 			});
+			window.setTimeout(
+				() => setAlert({ type: '', message: '', show: false }),
+				6500
+			);
 		});
 
 		return () => ar();
@@ -26,10 +29,7 @@ function Alert(props) {
 		<div>
 			{alert.show && (
 				<div
-					className={[
-						'uk-alert-' + alert.type,
-						'uk-margin-remove-top',
-					].join(' ')}
+					className={['uk-alert-' + alert.type].join(' ')}
 					uk-alert='true'>
 					<a
 						className='uk-alert-close'
