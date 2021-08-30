@@ -4,6 +4,8 @@ import React from 'react';
 import { Link, useHistory } from 'react-router-dom';
 
 function Nav(props) {
+	const [currPath, setCurrPath] = React.useState(window.location.pathname);
+
 	const links = [
 		{ to: '/', text: 'home', icon: 'roofing' },
 		{ to: '/about', text: 'about', icon: 'help_outline' },
@@ -15,11 +17,12 @@ function Nav(props) {
 	React.useEffect(() => {
 		history.listen(() => {
 			window.UIkit.offcanvas(document.querySelector('#offcanvas')).hide();
+			setCurrPath(window.location.pathname);
 		});
 	}, []);
 
 	return (
-		<div>
+		<div id='main-nav'>
 			<div
 				uk-sticky='media: 960'
 				className='uk-navbar-container tm-navbar-container uk-sticky'>
@@ -32,7 +35,7 @@ function Nav(props) {
 								style={{ width: 100 }}>
 								<img
 									uk-svg=''
-									src='https://static.isakgranqvist.com/svg/simple-logo.svg'
+									src='https://static.isakgranqvist.com/svg/simple-logo.white.svg'
 									style={{ maxWidth: 100, maxHeight: 50 }}
 									className='uk-margin-small-right'
 									hidden=''
@@ -43,7 +46,16 @@ function Nav(props) {
 							<ul className='uk-navbar-nav uk-visible@m'>
 								{links.map((link, i) => (
 									<li key={i}>
-										<Link to={link.to}>{link.text}</Link>
+										<Link
+											className={[
+												'nav-link',
+												currPath === link.to
+													? 'active'
+													: '',
+											].join(' ')}
+											to={link.to}>
+											{link.text}
+										</Link>
 									</li>
 								))}
 							</ul>

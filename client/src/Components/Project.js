@@ -8,7 +8,7 @@ function Project(props) {
 			<div
 				className='uk-position-relative uk-visible-toggle uk-light'
 				tabIndex='-1'
-				uk-slideshow='animation: pull'>
+				uk-slideshow='animation: slide'>
 				<ul className='uk-slideshow-items'>
 					{props.images.map((img, i) => (
 						<li key={i}>

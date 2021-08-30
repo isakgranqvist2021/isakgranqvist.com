@@ -36,15 +36,29 @@ function About(props) {
 	return (
 		<motion.div {...animation} className='uk-container uk-margin-large-top'>
 			{blocks.map((block, i) => (
-				<Block key={i} i={i} {...block}></Block>
+				<div>
+					<Block key={i} i={i} {...block}></Block>
+					<hr className='uk-divider-icon' />
+				</div>
 			))}
 
 			<footer>
-				<p>
-					If you would like to have a longer chat about programming or
-					potentially hiring me,
-					<br /> you can reach me via mail or the{' '}
-					<Link to='/contact'>contact form</Link>
+				<p
+					className='uk-text-meta uk-text-center uk-margin-medium-top uk-margin-auto'
+					style={{ maxWidth: '80ch', padding: '0 10px' }}>
+					Thank you for taking the time to read about me. If you would
+					like to have a longer chat about programming or potentially
+					hiring me, you can reach me via{' '}
+					<a
+						className='uk-text-primary'
+						href='mailto:contact@isakgranqvist.com'>
+						mail
+					</a>{' '}
+					or the
+					<Link to='/contact' className='uk-text-primary'>
+						{' '}
+						contact form
+					</Link>
 				</p>
 			</footer>
 
