@@ -1,78 +1,95 @@
-@import 'layout';
-
-* {
-  box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  width: 100%;
-  height: 100%;
-  font-family: 'Roboto', sans-serif;
-  overflow-x: hidden;
-  background-color: var(--color1);
-
-  &::-webkit-scrollbar,
-  &::-webkit-scrollbar-track {
-    background-color: var(--color7);
-    width: .7rem;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background-color: var(--color3);
-  }
-}
-
-body {
-  margin: 0;
-}
+/** @format */
 
 p {
-  line-height: 2;
+	line-height: 2;
 }
 
 .nav-f-actions {
-  display: flex;
-  justify-content: space-between;
-  padding: 1.5rem 0;
-  a {
-    color: var(--color7);
-    text-decoration: none;
-    
-    &:nth-child(1) {
-      &:hover {
-        .fas.fa-arrow-left {
-          transform: translateX(-10px);
-        }
-      }
-    }
-
-    &:nth-child(2) {
-      &:hover {
-        .fas.fa-arrow-right {
-          transform: translateX(10px);
-        }
-      }
-    }
-
-    .fas.fa-arrow-left,
-    .fas.fa-arrow-right {
-      transition: transform 200ms;
-    }
-
-    .fas.fa-arrow-left {
-      margin-right: .72rem;
-    }
-    
-    .fas.fa-arrow-right {
-      margin-left: .72rem;
-    }
-  }
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 50px 0;
 }
 
-@media only screen and(max-width: 576px) {
-  p {
-    font-size: .8rem;
-  }
+.svg {
+	transform: none !important;
+	margin-bottom: -100px;
+}
+
+#hpc {
+	padding-right: 50px;
+}
+
+.blob {
+	position: absolute;
+	z-index: -1;
+	bottom: -400px;
+	animation: scaleIn 1s ease 1 normal forwards;
+}
+
+.character-symbol {
+	transition: all 200ms ease;
+}
+
+body {
+	&::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	/* Track */
+	&::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	/* Handle */
+	&::-webkit-scrollbar-thumb {
+		background: #1e87f0;
+	}
+
+	/* Handle on hover */
+	&::-webkit-scrollbar-thumb:hover {
+		background: #81b2e4;
+	}
+}
+
+@media (max-width: 1220px) and (min-width: 1099px) {
+	.blob {
+		bottom: -400px;
+		left: 100px;
+	}
+}
+
+@media (max-width: 1100px) {
+	#hpt {
+		font-size: 2.4rem;
+	}
+
+	#hpc {
+		padding-right: 25px;
+	}
+
+	.blob {
+		bottom: -400px;
+	}
+}
+
+@media (max-width: 960px) {
+	#hpc {
+		margin-bottom: 40px;
+		padding-right: 0;
+	}
+
+	.blob {
+		bottom: -200px;
+		left: -100px;
+	}
+}
+
+@keyframes scaleIn {
+	from {
+		transform: scale(0);
+	}
+	to {
+		transform: scale(1);
+	}
 }

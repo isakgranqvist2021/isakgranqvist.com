@@ -1,13 +1,11 @@
 /** @format */
 
 import React, { useEffect } from 'react';
-import './About.scss';
-
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
-import Block from '../../Components/Block/Block';
-import http from '../../Utils/http';
+import Block from '../Components/Block';
+import http from '../Utils/http';
 
 function About(props) {
 	window.document.title = 'Isak Granqvist - About Me';
@@ -36,7 +34,7 @@ function About(props) {
 	}, [fetchText]);
 
 	return (
-		<motion.div {...animation} className='container aboutPage'>
+		<motion.div {...animation} className='uk-container uk-margin-large-top'>
 			{blocks.map((block, i) => (
 				<Block key={i} i={i} {...block}></Block>
 			))}
@@ -44,17 +42,18 @@ function About(props) {
 			<footer>
 				<p>
 					If you would like to have a longer chat about programming or
-					potentially hiring me, you can reach me via mail or the{' '}
+					potentially hiring me,
+					<br /> you can reach me via mail or the{' '}
 					<Link to='/contact'>contact form</Link>
 				</p>
 			</footer>
 
 			<div className='nav-f-actions'>
 				<Link to='/projects'>
-					<i className='fas fa-arrow-left'></i> Projects
+					<span uk-icon='icon: chevron-left'></span> Projects
 				</Link>
 				<Link to='/contact'>
-					Contact <i className='fas fa-arrow-right'></i>
+					Contact <span uk-icon='icon: chevron-right'></span>
 				</Link>
 			</div>
 		</motion.div>
