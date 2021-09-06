@@ -13,12 +13,14 @@
 		.social {
 			margin-left: 50px;
 			h3 {
-				font-size: 2rem;
+				font-size: 3rem;
 				font-weight: 900;
+				color: rgb(61, 61, 61);
 			}
 
 			.icons {
 				display: flex;
+				flex-wrap: wrap;
 				margin-top: 20px;
 
 				a {
@@ -49,12 +51,6 @@
 		form {
 			margin-right: 50px;
 			padding: 3rem;
-			h3 {
-				margin-bottom: 1.42rem;
-				font-size: 2.5rem;
-				font-weight: 900;
-				text-transform: uppercase;
-			}
 
 			section {
 				margin-bottom: 2rem;
@@ -127,6 +123,32 @@
 				text-align: center;
 				.icons {
 					justify-content: center;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	#Contact {
+		.container {
+			.social {
+				h3 {
+					font-size: 2rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 500px) {
+	#Contact {
+		.container {
+			.social {
+				.icons {
+					a {
+						margin-bottom: 10px;
+					}
 				}
 			}
 		}

@@ -24,7 +24,7 @@ export default function Hero() {
 		});
 	}, []);
 	return (
-		<div className='container' id='Hero'>
+		<div id='Hero' className='container'>
 			<div className='hero-content'>
 				<h1 className='ml12'>Swedish software developer</h1>
 

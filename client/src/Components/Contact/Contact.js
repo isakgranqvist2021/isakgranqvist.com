@@ -120,6 +120,14 @@ function Contact(props) {
 								alt='Fiverr Icon'
 							/>
 						</a>
+						<a
+							href='mailto:contact@isakgranqvist.com'
+							title='Send mail'>
+							<img
+								src='https://static.isakgranqvist.com/icons/email.svg'
+								alt='Email Icon'
+							/>
+						</a>
 					</div>
 				</div>
 			</div>

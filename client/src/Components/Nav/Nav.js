@@ -1,22 +1,27 @@
 /** @format */
 
 import React from 'react';
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import './Nav.scss';
+import Scrollspy from 'react-scrollspy';
 
 function Nav(props) {
 	const [open, setOpen] = React.useState(false);
 	const history = useHistory();
 
 	const links = [
-		{ to: '/', text: 'home' },
-		{ to: '/about', text: 'about' },
-		{ to: '/contact', text: 'contact' },
-		{ to: '/projects', text: 'projects' },
+		{ to: '/', text: 'home', selector: '#Hero' },
+		{ to: '/projects', text: 'projects', selector: '#Projects' },
+		{ to: '/about', text: 'about', selector: '#About' },
+		{ to: '/contact', text: 'contact', selector: '#Contact' },
 	];
 
 	const navigate = (e, to) => {
 		e.preventDefault();
+		setOpen(false);
+		document.querySelector(to).scrollIntoView({
+			behavior: 'smooth',
+		});
 	};
 
 	return (
@@ -27,14 +32,18 @@ function Nav(props) {
 					alt='Isak Granqvist Logo'
 				/>
 				<div className={['nav-links', open ? 'open' : ''].join(' ')}>
-					{links.map((link, i) => (
-						<a
-							key={i}
-							href={link.to}
-							onClick={(e) => navigate(e, link.to)}>
-							{link.text}
-						</a>
-					))}
+					<Scrollspy
+						items={['Hero', 'Projects', 'About', 'Contact']}
+						currentClassName='is-current'>
+						{links.map((link, i) => (
+							<a
+								key={i}
+								href={link.selector.replace('#', '')}
+								onClick={(e) => navigate(e, link.selector)}>
+								{link.text}
+							</a>
+						))}
+					</Scrollspy>
 				</div>
 				<span
 					className='material-icons-outlined'

@@ -27,6 +27,15 @@
 			text-decoration: none;
 			font-weight: 600;
 			letter-spacing: 1.1px;
+			border-top: 2px solid transparent;
+			border-bottom: 2px solid transparent;
+			padding: 5px 0;
+			transition: all 200ms ease;
+
+			&:hover,
+			&.is-current {
+				border-color: #fff;
+			}
 
 			&:not(:first-of-type) {
 				margin-left: 1rem;
@@ -51,8 +60,7 @@
 
 		.nav-links {
 			position: fixed;
-			display: flex;
-			flex-direction: column;
+
 			background: #333;
 			top: 0;
 			left: 0;
@@ -61,10 +69,16 @@
 			width: 0;
 			transition: all 300ms ease;
 			z-index: 15;
+
+			ul {
+				display: flex;
+				flex-direction: column;
+			}
 			a {
 				margin-left: 0 !important;
 				margin-bottom: 1rem;
 				padding: 0rem 1rem 0 1rem;
+				border: none !important;
 
 				&:first-of-type {
 					margin-top: 30px;
@@ -81,6 +95,7 @@
 			color: #fff;
 			font-size: 2.5rem;
 			z-index: 15;
+			cursor: pointer;
 		}
 
 		#filler {

@@ -17,6 +17,22 @@ body {
 body {
 	margin: 0;
 	font-family: 'Urbanist', sans-serif;
+
+	&::-webkit-scrollbar,
+	&::-webkit-scrollbar-track {
+		background-color: rgb(238, 238, 238);
+		width: 10px;
+	}
+
+	&::-webkit-scrollbar-thumb {
+		background-color: #333;
+		border-radius: 10px;
+
+		&:active,
+		&:hover {
+			background-color: rgb(85, 85, 85);
+		}
+	}
 }
 
 .bg-dark {
