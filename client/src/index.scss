@@ -1,210 +1,66 @@
 /** @format */
 
-p {
-	line-height: 2;
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
 }
 
-.nav-f-actions {
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 50px 0;
-}
-
-#waves {
-	position: fixed;
-	bottom: 0;
-}
-
-.svg {
-	transform: none !important;
-	margin-bottom: -100px;
-}
-
-#hpc {
-	padding-right: 50px;
-}
-
-.character-symbol {
-	transition: all 200ms ease;
-}
-
-.block {
-	padding: 40px 0;
-	width: 60%;
-}
-
-.nav-link {
-	position: relative;
-
-	&:hover {
-		&::after {
-			width: 75%;
-		}
-	}
-
-	&.active {
-		&::after {
-			width: 75%;
-		}
-	}
-
-	&::after {
-		transition: all 200ms ease;
-		margin-top: 30px;
-		content: '';
-		position: absolute;
-		width: 0;
-		height: 1px;
-		background: #fff;
-	}
-}
-
-#main-nav {
-	.navbar {
-		background: rgb(14, 109, 205);
-	}
-
-	* {
-		color: #fff;
-	}
+html,
+body {
+	min-width: 100%;
+	min-height: 100%;
 }
 
 body {
-	&::-webkit-scrollbar {
-		width: 10px;
-	}
-
-	/* Track */
-	&::-webkit-scrollbar-track {
-		background: #f1f1f1;
-	}
-
-	/* Handle */
-	&::-webkit-scrollbar-thumb {
-		background: #1e87f0;
-	}
-
-	/* Handle on hover */
-	&::-webkit-scrollbar-thumb:hover {
-		background: #81b2e4;
-	}
+	margin: 0;
+	font-family: 'Urbanist', sans-serif;
 }
 
-#contact-bg {
-	background-image: url('https://static.isakgranqvist.com/img/mountains-ice-bergs-antarctica-berg-48178.jpeg');
-	background-repeat: no-repeat;
-
-	div {
-		width: 40%;
-	}
+.bg-dark {
+	background-color: rgb(51, 51, 51);
 }
 
-@media (max-width: 1600px) {
-	#contact-bg {
-		div {
-			width: 50%;
-		}
-	}
+.bg-light {
+	background-color: #fff;
 }
 
-@media (max-width: 1190px) {
-	#hpt {
-		font-size: 2.5rem;
-	}
-
-	#contact-bg {
-		div {
-			width: 60%;
-		}
-	}
+p {
+	line-height: 1.5;
 }
 
-@media (max-width: 1100px) {
-	#hpt {
-		font-size: 2.4rem;
-	}
-
-	#hpc {
-		padding-right: 0;
-	}
+.card {
+	box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+	border-radius: 0.25rem;
 }
 
-@media (max-width: 960px) {
-	#contact-bg {
-		display: none;
-	}
-	.block {
-		width: 85%;
-	}
-
-	#hpc {
-		margin-bottom: 40px;
-		padding-right: 0;
-		margin-top: -100px;
-		justify-content: flex-start;
-	}
-
-	.svg {
-		max-width: 75%;
-		margin-right: -300px;
-	}
+.container {
+	width: 1320px;
+	margin: 0 auto;
 }
 
-@media (max-width: 700px) {
-	.content-layout {
-		width: 80%;
-		margin: 0 auto;
-	}
-}
-
-@media (max-width: 400px) {
-	.content-layout {
+@media (max-width: 1200px) {
+	.container {
 		width: 90%;
 	}
-	#home-page {
-		align-items: flex-start;
-	}
+}
 
-	#hpc {
-		margin-top: 50px;
-	}
-	#hpt {
-		font-size: 2.2rem;
-	}
-
-	.lwm {
-		width: 100%;
-		flex-grow: 1;
-	}
-
-	.svg {
-		max-width: 100%;
+@media (max-width: 992px) {
+	.container {
+		width: 90%;
 	}
 }
 
-@media (max-width: 272px) {
-	// galaxy fold
-	#mgf {
-		margin-bottom: 10px;
+@media (max-width: 768px) {
+	.container {
+		width: 90%;
 	}
 }
 
-@media (max-height: 653px) {
-	#hpc {
-		margin-top: 20px;
-	}
-
-	#waves {
-		display: none;
-	}
-}
-
-@keyframes scaleIn {
-	from {
-		transform: scale(0);
-	}
-	to {
-		transform: scale(1);
+@media (max-width: 576px) {
+	.container {
+		width: 95%;
 	}
 }

@@ -3,11 +3,8 @@
 import React from 'react';
 import Router from './Router';
 import Home from '../Pages/Home';
-import About from '../Pages/About';
-import Contact from '../Pages/Contact';
-import Projects from '../Pages/Projects';
 
-const components = { Home, About, Contact, Projects };
+const components = { Home };
 
 function Outlet(props) {
 	return (

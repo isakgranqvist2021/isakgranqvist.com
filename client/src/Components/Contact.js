@@ -1,27 +1,16 @@
 /** @format */
 
 import React from 'react';
-import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import http from '../Utils/http';
 import alertsReducer from '../Store/alerts.reducer';
-import Alert from '../Components/Alert';
+import Alert from './Alert';
 
 function Contact(props) {
-	window.document.title = 'Isak Granqvist - Contact Me';
-
 	const [formData, setFormData] = React.useState({
 		email: '',
 		name: '',
 		message: '',
 	});
-
-	const animation = {
-		initial: { scaleY: 0 },
-		animate: { scaleY: 1 },
-		exit: { scaleY: 0 },
-		transition: { duration: 0.5 },
-	};
 
 	const submit = async () => {
 		try {
@@ -45,10 +34,7 @@ function Contact(props) {
 	};
 
 	return (
-		<motion.div
-			{...animation}
-			className='uk-flex'
-			style={{ height: 'calc(100vh - 80px)' }}>
+		<div style={{ height: 'calc(100vh - 80px)' }}>
 			<div className='uk-width-100'>
 				<div className='uk-container uk-container-xsmall uk-flex uk-flex-column uk-flex-center uk-height-1-1'>
 					<header>
@@ -122,15 +108,6 @@ function Contact(props) {
 							Send Message
 						</button>
 					</form>
-
-					<div className='nav-f-actions uk-margin-top'>
-						<Link to='/about'>
-							<span uk-icon='icon: chevron-left'></span> About
-						</Link>
-						<Link to='/'>
-							Home <span uk-icon='icon: chevron-right'></span>
-						</Link>
-					</div>
 				</div>
 			</div>
 			<div className='uk-width-100' id='contact-bg'>
@@ -165,7 +142,7 @@ function Contact(props) {
 					</ul>
 				</div>
 			</div>
-		</motion.div>
+		</div>
 	);
 }
 export default Contact;

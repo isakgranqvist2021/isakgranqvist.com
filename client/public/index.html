@@ -5,7 +5,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<meta name="viewport" content="width=device-width,initial-scale=1" />
 		<meta
 			name="description"
 			content="Isak Granqvist's portfolio website, view my projects, contact me or read about my history in software development."
@@ -14,17 +14,23 @@
 			name="keywords"
 			content="web developer, software developer, portfolio, react.js"
 		/>
+
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;500;700;800;900&display=swap"
+			rel="stylesheet"
+		/>
 		<link
 			rel="stylesheet"
-			href="https://static.isakgranqvist.com/css/uikit.min.css"
+			href="https://fonts.googleapis.com/icon?family=Material+Icons|Material+Icons+Outlined"
 		/>
-
 		<title>Isak Granqvist - Swedish Software Developer</title>
 	</head>
 	<body>
 		<div id="root"></div>
-		<noscript>
-			<link
+		<noscript
+			><link
 				rel="stylesheet"
 				href="https://static.isakgranqvist.com/css/no-script.css"
 			/>
@@ -43,10 +49,20 @@
 						>How do I enable JavaScript?</a
 					>
 				</div>
-			</div>
-		</noscript>
+			</div></noscript
+		>
+		<script
+			async
+			src="https://www.googletagmanager.com/gtag/js?id=G-SFK4JQRKBG"
+		></script>
+		<script>
+			function gtag() {
+				dataLayer.push(arguments);
+			}
+			(window.dataLayer = window.dataLayer || []),
+				gtag('js', new Date()),
+				gtag('config', 'G-SFK4JQRKBG');
+		</script>
 		<script src="https://static.isakgranqvist.com/js/anime.min.js"></script>
-		<script src="https://static.isakgranqvist.com/js/uikit.min.js"></script>
-		<script src="https://static.isakgranqvist.com/js/uikit-icons.min.js"></script>
 	</body>
 </html>

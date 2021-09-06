@@ -1,0 +1,36 @@
+/** @format */
+
+#Projects {
+	padding: 110px 0;
+
+	header {
+		margin-bottom: 110px;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		text-align: center;
+
+		h3 {
+			font-size: 4rem;
+			font-weight: 900;
+			margin-bottom: 0.66rem;
+			color: rgb(56, 56, 56);
+		}
+
+		p {
+			max-width: 60ch;
+			font-size: 1.3rem;
+			letter-spacing: 1.2px;
+
+			a {
+				text-decoration: none;
+				color: #cf3030;
+			}
+		}
+	}
+
+	.projects-grid {
+		display: flex;
+		flex-wrap: wrap;
+	}
+}

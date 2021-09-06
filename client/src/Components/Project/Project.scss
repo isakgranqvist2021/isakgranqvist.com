@@ -1,0 +1,52 @@
+/** @format */
+.Project {
+	width: 100%;
+	overflow: hidden;
+	padding-bottom: 5rem;
+}
+
+.swiper {
+	width: 100%;
+}
+
+.swiper-slide img {
+	display: block;
+	width: 100%;
+	height: 300px;
+}
+
+.project-body {
+	margin-top: 50px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	h4 {
+		text-transform: capitalize;
+		font-size: 2.4rem;
+	}
+
+	.actions {
+		margin-top: 25px;
+
+		a {
+			display: inline-block;
+			padding: 1rem;
+			width: 200px;
+			text-align: center;
+			text-transform: uppercase;
+			text-decoration: none;
+			&:last-of-type {
+				margin-left: 0.5rem;
+				background-color: #cf3030;
+				color: #fff;
+			}
+
+			&:first-of-type {
+				margin-right: 0.5rem;
+				border: 1px solid #cf3030;
+				color: #cf3030;
+			}
+		}
+	}
+}
