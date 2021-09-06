@@ -53,3 +53,39 @@
 		}
 	}
 }
+
+@media (max-width: 1400px) {
+	.Project {
+		padding: 0 0 5rem 0 !important;
+	}
+}
+
+@media (max-width: 820px) {
+	.Project {
+		.project-body {
+			text-align: center;
+			.actions {
+				display: flex;
+				flex-direction: column-reverse;
+				width: 100%;
+				a {
+					width: 100%;
+					margin: 0.5rem 0 !important;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 620px) {
+	.Project {
+		.project-body {
+			.actions {
+				width: 100%;
+				a {
+					width: 100%;
+				}
+			}
+		}
+	}
+}

@@ -2,15 +2,22 @@
 
 import React from 'react';
 import Nav from './Components/Nav/Nav';
-import Outlet from './Components/Outlet';
-import { BrowserRouter } from 'react-router-dom';
+import Hero from './Components/Hero/Hero';
+import Features from './Components/Features/Features';
+import Projects from './Components/Projects/Projects';
+import About from './Components/About/About';
+import Contact from './Components/Contact/Contact';
 
 function App(props) {
 	return (
-		<BrowserRouter>
+		<div>
 			<Nav></Nav>
-			<Outlet></Outlet>
-		</BrowserRouter>
+			<Hero />
+			<Features />
+			<Projects />
+			<About />
+			<Contact />
+		</div>
 	);
 }
 

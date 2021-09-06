@@ -36,3 +36,27 @@
 		}
 	}
 }
+
+@media (max-width: 900px) {
+	#About {
+		.container {
+			flex-direction: column-reverse;
+			text-align: center;
+			.flex-item {
+				svg {
+					margin-bottom: 2rem;
+				}
+			}
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	#About {
+		.container {
+			h3 {
+				font-size: 2.5rem;
+			}
+		}
+	}
+}

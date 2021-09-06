@@ -13,8 +13,6 @@ import './Project.scss';
 SwiperCore.use([EffectCube, Pagination]);
 
 function Project(props) {
-	console.log(props);
-
 	const styles =
 		props.padding === 'left'
 			? { paddingLeft: '3rem' }

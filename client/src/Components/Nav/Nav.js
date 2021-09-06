@@ -5,18 +5,18 @@ import { Link, useHistory } from 'react-router-dom';
 import './Nav.scss';
 
 function Nav(props) {
+	const [open, setOpen] = React.useState(false);
 	const history = useHistory();
 
 	const links = [
-		{ to: '/', text: 'home', icon: 'roofing' },
-		{ to: '/about', text: 'about', icon: 'help_outline' },
-		{ to: '/contact', text: 'contact', icon: 'mail_outline' },
-		{ to: '/projects', text: 'projects', icon: 'work_outline' },
+		{ to: '/', text: 'home' },
+		{ to: '/about', text: 'about' },
+		{ to: '/contact', text: 'contact' },
+		{ to: '/projects', text: 'projects' },
 	];
 
 	const navigate = (e, to) => {
 		e.preventDefault();
-		history.push(to, null);
 	};
 
 	return (
@@ -26,7 +26,7 @@ function Nav(props) {
 					src='https://static.isakgranqvist.com/svg/simple-logo.white.svg'
 					alt='Isak Granqvist Logo'
 				/>
-				<div className='nav-links'>
+				<div className={['nav-links', open ? 'open' : ''].join(' ')}>
 					{links.map((link, i) => (
 						<a
 							key={i}
@@ -36,30 +36,20 @@ function Nav(props) {
 						</a>
 					))}
 				</div>
+				<span
+					className='material-icons-outlined'
+					id='sidenav-toggle'
+					onClick={() => setOpen(!open ? true : false)}>
+					{open ? 'close' : 'menu'}
+				</span>
 			</div>
+
+			<div
+				id='filler'
+				className={open ? 'open' : ''}
+				onClick={() => setOpen(false)}></div>
 		</nav>
 	);
 }
 
 export default Nav;
-/*
-<ul className='uk-nav uk-nav-default tm-nav uk-margin-top'>
-	<li className='uk-nav-header'>More</li>{' '}
-	<li>
-		<a href='https://www.fiverr.com/isakgranqvis277'>
-			Fiverr
-		</a>
-	</li>
-	<li href='https://github.com/isakgranqvist2021'>
-		<a>Github</a>
-	</li>
-	<li>
-		<a href='https://www.linkedin.com/in/isak-granqvist-b1217a207/'>
-			Linkedin
-		</a>
-	</li>
-	<li>
-		<a href='mailto:contact@isakgranqvist.com'>Email</a>
-	</li>
-</ul>
-*/

@@ -32,5 +32,41 @@
 	.projects-grid {
 		display: flex;
 		flex-wrap: wrap;
+
+		.project-container {
+			width: 50%;
+		}
+	}
+}
+
+@media (max-width: 1400px) {
+	#Projects {
+		.projects-grid {
+			flex-direction: column;
+			margin: 0 auto;
+			.project-container {
+				margin: 0 auto;
+				width: 75%;
+			}
+		}
+	}
+}
+
+@media (max-width: 620px) {
+	#Projects {
+		header {
+			h3 {
+				font-size: 3rem;
+			}
+
+			p {
+				font-size: 1.125rem;
+			}
+		}
+		.projects-grid {
+			.project-container {
+				width: 100%;
+			}
+		}
 	}
 }

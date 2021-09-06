@@ -40,11 +40,9 @@ export default function Hero() {
 						className='uk-button uk-button-default uk-margin-right'>
 						<span>Get in touch</span>
 					</a>
-					<Link
-						to='/projects'
-						className='uk-button uk-button-primary'>
+					<a className='uk-button uk-button-primary'>
 						<span>Recent Projects</span>
-					</Link>
+					</a>
 				</div>
 			</div>
 			<img

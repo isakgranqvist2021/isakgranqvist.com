@@ -39,7 +39,7 @@ function Projects(props) {
 
 			<div className='projects-grid'>
 				{projects.map((project, i) => (
-					<div key={i} style={{ width: '50%' }}>
+					<div className='project-container' key={i}>
 						<Project
 							{...project}
 							padding={i % 2 === 0 ? 'right' : 'left'}></Project>

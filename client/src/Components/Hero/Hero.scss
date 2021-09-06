@@ -51,3 +51,45 @@
 		max-width: 50%;
 	}
 }
+
+@media (max-width: 1400px) {
+	#Hero {
+		flex-direction: column;
+		padding: 210px 0 105px 0;
+		img {
+			max-width: 60%;
+		}
+	}
+}
+
+@media (max-width: 900px) {
+	#Hero {
+		img {
+			margin-top: 3rem;
+			max-width: 80%;
+		}
+	}
+}
+
+@media (max-width: 600px) {
+	#Hero {
+		padding: 160px 0;
+		.hero-content {
+			text-align: center;
+			.actions {
+				display: flex;
+				flex-direction: column;
+				width: 100%;
+				margin-top: 2rem;
+				a {
+					width: 100%;
+					margin-left: 0 !important;
+
+					&:first-of-type {
+						margin-bottom: 1rem;
+					}
+				}
+			}
+		}
+	}
+}
