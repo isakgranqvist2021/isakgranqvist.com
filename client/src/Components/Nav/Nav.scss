@@ -25,6 +25,8 @@
 			text-transform: uppercase;
 			display: inline-block;
 			text-decoration: none;
+			font-weight: 600;
+			letter-spacing: 1.1px;
 
 			&:not(:first-of-type) {
 				margin-left: 1rem;
