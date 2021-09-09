@@ -34,9 +34,9 @@ function Alert(props) {
 						''
 					)}>
 					<p>{alert.message}</p>
-					<a onClick={() => setAlert({ ...alert, show: false })}>
+					<span onClick={() => setAlert({ ...alert, show: false })}>
 						<span className='material-icons-outlined'>close</span>
-					</a>
+					</span>
 				</div>
 			)}
 		</div>

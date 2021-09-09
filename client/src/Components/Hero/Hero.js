@@ -1,7 +1,6 @@
 /** @format */
 
 import React from 'react';
-import { Link } from 'react-router-dom';
 
 import './Hero.scss';
 
@@ -23,8 +22,9 @@ export default function Hero() {
 			delay: (el, i) => 500 + 30 * i,
 		});
 	}, []);
+
 	return (
-		<div id='Hero' className='container'>
+		<div id='Home' className='container'>
 			<div className='hero-content'>
 				<h1 className='ml12'>Swedish software developer</h1>
 
@@ -34,13 +34,10 @@ export default function Hero() {
 					problems and come up with creative and innovative solutions.
 				</p>
 				<div className='actions'>
-					<a
-						href='https://github.com/isakgranqvist2021'
-						id='mgf'
-						className='uk-button uk-button-default uk-margin-right'>
+					<a href='#Contact'>
 						<span>Get in touch</span>
 					</a>
-					<a className='uk-button uk-button-primary'>
+					<a href='#Projects'>
 						<span>Recent Projects</span>
 					</a>
 				</div>

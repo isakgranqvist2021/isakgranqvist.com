@@ -4,9 +4,17 @@ import React from 'react';
 import http from '../../Utils/http';
 import alertsReducer from '../../Store/alerts.reducer';
 import Alert from '../Alert/Alert';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Contact.scss';
 
 function Contact(props) {
+	React.useEffect(() => {
+		AOS.init({
+			duration: 2000,
+		});
+	}, []);
+
 	const [formData, setFormData] = React.useState({
 		email: '',
 		name: '',
@@ -37,7 +45,7 @@ function Contact(props) {
 	return (
 		<div id='Contact'>
 			<div className='container'>
-				<form className='card'>
+				<form data-aos='fade-right'>
 					<Alert />
 					<section className='uk-margin-medium-bottom'>
 						<label htmlFor='email'>Email </label>
@@ -86,8 +94,10 @@ function Contact(props) {
 					</button>
 				</form>
 				<div className='social'>
-					<h3>You can also reach me through my social channels</h3>
-					<div className='icons'>
+					<h3 data-aos='fade-left'>
+						You can also reach me through my social channels
+					</h3>
+					<div className='icons' data-aos='fade-up'>
 						<a
 							href='https://www.instagram.com/isakgranqvist2021/'
 							title='Instagram'>
@@ -110,14 +120,6 @@ function Contact(props) {
 							<img
 								src='https://static.isakgranqvist.com/icons/github.svg'
 								alt='Github Icon'
-							/>
-						</a>
-						<a
-							href='https://www.fiverr.com/isakgranqvis277'
-							title='Fiverr'>
-							<img
-								src='https://static.isakgranqvist.com/icons/fiverr.svg'
-								alt='Fiverr Icon'
 							/>
 						</a>
 						<a

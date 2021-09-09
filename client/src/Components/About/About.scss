@@ -3,7 +3,9 @@
 #About {
 	color: #fff;
 	padding: 100px 0;
-
+	min-height: 75vh;
+	display: flex;
+	align-items: center;
 	.container {
 		display: flex;
 		height: 100%;

@@ -1,21 +1,21 @@
 /** @format */
 
-import React, { useEffect } from 'react';
-
+import React from 'react';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './About.scss';
 
-/*
-	Thank you for taking the time to read about me. If you
-	would like to have a longer chat about programming or
-	potentially hiring me, you can reach me via mail or the
-	contact form
-*/
-
 function About(props) {
+	React.useEffect(() => {
+		AOS.init({
+			duration: 2000,
+		});
+	}, []);
+
 	return (
 		<div id='About' className='bg-dark'>
 			<div className='container'>
-				<div className='flex-item'>
+				<div className='flex-item' data-aos='fade-up-right'>
 					<h3>About My Business</h3>
 					<p>
 						The main purpose of my business is to deliver fast,
@@ -28,7 +28,7 @@ function About(props) {
 						your business.
 					</p>
 				</div>
-				<div className='flex-item'>
+				<div className='flex-item' data-aos='zoom-in'>
 					<svg
 						xmlns='http://www.w3.org/2000/svg'
 						width='24'
