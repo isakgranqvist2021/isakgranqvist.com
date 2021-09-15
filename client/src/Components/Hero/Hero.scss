@@ -9,7 +9,7 @@
 	.ml12 {
 		@for $i from 8 through 15 {
 			span:nth-child(#{$i}) {
-				color:#cf3030;
+				color: #cf3030;
 			}
 		}
 	}
@@ -21,7 +21,7 @@
 			color: rgb(37, 37, 37);
 			text-transform: capitalize;
 			letter-spacing: 1.5px;
-			color:#3f3f3f
+			color: #3f3f3f;
 		}
 
 		p {
@@ -100,7 +100,7 @@
 		}
 	}
 
-	img {
+	Svg {
 		max-width: 50%;
 	}
 }
@@ -114,29 +114,27 @@
 				max-width: 18ch;
 			}
 		}
-		img {
+
+		Svg {
 			display: none;
 		}
 	}
 }
-
-
 
 @media (max-width: 600px) {
 	#Home {
 		padding: 160px 0 100px 0;
 		.hero-content {
 			align-items: center;
-			//text-align: center;
 
 			h1 {
 				font-size: 4rem;
 				margin: 0 auto;
 			}
+
 			.actions {
 				display: flex;
 				flex-direction: column;
-				//align-items: center;
 				width: 100%;
 				margin-top: 2rem;
 				a {

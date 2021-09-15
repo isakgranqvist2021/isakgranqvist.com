@@ -1,0 +1,21 @@
+/** @format */
+
+#eab74653-e4ff-4b0f-8495-b71ce9943559 {
+	.line-text {
+		animation-name: fadeIn;
+		animation-timing-function: ease;
+		animation-duration: 1s;
+		animation-fill-mode: forwards;
+		animation-direction: alternate-reverse;
+		animation-iteration-count: 8;
+	}
+}
+
+@keyframes fadeIn {
+	from {
+		opacity: 0.2;
+	}
+	to {
+		opacity: 1;
+	}
+}

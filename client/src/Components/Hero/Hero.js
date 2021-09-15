@@ -1,11 +1,17 @@
 /** @format */
 
 import { useEffect } from 'react';
-
+import Svg from '../Svg/Svg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 import './Hero.scss';
 
 export default function Hero() {
 	useEffect(() => {
+		AOS.init({
+			duration: 2000,
+		});
+
 		var textWrapper = document.querySelector('.ml12');
 		textWrapper.innerHTML = textWrapper.textContent.replace(
 			/\S/g,
@@ -34,18 +40,16 @@ export default function Hero() {
 					problems and come up with creative and innovative solutions.
 				</p>
 				<div className='actions'>
-					<a href='#Contact'>
+					<a href='#Contact' data-aos='fade-right'>
 						<span>Get in touch</span>
 					</a>
-					<a href='#Projects'>
+					<a href='#Projects' data-aos='fade-left'>
 						<span>Recent Projects</span>
 					</a>
 				</div>
 			</div>
-			<img
-				alt='Computer Guy'
-				src='https://static.isakgranqvist.com/svg/undraw_Design_notes_re_eklr.svg'
-			/>
+
+			<Svg />
 		</div>
 	);
 }
