@@ -6,6 +6,14 @@
 	align-items: center;
 	padding: 210px 0;
 
+	.ml12 {
+		@for $i from 8 through 15 {
+			span:nth-child(#{$i}) {
+				color:#cf3030;
+			}
+		}
+	}
+
 	.hero-content {
 		h1 {
 			font-size: 3.4rem;
@@ -13,13 +21,13 @@
 			color: rgb(37, 37, 37);
 			text-transform: capitalize;
 			letter-spacing: 1.5px;
+			color:#3f3f3f
 		}
 
 		p {
-			margin: 1rem 0;
-			font-size: 1.2rem;
+			margin: 1.5rem 0;
+			font-size: 1.1rem;
 			font-weight: 500;
-			letter-spacing: 1.1px;
 			max-width: 50ch;
 			color: rgb(100, 100, 100);
 		}
@@ -100,33 +108,41 @@
 @media (max-width: 1400px) {
 	#Home {
 		flex-direction: column;
-		padding: 210px 0 105px 0;
+
+		.hero-content {
+			h1 {
+				max-width: 18ch;
+			}
+		}
 		img {
-			max-width: 90%;
+			display: none;
 		}
 	}
 }
 
-@media (max-width: 900px) {
-	#Home {
-		img {
-			margin-top: 3rem;
-		}
-	}
-}
+
 
 @media (max-width: 600px) {
 	#Home {
-		padding: 160px 0;
+		padding: 160px 0 100px 0;
 		.hero-content {
+			align-items: center;
+			//text-align: center;
+
+			h1 {
+				font-size: 4rem;
+				margin: 0 auto;
+			}
 			.actions {
 				display: flex;
 				flex-direction: column;
+				//align-items: center;
 				width: 100%;
 				margin-top: 2rem;
 				a {
 					width: 100%;
 					margin-left: 0 !important;
+					margin-right: 0 !important;
 
 					&:first-of-type {
 						margin-bottom: 1rem;

@@ -37,6 +37,11 @@ body {
 	}
 }
 
+#App {
+	max-width: 100%;
+	overflow: hidden;
+}
+
 .bg-dark {
 	background-color: rgb(51, 51, 51);
 }

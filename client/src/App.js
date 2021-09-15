@@ -10,7 +10,7 @@ import Contact from './Components/Contact/Contact';
 
 function App(props) {
 	return (
-		<div>
+		<div id="App">
 			<Nav></Nav>
 			<Hero />
 			<Features />
