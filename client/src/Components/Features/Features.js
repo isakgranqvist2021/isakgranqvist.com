@@ -1,12 +1,12 @@
 /** @format */
 
-import React from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './Features.scss';
 
 export default function Features() {
-	React.useEffect(() => {
+	useEffect(() => {
 		AOS.init({
 			duration: 2000,
 		});

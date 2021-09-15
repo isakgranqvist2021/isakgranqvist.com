@@ -1,17 +1,17 @@
 /** @format */
 
-import React from 'react';
+import { useState, useEffect } from 'react';
 import alertsReducer from '../../Store/alerts.reducer';
 import './Alert.scss';
 
 function Alert(props) {
-	const [alert, setAlert] = React.useState({
+	const [alert, setAlert] = useState({
 		type: 'success',
 		message: 'an error has occured',
 		show: false,
 	});
 
-	React.useEffect(() => {
+	useEffect(() => {
 		let ar = alertsReducer.subscribe(() => {
 			setAlert({
 				...alertsReducer.getState(),

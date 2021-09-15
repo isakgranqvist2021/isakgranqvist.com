@@ -1,15 +1,15 @@
 /** @format */
 
-import React, { useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 
 import Project from '../Project/Project';
 import http from '../../Utils/http';
 import './Projects.scss';
 
 function Projects(props) {
-	const [projects, setProjects] = React.useState([]);
+	const [projects, setProjects] = useState([]);
 
-	const fetchProjects = React.useCallback(async () => {
+	const fetchProjects = useCallback(async () => {
 		const abortController = new AbortController();
 		const response = await http.GET('/projects');
 

@@ -1,12 +1,12 @@
 /** @format */
 
-import React from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import './About.scss';
 
 function About(props) {
-	React.useEffect(() => {
+	useEffect(() => {
 		AOS.init({
 			duration: 2000,
 		});
@@ -16,16 +16,24 @@ function About(props) {
 		<div id='About' className='bg-dark'>
 			<div className='container'>
 				<div className='flex-item' data-aos='fade-up-right'>
-					<h3>About My Business</h3>
+					<h3>About Me</h3>
 					<p>
-						The main purpose of my business is to deliver fast,
-						modern and reliable software to clients all over the
-						world. I mostly deliver custom software solutions
-						tailored to specific business requirements. I value
-						client relationships very highly because without clients
-						there's no business. Do you wanna become one of my
-						highly valued clients? I would love to work for you and
-						your business.
+						The main <span>purpose</span> of my business is to
+						deliver fast, modern and reliable software to clients
+						all over the world. At affordable prices.
+					</p>
+					<p>
+						I mostly deliver <span>custom</span> software solutions
+						tailored to specific business requirements. I will build
+						a custom application which solved some problem for your
+						business.
+					</p>
+					<p>
+						The most important asset for any business are the
+						customers. Without customers there's no business to be
+						conducted. I strive to satisfy my customers and live up
+						to their expectations. Customer satisfaction is my
+						absolute number one priority and will always be.
 					</p>
 				</div>
 				<div className='flex-item' data-aos='zoom-in'>

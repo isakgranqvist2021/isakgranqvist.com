@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import { useEffect } from 'react';
 import SwiperCore, { Pagination, EffectCube } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import AOS from 'aos';
@@ -19,7 +19,7 @@ function Project(props) {
 			? { paddingLeft: '3rem' }
 			: { paddingRight: '3rem' };
 
-	React.useEffect(() => {
+	useEffect(() => {
 		AOS.init({
 			duration: 2000,
 		});

@@ -8,10 +8,10 @@ import Projects from './Components/Projects/Projects';
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
 
-function App(props) {
+export default function App(props) {
 	return (
-		<div id="App">
-			<Nav></Nav>
+		<div id='App'>
+			<Nav />
 			<Hero />
 			<Features />
 			<Projects />
@@ -20,5 +20,3 @@ function App(props) {
 		</div>
 	);
 }
-
-export default App;

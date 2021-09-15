@@ -19,7 +19,7 @@
 			svg {
 				width: 300px;
 				height: 300px;
-				fill: #cf3030;
+				fill: #ffffff;
 				margin: 0 auto;
 			}
 		}
@@ -35,6 +35,13 @@
 			line-height: 1.7;
 			font-size: 1.1rem;
 			letter-spacing: 1.1px;
+
+			span {
+				color: #df7c7c;
+			}
+			&:not(:last-of-type) {
+				margin-bottom: 1rem;
+			}
 		}
 	}
 }

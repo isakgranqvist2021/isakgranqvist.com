@@ -1,11 +1,11 @@
 /** @format */
 
-import React from 'react';
+import { useState } from 'react';
 import './Nav.scss';
 import Scrollspy from 'react-scrollspy';
 
 function Nav(props) {
-	const [open, setOpen] = React.useState(false);
+	const [open, setOpen] = useState(false);
 
 	const links = [
 		{ to: '/', text: 'home', selector: '#Home' },

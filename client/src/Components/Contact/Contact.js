@@ -1,6 +1,6 @@
 /** @format */
 
-import React from 'react';
+import { useState, useEffect } from 'react';
 import http from '../../Utils/http';
 import alertsReducer from '../../Store/alerts.reducer';
 import Alert from '../Alert/Alert';
@@ -9,13 +9,7 @@ import 'aos/dist/aos.css';
 import './Contact.scss';
 
 function Contact(props) {
-	React.useEffect(() => {
-		AOS.init({
-			duration: 2000,
-		});
-	}, []);
-
-	const [formData, setFormData] = React.useState({
+	const [formData, setFormData] = useState({
 		email: '',
 		name: '',
 		message: '',
@@ -41,6 +35,12 @@ function Contact(props) {
 			window.alert('message could not be sent');
 		}
 	};
+
+	useEffect(() => {
+		AOS.init({
+			duration: 2000,
+		});
+	}, []);
 
 	return (
 		<div id='Contact'>

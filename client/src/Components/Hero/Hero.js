@@ -1,11 +1,11 @@
 /** @format */
 
-import React from 'react';
+import { useEffect } from 'react';
 
 import './Hero.scss';
 
 export default function Hero() {
-	React.useEffect(() => {
+	useEffect(() => {
 		var textWrapper = document.querySelector('.ml12');
 		textWrapper.innerHTML = textWrapper.textContent.replace(
 			/\S/g,
