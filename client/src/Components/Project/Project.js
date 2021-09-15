@@ -1,17 +1,16 @@
 /** @format */
 
 import { useEffect } from 'react';
-import SwiperCore, { Pagination, EffectCube } from 'swiper/core';
+import SwiperCore, { Pagination } from 'swiper/core';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import 'swiper/swiper-bundle.css';
-import 'swiper/components/effect-cube/effect-cube.min.css';
 import 'swiper/components/pagination/pagination.min.css';
 
 import './Project.scss';
 
-SwiperCore.use([EffectCube, Pagination]);
+SwiperCore.use([Pagination]);
 
 function Project(props) {
 	const styles =
@@ -30,17 +29,7 @@ function Project(props) {
 			className='Project'
 			style={styles}
 			data-aos={props.padding === 'left' ? 'fade-left' : 'fade-right'}>
-			<Swiper
-				effect={'cube'}
-				grabCursor={true}
-				cubeEffect={{
-					shadow: true,
-					slideShadows: true,
-					shadowOffset: 20,
-					shadowScale: 0.94,
-				}}
-				loop={true}
-				pagination={true}>
+			<Swiper grabCursor={true} loop={true} pagination={true}>
 				{props.images.map((img, i) => (
 					<SwiperSlide key={i}>
 						<img src={img.src} alt={img.alt} />
