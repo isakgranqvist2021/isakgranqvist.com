@@ -19,6 +19,7 @@ body {
 body {
 	margin: 0;
 	font-family: 'Urbanist', sans-serif;
+	background-color: rgb(243, 243, 243);
 
 	&::-webkit-scrollbar,
 	&::-webkit-scrollbar-track {
@@ -35,6 +36,12 @@ body {
 			background-color: rgb(85, 85, 85);
 		}
 	}
+}
+
+#site-bg {
+	position: fixed;
+	inset: 0;
+	z-index: -1;
 }
 
 #App {
