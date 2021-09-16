@@ -39,7 +39,8 @@ body {
 }
 
 #site-bg {
-	position: fixed;
+	position: fixed !important;
+	z-index: -1 !important;
 	inset: 0;
 }
 

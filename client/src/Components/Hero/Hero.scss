@@ -99,10 +99,6 @@
 			}
 		}
 	}
-
-	Svg {
-		max-width: 50%;
-	}
 }
 
 @media (max-width: 1400px) {
@@ -113,10 +109,6 @@
 			h1 {
 				max-width: 18ch;
 			}
-		}
-
-		Svg {
-			display: none;
 		}
 	}
 }
