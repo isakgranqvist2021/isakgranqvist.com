@@ -1,7 +1,8 @@
+import { Styled } from './svg.styled';
+
 export const Svg = () => {
 	return (
-		<svg
-			id='eab74653-e4ff-4b0f-8495-b71ce9943559'
+		<Styled.Svg
 			data-name='Layer 1'
 			xmlns='http://www.w3.org/2000/svg'
 			width='899.86614'
@@ -305,6 +306,6 @@ export const Svg = () => {
 				transform='translate(-150.06693 -84.40466)'
 				fill='#cacaca'
 			/>
-		</svg>
+		</Styled.Svg>
 	);
 };
