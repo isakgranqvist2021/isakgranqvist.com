@@ -3,12 +3,10 @@ import styled from 'styled-components';
 import { Container } from 'components';
 
 const About = styled('div')`
-	color: #fff;
 	padding: 100px 0;
 	min-height: 75vh;
 	display: flex;
 	align-items: center;
-	background-color: #333;
 `;
 
 const AboutContainer = styled(Container)`
@@ -20,6 +18,7 @@ const AboutContainer = styled(Container)`
 		margin-bottom: 1rem;
 		font-weight: 900;
 		letter-spacing: 1px;
+		color: #333;
 	}
 
 	p {
@@ -58,6 +57,7 @@ const FlexItem = styled('div')`
 	svg {
 		width: 300px;
 		height: 300px;
+		max-width: 100%;
 		fill: #ffffff;
 		margin: 0 auto;
 	}

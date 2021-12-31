@@ -1,1 +1,1 @@
-export * from './global-styles';
+export * from './global-styled';

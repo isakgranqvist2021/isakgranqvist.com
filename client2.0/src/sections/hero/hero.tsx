@@ -1,11 +1,15 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 
-import { Svg } from 'components';
+import { Svg, Button } from 'components';
 
 import { Styled } from './hero.styled';
 
 export const Hero = () => {
+	const onClickHandler = (hash: string) => {
+		window.location.hash = hash;
+	};
+
 	useEffect(() => {
 		AOS.init({
 			duration: 2000,
@@ -13,10 +17,10 @@ export const Hero = () => {
 	}, []);
 
 	return (
-		<Styled.Hero>
+		<Styled.Hero id='Home'>
 			<Styled.HeroContainer>
 				<Styled.HeroContent>
-					<h1 className='ml12'>Swedish software developer</h1>
+					<h1 className='ml12'>High Quality Software At Affordable Prices</h1>
 
 					<p>
 						Are you looking for a software developer who loves learning new
@@ -24,12 +28,16 @@ export const Hero = () => {
 						come up with creative and innovative solutions.
 					</p>
 					<Styled.HeroActions>
-						<a href='#Contact' data-aos='fade-right'>
+						<Button
+							data-aos='fade-right'
+							onClick={() => onClickHandler('#Contact')}>
 							<span>Get in touch</span>
-						</a>
-						<a href='#Projects' data-aos='fade-left'>
-							<span>Recent Projects</span>
-						</a>
+						</Button>
+						<Button
+							data-aos='fade-left'
+							onClick={() => onClickHandler('#Features')}>
+							<span>Technology</span>
+						</Button>
 					</Styled.HeroActions>
 				</Styled.HeroContent>
 				<Svg />

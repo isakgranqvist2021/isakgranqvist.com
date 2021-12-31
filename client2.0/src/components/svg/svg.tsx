@@ -1,13 +1,15 @@
 import { Styled } from './svg.styled';
+import { SvgProps } from './svg.types';
 
-export const Svg = () => {
+export const Svg = (props: SvgProps) => {
 	return (
 		<Styled.Svg
 			data-name='Layer 1'
 			xmlns='http://www.w3.org/2000/svg'
 			width='899.86614'
 			height='731.19068'
-			viewBox='0 0 899.86614 731.19068'>
+			viewBox='0 0 899.86614 731.19068'
+			{...props}>
 			<path
 				d='M406.49731,547.15369a10.05574,10.05574,0,0,1-5.12556-14.5425l-23.07542-27.2856,18.43836-2.20463,19.086,26.24886a10.11028,10.11028,0,0,1-9.32339,17.78387Z'
 				transform='translate(-150.06693 -84.40466)'

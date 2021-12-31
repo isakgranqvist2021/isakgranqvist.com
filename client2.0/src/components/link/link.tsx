@@ -1,8 +1,8 @@
-import { Styled } from './link.styles';
+import { Styled } from './link.styled';
 import { LinkProps } from './link.types';
 
 export const Link = (props: LinkProps) => {
-	const { children, ...rest } = props;
+	const { children, text, ...rest } = props;
 
-	return <Styled.Link {...rest}>{children}</Styled.Link>;
+	return <Styled.Link {...rest}>{text}</Styled.Link>;
 };

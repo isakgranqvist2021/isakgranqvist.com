@@ -13,31 +13,32 @@ export const Features = () => {
 	}, []);
 
 	return (
-		<Styled.Features>
+		<Styled.Features id='Features'>
 			<Container>
 				<Styled.FeaturesGrid>
 					<div className='card' data-aos='fade-right'>
-						<span className='material-icons-outlined'>code</span>
-						<h3>Software Solutions</h3>
+						<span className='material-icons-outlined'>business</span>
+						<h3>Backend Development</h3>
 						<p>
-							I deliver custom software solutions with your unique business
-							requirements in mind. Web, Mobile, Desktop.
+							Do you need reliable software to power your business
+							infrastructure? I utilize tools like TypeScript, Go and .NET to
+							make that happen.
 						</p>
 					</div>
 					<div className='card' data-aos='fade-up'>
-						<span className='material-icons-outlined'>groups</span>
-						<h3>Business Consulting</h3>
+						<span className='material-icons-outlined'>storefront</span>
+						<h3>Frontend Development</h3>
 						<p>
-							I asses your IT needs and what software solution might be suitable
-							for your company. Provide guidance on how you can implement those.
+							Do you want a modern, fast and user friendly user interface? I
+							build modern user interfaces in tools like React and Angular.
 						</p>
 					</div>
 					<div className='card' data-aos='fade-left'>
-						<span className='material-icons-outlined'>wordpress</span>
-						<h3>CMS Maintenance</h3>
+						<span className='material-icons-outlined'>cloud</span>
+						<h3>Cloud Development</h3>
 						<p>
-							I will build websites or maintain already built sites. Common
-							alternatives are wordpress, shopify.
+							Are you looking to scale your software infrastructure with tools
+							provided by Google or Amazon?
 						</p>
 					</div>
 				</Styled.FeaturesGrid>

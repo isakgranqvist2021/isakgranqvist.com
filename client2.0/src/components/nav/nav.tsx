@@ -7,10 +7,10 @@ export const Nav = () => {
 	const [open, setOpen] = useState(false);
 
 	const links = [
-		{ to: '/', text: 'home', selector: '#Home' },
-		{ to: '/projects', text: 'projects', selector: '#Projects' },
-		{ to: '/about', text: 'about', selector: '#About' },
-		{ to: '/contact', text: 'contact', selector: '#Contact' },
+		{ text: 'home', selector: '#Home' },
+		{ text: 'Technology', selector: '#Features' },
+		{ text: 'about', selector: '#About' },
+		{ text: 'contact', selector: '#Contact' },
 	];
 
 	return (

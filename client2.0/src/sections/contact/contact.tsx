@@ -2,9 +2,9 @@ import { useState, useEffect } from 'react';
 import AOS from 'aos';
 
 import { POST } from 'services';
-import { Alert } from 'components';
+import { Alert, Button } from 'components';
 
-import { Styled } from './contact.styles';
+import { Styled } from './contact.styled';
 
 export const Contact = () => {
 	const [formData, setFormData] = useState({
@@ -36,15 +36,15 @@ export const Contact = () => {
 	}, []);
 
 	return (
-		<Styled.Contact>
+		<Styled.Contact id='Contact'>
 			<Styled.ContactContainer>
 				<Styled.Form data-aos='fade-right'>
 					<Alert />
 					<section className='uk-margin-medium-bottom'>
-						<label htmlFor='email'>Email </label>
+						<label htmlFor='email'>Email</label>
 						<input
 							id='email'
-							placeholder='peter-smith@email.com'
+							placeholder='Email'
 							value={formData.email}
 							onChange={(e) =>
 								setFormData({
@@ -58,7 +58,7 @@ export const Contact = () => {
 						<label htmlFor='name'>Full Name</label>
 						<input
 							id='name'
-							placeholder='Peter Smith'
+							placeholder='Your name'
 							value={formData.name}
 							onChange={(e) =>
 								setFormData({
@@ -82,9 +82,7 @@ export const Contact = () => {
 							}></textarea>
 					</section>
 
-					<button type='button' onClick={submit}>
-						<span className='material-icons-outlined'>send</span>
-					</button>
+					<Button onClick={submit}>Send Message</Button>
 				</Styled.Form>
 				<Styled.Social>
 					<h3 data-aos='fade-left'>

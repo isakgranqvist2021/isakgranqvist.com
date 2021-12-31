@@ -5,13 +5,24 @@ import { Container } from 'components';
 const Contact = styled('div')`
 	padding: 100px 0;
 	overflow: hidden;
-	.container {
-		display: flex;
+	background-color: #333;
+
+	@media (max-width: 600px) {
+		padding: 50px 0;
 	}
 `;
 
 const ContactContainer = styled(Container)`
 	display: flex;
+
+	@media (max-width: 1100px) {
+		flex-direction: column-reverse;
+		gap: 50px;
+	}
+
+	@media (max-width: 600px) {
+		gap: 25px;
+	}
 `;
 
 const Form = styled('form')`
@@ -36,14 +47,14 @@ const Form = styled('form')`
 			font-size: 1.2rem;
 			width: 100%;
 			padding: 0.66rem;
-			border: 2px solid #cfcfcf;
+			border: none;
 			outline: none;
 			border-radius: 0.25rem;
 			transition: all 300ms ease;
 			resize: none;
 
 			&:focus {
-				border-color: #cf3030;
+				transform: scale(1.1);
 			}
 		}
 
@@ -52,41 +63,19 @@ const Form = styled('form')`
 		}
 	}
 
-	button {
-		margin-left: auto;
-		display: block;
-		background-color: #cf3030;
-		border: 1px solid #cf3030;
-		color: #fff;
-		padding: 0.5rem;
-		width: 200px;
-		text-align: center;
-		text-transform: uppercase;
-		border-radius: 0.5rem;
-		cursor: pointer;
-		transition: all 300ms ease;
-
-		&:hover {
-			background-color: #fff;
-			color: #cf3030;
-		}
-	}
-
 	@media (max-width: 500px) {
 		margin-right: 0;
-		button {
-			width: 100%;
-		}
 	}
 `;
 
 const Social = styled('div')`
 	width: 100%;
 	margin-left: 50px;
+
 	h3 {
 		font-size: 3rem;
 		font-weight: 900;
-		color: rgb(61, 61, 61);
+		color: #fff;
 	}
 
 	.icons {
@@ -99,6 +88,7 @@ const Social = styled('div')`
 			padding: 1rem;
 			border-radius: 50%;
 			transition: all 200ms ease;
+			background-color: #fff;
 
 			&:hover {
 				box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
@@ -118,8 +108,9 @@ const Social = styled('div')`
 	}
 
 	@media (max-width: 1100px) {
-		margin: 0 0 3rem 0 !important;
+		margin: 50px 0 0 0 !important;
 		text-align: center;
+
 		.icons {
 			justify-content: center;
 		}
@@ -135,10 +126,9 @@ const Social = styled('div')`
 		h3 {
 			max-width: 20ch;
 		}
-		.icons {
-			margin: 2rem auto 0 auto;
-			max-width: 75%;
 
+		.icons {
+			margin-top: 25px;
 			a {
 				margin-bottom: 10px;
 			}

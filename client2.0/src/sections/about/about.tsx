@@ -11,34 +11,37 @@ export const About = () => {
 	}, []);
 
 	return (
-		<Styled.About>
+		<Styled.About id='About'>
 			<Styled.AboutContainer>
 				<Styled.FlexItem>
-					<h3>About Me</h3>
-					<p>
+					<h3 data-aos='fade-down'>About Me</h3>
+					<p data-aos='fade-up'>
 						The main <span>purpose</span> of my business is to deliver fast,
 						modern and reliable software to clients all over the world. At
 						affordable prices.
 					</p>
-					<p>
+					<p data-aos='fade-up'>
 						I mostly deliver <span>custom</span> software solutions tailored to
-						specific business requirements. I will build a custom application
-						which solved some problem for your business.
+						specific business requirements.
 					</p>
-					<p>
+					<p data-aos='fade-up'>
 						The most important asset for any business are the customers. Without
 						customers there's no business to be conducted. I strive to satisfy
 						my customers and live up to their expectations. Customer
 						satisfaction is my absolute number one priority and will always be.
 					</p>
 				</Styled.FlexItem>
-				<Styled.FlexItem className='flex-item'>
+				<Styled.FlexItem data-aos='fade-left'>
 					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						width='24'
-						height='24'
-						viewBox='0 0 24 24'>
-						<path d='M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2.033 16.01c.564-1.789 1.632-3.932 1.821-4.474.273-.787-.211-1.136-1.74.209l-.34-.64c1.744-1.897 5.335-2.326 4.113.613-.763 1.835-1.309 3.074-1.621 4.03-.455 1.393.694.828 1.819-.211.153.25.203.331.356.619-2.498 2.378-5.271 2.588-4.408-.146zm4.742-8.169c-.532.453-1.32.443-1.761-.022-.441-.465-.367-1.208.164-1.661.532-.453 1.32-.442 1.761.022.439.466.367 1.209-.164 1.661z' />
+						width='1162'
+						height='1162'
+						viewBox='0 0 1162 1162'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'>
+						<path
+							d='M581 0C260.143 0 0 260.143 0 581C0 901.857 260.143 1162 581 1162C901.857 1162 1162 901.857 1162 581C1162 260.143 901.857 0 581 0ZM482.569 775.151C509.876 688.533 561.585 584.777 570.736 558.535C583.953 520.431 560.52 503.533 486.491 568.654L470.029 537.667C554.468 445.821 728.332 425.05 669.167 567.347C632.225 656.191 605.789 716.179 590.683 762.466C568.654 829.91 624.285 802.555 678.753 752.25C686.161 764.354 688.582 768.276 695.99 782.22C575.045 897.355 440.785 907.522 482.569 775.151V775.151ZM712.161 379.635C686.403 401.568 648.251 401.084 626.899 378.57C605.547 356.056 609.13 320.083 634.839 298.15C660.597 276.217 698.749 276.75 720.101 299.215C741.356 321.777 737.87 357.751 712.161 379.635Z'
+							fill='#333333'
+						/>
 					</svg>
 				</Styled.FlexItem>
 			</Styled.AboutContainer>

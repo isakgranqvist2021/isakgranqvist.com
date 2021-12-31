@@ -16,7 +16,7 @@ const Hero = styled('div')`
 	}
 
 	@media (max-width: 600px) {
-		padding: 160px 0 100px 0;
+		padding: 100px 0 100px 0;
 	}
 `;
 
@@ -25,6 +25,10 @@ const HeroContainer = styled(Container)`
 `;
 
 const HeroContent = styled('div')`
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
 	h1 {
 		font-size: 3.4rem;
 		font-weight: 900;
@@ -35,8 +39,8 @@ const HeroContent = styled('div')`
 	}
 
 	p {
-		margin: 1.5rem 0;
-		font-size: 1.1rem;
+		margin: 1.8rem 0;
+		font-size: 1.3rem;
 		font-weight: 500;
 		max-width: 50ch;
 		color: rgb(100, 100, 100);
@@ -59,88 +63,28 @@ const HeroContent = styled('div')`
 			margin: 0 auto;
 		}
 	}
-`;
 
-const HeroActions = styled('div')`
-	a {
-		display: inline-block;
-		width: 200px;
-		text-align: center;
-		text-transform: uppercase;
-		text-decoration: none;
-		cursor: pointer;
-		position: relative;
-		border: 1px solid transparent;
-		height: 50px;
-
-		span {
-			position: absolute;
-			padding: 1rem;
-			left: 50%;
-			transform: translateX(-50%);
-			width: 100%;
-			z-index: 2;
-		}
-
-		&::before {
-			content: '';
-			position: absolute;
-			inset: 0;
-			transform: scale(0);
-			transition: all 400ms ease;
-			z-index: 1;
-		}
-
-		&:last-of-type {
-			margin-left: 0.5rem;
-			background-color: #cf3030;
-			color: #fff;
-
-			&::before {
-				background-color: #fff;
-			}
-
-			&:hover {
-				color: #cf3030;
-				border-color: #cf3030;
-				&::before {
-					transform: scale(1);
-				}
-			}
-		}
-
-		&:first-of-type {
-			margin-right: 0.5rem;
-			border: 1px solid #cf3030;
-			color: #cf3030;
-
-			&::before {
-				background-color: #cf3030;
-			}
-
-			&:hover {
-				color: #ffffff;
-				&::before {
-					transform: scale(1);
-				}
-			}
+	@media (max-width: 420px) {
+		h1 {
+			font-size: 3rem;
 		}
 	}
 
-	@media (max-width: 600px) {
-		display: flex;
-		flex-direction: column;
-		width: 100%;
-		margin-top: 2rem;
-		a {
-			width: 100%;
-			margin-left: 0 !important;
-			margin-right: 0 !important;
-
-			&:first-of-type {
-				margin-bottom: 1rem;
-			}
+	@media (max-width: 320px) {
+		h1 {
+			font-size: 2.6rem;
 		}
+	}
+`;
+
+const HeroActions = styled('div')`
+	display: flex;
+	gap: 20px;
+
+	@media (max-width: 600px) {
+		flex-direction: column;
+		margin-top: 2rem;
+		width: 100%;
 	}
 `;
 
