@@ -36,13 +36,25 @@ const AboutContainer = styled(Container)`
 	}
 
 	@media (max-width: 900px) {
-		flex-direction: column-reverse;
-		text-align: center;
+		flex-direction: column;
+		gap: 3rem;
 	}
 
 	@media (max-width: 900px) {
 		h3 {
 			font-size: 2.5rem;
+		}
+	}
+
+	@media (max-width: 400px) {
+		h3 {
+			font-size: 2rem;
+		}
+	}
+
+	@media (max-width: 320px) {
+		h3 {
+			font-size: 1.8rem;
 		}
 	}
 `;

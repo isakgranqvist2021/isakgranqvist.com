@@ -1,17 +1,12 @@
+import styled, { css } from 'styled-components';
+
 import { Container } from 'components';
-import styled from 'styled-components';
+
+import { ImageProps } from './hero.types';
 
 const Hero = styled('div')`
 	padding: 310px 0;
 	position: relative;
-
-	.ml12 {
-		@for $i from 8 through 15 {
-			span:nth-child(#{$i}) {
-				color: #cf3030;
-			}
-		}
-	}
 
 	@media (max-width: 600px) {
 		padding: 100px 0 100px 0;
@@ -24,6 +19,7 @@ const HeroContent = styled('div')`
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
+	position: relative;
 
 	h1 {
 		font-size: 3.4rem;
@@ -32,7 +28,6 @@ const HeroContent = styled('div')`
 		text-transform: capitalize;
 		letter-spacing: 1.5px;
 		color: #3f3f3f;
-		max-width: 20ch;
 	}
 
 	p {
@@ -43,33 +38,46 @@ const HeroContent = styled('div')`
 		color: #333;
 	}
 
-	@media (max-width: 1400px) {
-		flex-direction: column;
-
-		h1 {
-			max-width: 18ch;
-		}
-	}
-
-	@media (max-width: 600px) {
-		padding: 160px 0 100px 0;
-		align-items: center;
-
-		h1 {
-			font-size: 4rem;
-			margin: 0 auto;
-		}
-	}
-
-	@media (max-width: 420px) {
+	@media (max-width: 760px) {
 		h1 {
 			font-size: 3rem;
 		}
 	}
 
-	@media (max-width: 320px) {
+	@media (max-width: 680px) {
 		h1 {
-			font-size: 2.6rem;
+			font-size: 2.5rem;
+		}
+	}
+
+	@media (max-width: 600px) {
+		padding: 160px 0 100px 0;
+		h1 {
+			font-size: 2rem;
+		}
+	}
+
+	@media (max-width: 420px) {
+		h1 {
+			font-size: 1.85rem;
+		}
+	}
+
+	@media (max-width: 360px) {
+		h1 {
+			font-size: 1.65rem;
+		}
+		p {
+			font-size: 1rem;
+		}
+	}
+
+	@media (max-width: 325px) {
+		h1 {
+			font-size: 1.45rem;
+		}
+		p {
+			font-size: 1rem;
 		}
 	}
 `;
@@ -85,4 +93,37 @@ const HeroActions = styled('div')`
 	}
 `;
 
-export const Styled = { Hero, HeroContainer, HeroContent, HeroActions };
+const Image = styled('img')<ImageProps>`
+	position: absolute;
+	z-index: -1;
+
+	${(props) => css`
+		${props.top !== undefined &&
+		css`
+			top: ${props.top};
+		`}
+
+		${props.right !== undefined &&
+		css`
+			right: ${props.right};
+		`}
+
+		${props.bottom !== undefined &&
+		css`
+			bottom: ${props.bottom};
+		`}
+
+		${props.left !== undefined &&
+		css`
+			left: ${props.left};
+		`}
+	`}
+`;
+
+export const Styled = {
+	Hero,
+	HeroContainer,
+	HeroContent,
+	HeroActions,
+	Image,
+};

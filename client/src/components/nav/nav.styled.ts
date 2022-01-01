@@ -91,6 +91,8 @@ const Nav = styled('nav')`
 			width: 0;
 			transition: all 300ms ease;
 			z-index: 15;
+			display: flex;
+			flex-direction: column;
 
 			ul {
 				display: flex;
@@ -99,20 +101,21 @@ const Nav = styled('nav')`
 
 			a {
 				margin-left: 0 !important;
-				margin-bottom: 1rem;
-				padding: 0rem 1rem 0 1rem;
+				padding: 1rem;
 				color: #333;
+
+				&:not(:last-of-type) {
+					border-bottom: 1px solid #f5f5f5;
+				}
+
 				&::before,
 				&::after {
 					display: none;
 				}
-				&:first-of-type {
-					margin-top: 30px;
-				}
 			}
 
 			&.open {
-				width: 200px;
+				width: 280px;
 			}
 		}
 

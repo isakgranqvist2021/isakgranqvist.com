@@ -3,7 +3,6 @@ import AOS from 'aos';
 
 import { Button } from 'components';
 
-import { Svg } from './svg';
 import { Styled } from './hero.styled';
 
 export const Hero = () => {
@@ -21,7 +20,10 @@ export const Hero = () => {
 		<Styled.Hero id='Home'>
 			<Styled.HeroContainer>
 				<Styled.HeroContent>
-					<h1 className='ml12'>High Quality Software At Affordable Prices</h1>
+					<h1 className='ml12'>
+						High Quality Software
+						<br /> At Affordable Prices
+					</h1>
 
 					<p>
 						Are you looking for a software developer who loves learning new
@@ -41,8 +43,9 @@ export const Hero = () => {
 						</Button>
 					</Styled.HeroActions>
 				</Styled.HeroContent>
-				<Svg />
 			</Styled.HeroContainer>
+			<Styled.Image src='/phone.svg' bottom='60%' left='46%' />
+			<Styled.Image src='/artboard.svg' left='50%' bottom={0} />
 		</Styled.Hero>
 	);
 };

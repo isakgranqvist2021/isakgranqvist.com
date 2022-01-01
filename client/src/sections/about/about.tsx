@@ -14,7 +14,7 @@ export const About = () => {
 		<Styled.About id='About'>
 			<Styled.AboutContainer>
 				<Styled.FlexItem>
-					<h3 data-aos='fade-down'>About Me</h3>
+					<h3 data-aos='fade-down'>isakgranqvist.com</h3>
 					<p data-aos='fade-up'>
 						The main <span>purpose</span> of my business is to deliver fast,
 						modern and reliable software to clients all over the world. At

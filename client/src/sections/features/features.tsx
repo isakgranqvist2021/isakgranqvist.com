@@ -21,8 +21,8 @@ export const Features = () => {
 						<h3>Backend Development</h3>
 						<p>
 							Do you need reliable software to power your business
-							infrastructure? I utilize tools like TypeScript, Go and .NET to
-							make that happen.
+							infrastructure? I utilize popular tools like TypeScript, C# and Go
+							to make that happen.
 						</p>
 					</div>
 					<div className='card' data-aos='fade-up'>
@@ -30,7 +30,7 @@ export const Features = () => {
 						<h3>Frontend Development</h3>
 						<p>
 							Do you want a modern, fast and user friendly user interface? I
-							build modern user interfaces in tools like React and Angular.
+							build modern user interfaces with tools like React and Angular.
 						</p>
 					</div>
 					<div className='card' data-aos='fade-left'>
@@ -38,7 +38,7 @@ export const Features = () => {
 						<h3>Cloud Development</h3>
 						<p>
 							Are you looking to scale your software infrastructure with tools
-							provided by Google or Amazon?
+							provided by Google or Amazon? Then I would be glad to help you.
 						</p>
 					</div>
 				</Styled.FeaturesGrid>
