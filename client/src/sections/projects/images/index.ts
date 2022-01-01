@@ -17,10 +17,16 @@ export const images: BackgroundImage[] = [
 	},
 	{
 		src: gcp,
-		bgColor: '#333',
 		bgSize: {
 			default: '70%',
 			xs: '100%',
+		},
+	},
+	{
+		src: node,
+		bgSize: {
+			default: '50%',
+			xs: '50%',
 		},
 	},
 	{
@@ -35,14 +41,6 @@ export const images: BackgroundImage[] = [
 		bgSize: {
 			default: 'cover',
 			xs: 'cover',
-		},
-	},
-	{
-		src: node,
-		bgColor: 'lightgrey',
-		bgSize: {
-			default: '50%',
-			xs: '50%',
 		},
 	},
 	{

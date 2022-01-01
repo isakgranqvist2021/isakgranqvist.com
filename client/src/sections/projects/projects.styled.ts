@@ -24,12 +24,6 @@ const Project = styled('div')<StyledProjectProps>`
 	background-repeat: no-repeat;
 
 	${(props) =>
-		props.bgColor &&
-		css`
-			background-color: ${props.bgColor};
-		`}
-
-	${(props) =>
 		props.bgSize.default === 'hidden' &&
 		css`
 			display: none;
@@ -38,10 +32,13 @@ const Project = styled('div')<StyledProjectProps>`
 	@media (max-width: 580px) {
 		background-size: ${(props) => props.bgSize.xs};
 		${(props) =>
-			props.bgSize.xs === 'hidden' &&
-			css`
-				display: none;
-			`}
+			props.bgSize.xs === 'hidden'
+				? css`
+						display: none;
+				  `
+				: css`
+						display: block;
+				  `}
 	}
 `;
 
