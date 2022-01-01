@@ -21,13 +21,8 @@ const HeroContent = styled('div')`
 	justify-content: center;
 	position: relative;
 
-	h1 {
-		font-size: 3.4rem;
-		font-weight: 900;
-		color: #333;
-		text-transform: capitalize;
-		letter-spacing: 1.5px;
-		color: #3f3f3f;
+	@media (max-width: 600px) {
+		padding: 160px 0 100px 0;
 	}
 
 	p {
@@ -36,47 +31,12 @@ const HeroContent = styled('div')`
 		font-weight: 500;
 		max-width: 50ch;
 		color: #333;
-	}
 
-	@media (max-width: 760px) {
-		h1 {
-			font-size: 3rem;
-		}
-	}
-
-	@media (max-width: 680px) {
-		h1 {
-			font-size: 2.5rem;
-		}
-	}
-
-	@media (max-width: 600px) {
-		padding: 160px 0 100px 0;
-		h1 {
-			font-size: 2rem;
-		}
-	}
-
-	@media (max-width: 420px) {
-		h1 {
-			font-size: 1.85rem;
-		}
-	}
-
-	@media (max-width: 360px) {
-		h1 {
-			font-size: 1.65rem;
-		}
-		p {
+		@media (max-width: 360px) {
 			font-size: 1rem;
 		}
-	}
 
-	@media (max-width: 325px) {
-		h1 {
-			font-size: 1.45rem;
-		}
-		p {
+		@media (max-width: 325px) {
 			font-size: 1rem;
 		}
 	}

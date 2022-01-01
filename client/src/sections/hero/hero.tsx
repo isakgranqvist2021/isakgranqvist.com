@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 
-import { Button } from 'components';
+import { Button, Link, Text } from 'components';
 
 import { Styled } from './hero.styled';
 
@@ -20,15 +20,15 @@ export const Hero = () => {
 		<Styled.Hero id='Home'>
 			<Styled.HeroContainer>
 				<Styled.HeroContent>
-					<h1 className='ml12'>
+					<Text variant='h1'>
 						High Quality Software
 						<br /> At Affordable Prices
-					</h1>
+					</Text>
 
 					<p>
-						Are you looking for a software developer who loves learning new
-						technologies? I love working on new and challenging problems and
-						come up with creative and innovative solutions.
+						I build professional websites, modern mobile applications and
+						reliable server software. <Link href='#Contact'>Contact me</Link>{' '}
+						for a quote or further information.
 					</p>
 					<Styled.HeroActions>
 						<Button
