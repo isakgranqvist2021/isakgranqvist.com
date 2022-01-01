@@ -1,8 +1,11 @@
 import styled from 'styled-components';
 
 const Svg = styled('svg')`
-	/** @format */
-	max-width: 50%;
+	position: absolute;
+	z-index: -1;
+	right: 10%;
+	bottom: 0;
+	max-width: 100%;
 	.line-text {
 		animation-name: fadeIn;
 		animation-timing-function: ease;
@@ -10,19 +13,6 @@ const Svg = styled('svg')`
 		animation-fill-mode: forwards;
 		animation-direction: alternate-reverse;
 		animation-iteration-count: 8;
-	}
-
-	@media (max-width: 1400px) {
-		display: none;
-	}
-
-	@keyframes fadeIn {
-		from {
-			opacity: 0.2;
-		}
-		to {
-			opacity: 1;
-		}
 	}
 `;
 

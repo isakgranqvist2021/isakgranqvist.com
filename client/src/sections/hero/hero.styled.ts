@@ -2,10 +2,8 @@ import { Container } from 'components';
 import styled from 'styled-components';
 
 const Hero = styled('div')`
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	padding: 210px 0;
+	padding: 310px 0;
+	position: relative;
 
 	.ml12 {
 		@for $i from 8 through 15 {
@@ -20,9 +18,7 @@ const Hero = styled('div')`
 	}
 `;
 
-const HeroContainer = styled(Container)`
-	display: flex;
-`;
+const HeroContainer = styled(Container)``;
 
 const HeroContent = styled('div')`
 	display: flex;
@@ -32,10 +28,11 @@ const HeroContent = styled('div')`
 	h1 {
 		font-size: 3.4rem;
 		font-weight: 900;
-		color: rgb(37, 37, 37);
+		color: #333;
 		text-transform: capitalize;
 		letter-spacing: 1.5px;
 		color: #3f3f3f;
+		max-width: 20ch;
 	}
 
 	p {
@@ -43,7 +40,7 @@ const HeroContent = styled('div')`
 		font-size: 1.3rem;
 		font-weight: 500;
 		max-width: 50ch;
-		color: rgb(100, 100, 100);
+		color: #333;
 	}
 
 	@media (max-width: 1400px) {

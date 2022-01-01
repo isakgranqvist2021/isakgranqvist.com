@@ -1,8 +1,9 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 
-import { Svg, Button } from 'components';
+import { Button } from 'components';
 
+import { Svg } from './svg';
 import { Styled } from './hero.styled';
 
 export const Hero = () => {

@@ -1,8 +1,4 @@
-const env = 'production';
-const serverAddr =
-	env === 'production'
-		? 'https://isakgranqvist.com/api'
-		: 'http://localhost:8081/api';
+const serverAddr = process.env.REACT_APP_SERVER_ADDR;
 
 export const GET = async (endpoint: string, signal: AbortSignal) => {
 	const response = await fetch(serverAddr + endpoint, {

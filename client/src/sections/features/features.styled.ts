@@ -21,27 +21,8 @@ const FeaturesGrid = styled('div')`
 		align-items: center;
 		flex-direction: column;
 		text-align: center;
-		transition: all 300ms ease;
 		box-shadow: none;
 		padding: 20px;
-
-		&:nth-child(1) {
-			&:hover {
-				transform: translate(-20px, -20px);
-			}
-		}
-
-		&:nth-child(2) {
-			&:hover {
-				transform: scale(0.9);
-			}
-		}
-
-		&:nth-child(3) {
-			&:hover {
-				transform: translate(20px, -20px);
-			}
-		}
 
 		span {
 			font-size: 2.5rem;
