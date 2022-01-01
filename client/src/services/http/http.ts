@@ -1,9 +1,13 @@
+import { GetRequestOptions, PostRequestOptions } from './http.types';
+
 const serverAddr = process.env.REACT_APP_SERVER_ADDR;
 
-export const GET = async (endpoint: string, signal: AbortSignal) => {
+export const GET = async (options: GetRequestOptions) => {
+	const { endpoint, signal } = options;
+
 	const response = await fetch(serverAddr + endpoint, {
 		method: 'GET',
-		signal: signal,
+		signal,
 		headers: {
 			'Content-Type': 'application/json',
 		},
@@ -12,13 +16,16 @@ export const GET = async (endpoint: string, signal: AbortSignal) => {
 	return await response.json();
 };
 
-export const POST = async (endpoint: string, body: Record<string, any>) => {
+export const POST = async (options: PostRequestOptions) => {
+	const { endpoint, signal, body } = options;
+
 	const response = await fetch(serverAddr + endpoint, {
 		method: 'POST',
+		signal,
+		body: JSON.stringify(body),
 		headers: {
 			'Content-Type': 'application/json',
 		},
-		body: JSON.stringify(body),
 	});
 
 	return await response.json();

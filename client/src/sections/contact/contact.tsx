@@ -1,32 +1,19 @@
 import { useState, useEffect } from 'react';
 import AOS from 'aos';
 
-import { POST } from 'services';
 import { Alert, Button } from 'components';
+import { ContactModel } from 'models';
+import { postContact } from 'services';
 
+import { INITIAL_FORM_STATE } from './contact.constants';
 import { Styled } from './contact.styled';
 
 export const Contact = () => {
-	const [formData, setFormData] = useState({
-		email: '',
-		name: '',
-		message: '',
-	});
+	const [formData, setFormData] = useState<ContactModel>(INITIAL_FORM_STATE);
 
 	const submit = async () => {
-		try {
-			const response = await POST('/contact', formData);
-
-			if (response.success) {
-				setFormData({
-					email: '',
-					name: '',
-					message: '',
-				});
-			}
-		} catch (err) {
-			window.alert('message could not be sent');
-		}
+		const response = await postContact(formData);
+		if (response.success) setFormData(INITIAL_FORM_STATE);
 	};
 
 	useEffect(() => {

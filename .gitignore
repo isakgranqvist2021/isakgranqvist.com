@@ -2,4 +2,4 @@
 /server/.env
 /client/build
 /client2.0/node_modules
-/client/src/.env
+/client/.env
