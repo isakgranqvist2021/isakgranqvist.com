@@ -35,7 +35,7 @@ export const Features = () => {
 					</div>
 					<div className='card' data-aos='fade-left'>
 						<span className='material-icons-outlined'>cloud</span>
-						<h3>Cloud Development</h3>
+						<h3>Cloud Solutions</h3>
 						<p>
 							Are you looking to scale your software infrastructure with tools
 							provided by Google or Amazon? Then I would be glad to help you.

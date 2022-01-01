@@ -42,8 +42,8 @@ const FeaturesGrid = styled('div')`
 
 		p {
 			font-size: 1.2rem;
-			font-weight: 500;
-			color: #888888;
+			font-weight: 400;
+			color: #f5f5f5;
 		}
 	}
 
