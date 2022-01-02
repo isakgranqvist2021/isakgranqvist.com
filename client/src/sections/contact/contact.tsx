@@ -71,7 +71,9 @@ export const Contact = () => {
 							}></textarea>
 					</FormGroup>
 
-					<Button onClick={submit}>Send Message</Button>
+					<Button variant='secondary' onClick={submit}>
+						Send Message
+					</Button>
 				</Styled.Form>
 				<Styled.Social>
 					<h3 data-aos='fade-left'>

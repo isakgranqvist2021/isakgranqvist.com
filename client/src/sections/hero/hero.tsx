@@ -32,20 +32,21 @@ export const Hero = () => {
 					</p>
 					<Styled.HeroActions>
 						<Button
+							outlined
 							data-aos='fade-right'
 							onClick={() => onClickHandler('#Contact')}>
-							<span>Get in touch</span>
+							Get in touch
 						</Button>
 						<Button
 							data-aos='fade-left'
 							onClick={() => onClickHandler('#Features')}>
-							<span>Technology</span>
+							Technology
 						</Button>
 					</Styled.HeroActions>
 				</Styled.HeroContent>
 			</Styled.HeroContainer>
-			<Styled.Image src='/phone.svg' bottom='60%' left='46%' />
-			<Styled.Image src='/artboard.svg' left='50%' bottom={0} />
+			<Styled.Phone src='/phone.svg' />
+			<Styled.Artboard src='/artboard.svg' />
 		</Styled.Hero>
 	);
 };

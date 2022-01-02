@@ -1,15 +1,17 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import { Container } from 'components';
-
-import { ImageProps } from './hero.types';
 
 const Hero = styled('div')`
 	padding: 310px 0;
 	position: relative;
 
+	@media (max-width: 950px) {
+		padding: 160px 0;
+	}
+
 	@media (max-width: 600px) {
-		padding: 100px 0 100px 0;
+		padding: 50px 0;
 	}
 `;
 
@@ -48,36 +50,26 @@ const HeroActions = styled('div')`
 
 	@media (max-width: 600px) {
 		flex-direction: column;
-		margin-top: 2rem;
 		width: 100%;
 	}
 `;
 
-const Image = styled('img')<ImageProps>`
+const Artboard = styled('img')`
 	position: absolute;
 	z-index: -1;
+	left: 50%;
+	bottom: 0;
 
-	${(props) => css`
-		${props.top !== undefined &&
-		css`
-			top: ${props.top};
-		`}
+	@media (max-width: 950px) {
+		display: none;
+	}
+`;
 
-		${props.right !== undefined &&
-		css`
-			right: ${props.right};
-		`}
-
-		${props.bottom !== undefined &&
-		css`
-			bottom: ${props.bottom};
-		`}
-
-		${props.left !== undefined &&
-		css`
-			left: ${props.left};
-		`}
-	`}
+const Phone = styled('img')`
+	position: absolute;
+	z-index: -1;
+	bottom: 60%;
+	left: 46%;
 `;
 
 export const Styled = {
@@ -85,5 +77,6 @@ export const Styled = {
 	HeroContainer,
 	HeroContent,
 	HeroActions,
-	Image,
+	Artboard,
+	Phone,
 };

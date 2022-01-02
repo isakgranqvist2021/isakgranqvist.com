@@ -41,6 +41,18 @@ const FeaturesGrid = styled('div')`
 			margin: 1.5rem 0 0.8rem 0;
 			font-weight: 700;
 			color: rgb(255, 255, 255);
+
+			@media (max-width: 450px) {
+				font-size: 1.7rem;
+			}
+
+			@media (max-width: 350px) {
+				font-size: 1.5rem;
+			}
+
+			@media (max-width: 315px) {
+				font-size: 1.35rem;
+			}
 		}
 
 		p {

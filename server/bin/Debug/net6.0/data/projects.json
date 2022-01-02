@@ -1,0 +1,93 @@
+[{
+        "label": "Bobbabean App",
+        "description": "This project was initially given to me as a single html file with the purpose of re-building the navigation system but I ended up rebuilding the whole webpage. I chose Angular 11 as my primary framework because I was extremely comfortable with Angular and still is. The source code can be provided if you would be interested in that. In retrospect I would have chosen React rather than Angular due to project size. React seems more suitable for building smaller projects in my opinion. I had about 10 re-orders from the person I was working with on this which tells me I did something correctly.",
+        "images": [{
+                "src": "https://static.isakgranqvist.com/projects/bobbabean_a.png",
+                "alt": "Landing Page"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/bobbabean_b.png",
+                "alt": "Products Section"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/bobbabean_c.png",
+                "alt": "Description Section"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/bobbabean_d.png",
+                "alt": "Footer Section"
+            }
+        ],
+        "href": "https://bobbabean.com",
+        "github": null
+    },
+    {
+        "label": "Administration Dashboard",
+        "description": "I started this project to manage blog posts on my main site and after a while it became more about perfecting the application rather than solving an issue I had. I later realized that an administration interface is slightly overkill for the page I had built. I went with the material design patterns as my primary direction for styling the application. I built a major part of the app in Go and learnt a lot of valuable lessons. One being from trying to mutate pointers and getting bad values in the json on the client which is unheard of when working in a language like JavaScript. The application supports spawning child processes for managing multiple applications on the same server. Go has grown to become one of my go-to languages when building a new application because if it’s performance and ease of writing code.",
+        "images": [{
+                "src": "https://static.isakgranqvist.com/projects/admin_a.png",
+                "alt": "Sign In Screen"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/admin_b.png",
+                "alt": "Dashboard Screen"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/admin_c.png",
+                "alt": "Modify Account Screen"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/admin_d.png",
+                "alt": "Accounts Screen"
+            }
+        ],
+        "href": null,
+        "github": "https://github.com/isakgranqvist2021/Administration-UI"
+    },
+    {
+        "label": "Health Website",
+        "description": "",
+        "images": [{
+                "src": "https://static.isakgranqvist.com/projects/ems-training_a.png",
+                "alt": "Home Page"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/ems-training_b.png",
+                "alt": "Scheduling Software"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/ems-training_c.png",
+                "alt": "Content Management System"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/ems-training_d.png",
+                "alt": "Booking System"
+            }
+        ],
+        "href": "https://aileendemo.herokuapp.com",
+        "github": null
+    },
+    {
+        "label": "Crypto Currency Website",
+        "description": "",
+        "images": [{
+                "src": "https://static.isakgranqvist.com/projects/crypto_a.png",
+                "alt": "Dashboard"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/crypto_b.png",
+                "alt": "My Earnings"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/crypto_c.png",
+                "alt": "Contact Page"
+            },
+            {
+                "src": "https://static.isakgranqvist.com/projects/crypto_d.png",
+                "alt": "Live Support Chat"
+            }
+        ],
+        "href": "https://ditrix-demo.herokuapp.com/#/dashboard",
+        "github": null
+    }
+]
