@@ -1,6 +1,6 @@
-using System;
 using Microsoft.AspNetCore.Mvc;
 using server.Models;
+using Newtonsoft.Json;
 
 namespace server.Controllers
 {   
@@ -9,15 +9,15 @@ namespace server.Controllers
    public class ContactController : ControllerBase
     {
         [HttpPost]
-        public ActionResult<string> SendMail([FromBody] Object data)
+        public ActionResult<string> SendMail([FromBody] ContactModel data)
         {
-            Console.WriteLine("qwtqwt");
-            Console.WriteLine(data);
-            
-            // Console.WriteLine(data.Email);
-            // Console.WriteLine(data.Name);
-            // Console.WriteLine(data.Message);
-            return "";
+            var response = new HttpResponseModel{
+                Message = "Mail has been sent",
+                Success = true,
+                Data = new Object{},
+            };
+
+            return JsonConvert.SerializeObject(response);
         }
     }
 }
