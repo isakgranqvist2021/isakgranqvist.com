@@ -29,40 +29,6 @@ const Form = styled('form')`
 	width: 100%;
 	margin-right: 50px;
 
-	section {
-		margin-bottom: 2rem;
-
-		label {
-			display: flex;
-			justify-content: space-between;
-			margin-bottom: 10px;
-			text-transform: uppercase;
-			color: #333333;
-			font-weight: 800;
-			font-size: 1rem;
-		}
-
-		input,
-		textarea {
-			font-size: 1.2rem;
-			width: 100%;
-			padding: 0.66rem;
-			border: none;
-			outline: none;
-			border-radius: 0.25rem;
-			transition: all 300ms ease;
-			resize: none;
-
-			&:focus {
-				transform: scale(1.1);
-			}
-		}
-
-		textarea {
-			height: 11rem;
-		}
-	}
-
 	@media (max-width: 500px) {
 		margin-right: 0;
 	}

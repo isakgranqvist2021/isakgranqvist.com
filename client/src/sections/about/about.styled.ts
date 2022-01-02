@@ -26,10 +26,6 @@ const AboutContainer = styled(Container)`
 		font-size: 1.1rem;
 		letter-spacing: 1.1px;
 
-		span {
-			color: #df7c7c;
-		}
-
 		&:not(:last-of-type) {
 			margin-bottom: 1rem;
 		}

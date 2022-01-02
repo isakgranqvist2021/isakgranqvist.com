@@ -1,12 +1,16 @@
 import styled from 'styled-components';
 
-const Projects = styled('div')``;
+const Projects = styled('div')`
+	padding: 50px 0;
+	border-bottom: 1px solid #f2f2f2;
+`;
 
 const Project = styled('div')`
 	height: 400px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	padding: 50px;
 
 	img {
 		width: 100%;

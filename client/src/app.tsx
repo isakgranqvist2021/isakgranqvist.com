@@ -5,7 +5,7 @@ import 'swiper/css/scrollbar';
 import 'aos/dist/aos.css';
 
 import { Nav } from './components';
-import { Hero, Features, About, Contact, Projects } from './sections';
+import { Hero, Features, About, Contact, Projects, Footer } from './sections';
 import { GlobalStyles } from './theme';
 
 export const App = () => {
@@ -18,6 +18,7 @@ export const App = () => {
 			<Projects />
 			<About />
 			<Contact />
+			<Footer />
 		</>
 	);
 };

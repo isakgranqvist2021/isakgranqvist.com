@@ -16,19 +16,17 @@ export const About = () => {
 				<Styled.FlexItem>
 					<h3 data-aos='fade-down'>isakgranqvist.com</h3>
 					<p data-aos='fade-up'>
-						The main <span>purpose</span> of my business is to deliver fast,
-						modern and reliable software to clients all over the world. At
-						affordable prices.
+						The primary purpose of my business is to deliver reliable, scalable,
+						and high-quality software - at affordable prices.
 					</p>
 					<p data-aos='fade-up'>
-						I mostly deliver <span>custom</span> software solutions tailored to
-						specific business requirements.
+						I mostly deliver custom software and applications tailored to
+						specific business requirements. Primarily web applications.
 					</p>
 					<p data-aos='fade-up'>
-						The most important asset for any business are the customers. Without
-						customers there's no business to be conducted. I strive to satisfy
-						my customers and live up to their expectations. Customer
-						satisfaction is my absolute number one priority and will always be.
+						Software infrastructure is an essential part of many businesses and
+						reliability should be the highest priority for anyone seeking
+						longevity.
 					</p>
 				</Styled.FlexItem>
 				<Styled.FlexItem data-aos='fade-left'>

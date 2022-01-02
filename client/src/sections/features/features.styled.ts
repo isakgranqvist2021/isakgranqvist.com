@@ -18,30 +18,33 @@ const FeaturesGrid = styled('div')`
 
 	.card {
 		display: flex;
-		align-items: center;
 		flex-direction: column;
-		text-align: center;
 		box-shadow: none;
 		padding: 20px;
 
 		span {
-			font-size: 2.5rem;
+			font-size: 1.5rem;
 			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 			padding: 30px;
 			border-radius: 50%;
 			background-color: #fff;
 			color: #333;
+			width: 50px;
+			height: 50px;
+			display: flex;
+			align-items: center;
+			justify-content: center;
 		}
 
 		h3 {
 			font-size: 2rem;
-			margin: 1.5rem 0 0.5rem 0;
+			margin: 1.5rem 0 0.8rem 0;
 			font-weight: 700;
 			color: rgb(255, 255, 255);
 		}
 
 		p {
-			font-size: 1.2rem;
+			font-size: 1.1rem;
 			font-weight: 400;
 			color: #f5f5f5;
 		}

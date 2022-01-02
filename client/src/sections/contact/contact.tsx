@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AOS from 'aos';
 
-import { Alert, Button } from 'components';
+import { Alert, Button, FormGroup } from 'components';
 import { ContactModel } from 'models';
 import { postContact } from 'services';
 
@@ -27,11 +27,12 @@ export const Contact = () => {
 			<Styled.ContactContainer>
 				<Styled.Form data-aos='fade-right'>
 					<Alert />
-					<section className='uk-margin-medium-bottom'>
+					<FormGroup mb={32}>
 						<label htmlFor='email'>Email</label>
 						<input
 							id='email'
 							placeholder='Email'
+							autoComplete='email'
 							value={formData.email}
 							onChange={(e) =>
 								setFormData({
@@ -40,13 +41,14 @@ export const Contact = () => {
 								})
 							}
 						/>
-					</section>
-					<section>
+					</FormGroup>
+					<FormGroup mb={32}>
 						<label htmlFor='name'>Full Name</label>
 						<input
 							id='name'
 							placeholder='Your name'
 							value={formData.name}
+							autoComplete='name'
 							onChange={(e) =>
 								setFormData({
 									...formData,
@@ -54,8 +56,8 @@ export const Contact = () => {
 								})
 							}
 						/>
-					</section>
-					<section>
+					</FormGroup>
+					<FormGroup mb={10}>
 						<label htmlFor='message'>Message</label>
 						<textarea
 							id='message'
@@ -67,7 +69,7 @@ export const Contact = () => {
 									message: e.target.value,
 								})
 							}></textarea>
-					</section>
+					</FormGroup>
 
 					<Button onClick={submit}>Send Message</Button>
 				</Styled.Form>

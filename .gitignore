@@ -3,3 +3,4 @@
 /client/build
 /client2.0/node_modules
 /client/.env
+/.DB_STORE
