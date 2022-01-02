@@ -48,10 +48,46 @@ const h1 = styled('h1')`
 
 const h2 = styled('h2')`
 	${title};
+
+	font-size: 3.5rem;
+	margin-bottom: 1rem;
+	font-weight: 900;
+	letter-spacing: 1px;
+	color: #333;
+	text-transform: lowercase;
+
+	@media (max-width: 900px) {
+		font-size: 2.5rem;
+	}
+
+	@media (max-width: 400px) {
+		font-size: 2rem;
+	}
+
+	@media (max-width: 320px) {
+		font-size: 1.8rem;
+	}
 `;
 
 const h3 = styled('h3')`
 	${title};
+
+	font-size: 2rem;
+	margin: 1.5rem 0 0.8rem 0;
+	font-weight: 700;
+	color: rgb(255, 255, 255);
+
+	@media (max-width: 450px) {
+		font-size: 1.7rem;
+	}
+
+	@media (max-width: 350px) {
+		font-size: 1.5rem;
+	}
+
+	@media (max-width: 315px) {
+		font-size: 1.35rem;
+	}
 `;
 
 const h4 = styled('h4')`

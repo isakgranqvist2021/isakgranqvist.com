@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 
-import { Container } from 'components';
+import { Container, Text } from 'components';
 
 import { Styled } from './features.styled';
 
@@ -16,31 +16,31 @@ export const Features = () => {
 		<Styled.Features id='Features'>
 			<Container>
 				<Styled.FeaturesGrid>
-					<div className='card' data-aos='fade-right'>
-						<span className='material-icons-outlined'>business</span>
-						<h3>Backend Development</h3>
-						<p>
+					<Styled.Card data-aos='fade-right'>
+						<Styled.CardIcon>business</Styled.CardIcon>
+						<Text text='Backend Development' variant='h3' />
+						<Text variant='subtitle3'>
 							Do you need reliable software to power your business
 							infrastructure? I utilize popular tools like TypeScript, C# and Go
 							to make that happen.
-						</p>
-					</div>
-					<div className='card' data-aos='fade-up'>
-						<span className='material-icons-outlined'>storefront</span>
-						<h3>Frontend Development</h3>
-						<p>
+						</Text>
+					</Styled.Card>
+					<Styled.Card data-aos='fade-up'>
+						<Styled.CardIcon>storefront</Styled.CardIcon>
+						<Text text='Frontend Development' variant='h3' />
+						<Text variant='subtitle3'>
 							Do you want a modern, fast and user friendly user interface? I
 							build modern user interfaces with tools like React and Angular.
-						</p>
-					</div>
-					<div className='card' data-aos='fade-left'>
-						<span className='material-icons-outlined'>cloud</span>
-						<h3>Cloud Solutions</h3>
-						<p>
+						</Text>
+					</Styled.Card>
+					<Styled.Card data-aos='fade-left'>
+						<Styled.CardIcon>cloud</Styled.CardIcon>
+						<Text text='Cloud Solutions' variant='h3' />
+						<Text variant='subtitle3'>
 							Are you looking to scale your software infrastructure with tools
 							provided by Google or Amazon? Then I would be glad to help you.
-						</p>
-					</div>
+						</Text>
+					</Styled.Card>
 				</Styled.FeaturesGrid>
 			</Container>
 		</Styled.Features>

@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-import { Container } from 'components';
+import { Button, Container } from 'components';
 
 const Contact = styled('div')`
 	padding: 100px 0;
@@ -44,42 +44,9 @@ const Social = styled('div')`
 		color: #fff;
 	}
 
-	.icons {
-		display: flex;
-		flex-wrap: wrap;
-		margin-top: 20px;
-
-		a {
-			box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
-			padding: 1rem;
-			border-radius: 50%;
-			transition: all 200ms ease;
-			background-color: #fff;
-
-			&:hover {
-				box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
-					0 10px 10px rgba(0, 0, 0, 0.22);
-			}
-
-			&:not(:last-of-type) {
-				margin-right: 1rem;
-			}
-
-			img {
-				height: 32px;
-				width: 32px;
-				display: block;
-			}
-		}
-	}
-
 	@media (max-width: 1100px) {
 		margin: 50px 0 0 0 !important;
 		text-align: center;
-
-		.icons {
-			justify-content: center;
-		}
 	}
 
 	@media (max-width: 500px) {
@@ -92,14 +59,59 @@ const Social = styled('div')`
 		h3 {
 			max-width: 20ch;
 		}
+	}
+`;
 
-		.icons {
-			margin-top: 25px;
-			a {
-				margin-bottom: 10px;
-			}
+const SocialIcons = styled('div')`
+	display: flex;
+	flex-wrap: wrap;
+	margin-top: 20px;
+
+	a {
+		box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+		padding: 1rem;
+		border-radius: 50%;
+		transition: all 200ms ease;
+		background-color: #fff;
+
+		&:hover {
+			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+				0 10px 10px rgba(0, 0, 0, 0.22);
+		}
+
+		&:not(:last-of-type) {
+			margin-right: 1rem;
+		}
+
+		img {
+			height: 32px;
+			width: 32px;
+			display: block;
+		}
+	}
+
+	@media (max-width: 1100px) {
+		justify-content: center;
+	}
+
+	@media (max-width: 500px) {
+		margin-top: 25px;
+		a {
+			margin-bottom: 10px;
 		}
 	}
 `;
 
-export const Styled = { Contact, ContactContainer, Form, Social };
+const SendButton = styled(Button)`
+	display: block;
+	margin-left: auto;
+`;
+
+export const Styled = {
+	Contact,
+	ContactContainer,
+	Form,
+	Social,
+	SendButton,
+	SocialIcons,
+};

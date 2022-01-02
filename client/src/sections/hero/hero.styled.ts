@@ -26,22 +26,6 @@ const HeroContent = styled('div')`
 	@media (max-width: 600px) {
 		padding: 160px 0 100px 0;
 	}
-
-	p {
-		margin: 1.8rem 0;
-		font-size: 1.3rem;
-		font-weight: 500;
-		max-width: 50ch;
-		color: #333;
-
-		@media (max-width: 360px) {
-			font-size: 1rem;
-		}
-
-		@media (max-width: 325px) {
-			font-size: 1rem;
-		}
-	}
 `;
 
 const HeroActions = styled('div')`

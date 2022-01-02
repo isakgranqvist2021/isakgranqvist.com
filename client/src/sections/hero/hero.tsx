@@ -25,11 +25,11 @@ export const Hero = () => {
 						<br /> At Affordable Prices
 					</Text>
 
-					<p>
+					<Text variant='subtitle1'>
 						I build professional websites, modern mobile applications and
 						reliable server software. <Link href='#Contact'>Contact me</Link>{' '}
 						for a quote or further information.
-					</p>
+					</Text>
 					<Styled.HeroActions>
 						<Button
 							outlined

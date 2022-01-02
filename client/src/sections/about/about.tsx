@@ -1,6 +1,8 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 
+import { Text } from 'components';
+
 import { Styled } from './about.styled';
 
 export const About = () => {
@@ -14,20 +16,20 @@ export const About = () => {
 		<Styled.About id='About'>
 			<Styled.AboutContainer>
 				<Styled.FlexItem>
-					<h3 data-aos='fade-down'>isakgranqvist.com</h3>
-					<p data-aos='fade-up'>
+					<Text text='isakgranqvist.com' variant='h2' data-aos='fade-down' />
+					<Text variant='body1' data-aos='fade-up'>
 						The primary purpose of my business is to deliver reliable, scalable,
 						and high-quality software - at affordable prices.
-					</p>
-					<p data-aos='fade-up'>
+					</Text>
+					<Text variant='body1' data-aos='fade-up'>
 						I mostly deliver custom software and applications tailored to
 						specific business requirements. Primarily web applications.
-					</p>
-					<p data-aos='fade-up'>
+					</Text>
+					<Text variant='body1' data-aos='fade-up'>
 						Software infrastructure is an essential part of many businesses and
 						reliability should be the highest priority for anyone seeking
 						longevity.
-					</p>
+					</Text>
 				</Styled.FlexItem>
 				<Styled.FlexItem data-aos='fade-left'>
 					<svg

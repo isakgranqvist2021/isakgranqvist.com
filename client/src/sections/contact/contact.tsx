@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import AOS from 'aos';
 
-import { Alert, Button, FormGroup } from 'components';
+import { Alert, FormGroup, Input, Label, Textarea, Text } from 'components';
 import { ContactModel } from 'models';
 import { postContact } from 'services';
 
@@ -28,8 +28,8 @@ export const Contact = () => {
 				<Styled.Form data-aos='fade-right'>
 					<Alert />
 					<FormGroup mb={32}>
-						<label htmlFor='email'>Email</label>
-						<input
+						<Label htmlFor='email'>Email</Label>
+						<Input
 							id='email'
 							placeholder='Email'
 							autoComplete='email'
@@ -43,8 +43,8 @@ export const Contact = () => {
 						/>
 					</FormGroup>
 					<FormGroup mb={32}>
-						<label htmlFor='name'>Full Name</label>
-						<input
+						<Label htmlFor='name'>Full Name</Label>
+						<Input
 							id='name'
 							placeholder='Your name'
 							value={formData.name}
@@ -58,8 +58,8 @@ export const Contact = () => {
 						/>
 					</FormGroup>
 					<FormGroup mb={10}>
-						<label htmlFor='message'>Message</label>
-						<textarea
+						<Label htmlFor='message'>Message</Label>
+						<Textarea
 							id='message'
 							placeholder='Message'
 							value={formData.message}
@@ -68,18 +68,21 @@ export const Contact = () => {
 									...formData,
 									message: e.target.value,
 								})
-							}></textarea>
+							}></Textarea>
 					</FormGroup>
 
-					<Button variant='secondary' onClick={submit}>
+					<Styled.SendButton outlined variant='secondary' onClick={submit}>
 						Send Message
-					</Button>
+					</Styled.SendButton>
 				</Styled.Form>
 				<Styled.Social>
-					<h3 data-aos='fade-left'>
-						You can also reach me through my social channels
-					</h3>
-					<div className='icons' data-aos='fade-up'>
+					<Text
+						variant='h3'
+						text='You can also reach me through my social channels'
+						data-aos='fade-left'
+					/>
+
+					<Styled.SocialIcons data-aos='fade-up'>
 						<a
 							href='https://www.instagram.com/isakgranqvist2021/'
 							title='Instagram'>
@@ -108,7 +111,7 @@ export const Contact = () => {
 								alt='Email Icon'
 							/>
 						</a>
-					</div>
+					</Styled.SocialIcons>
 				</Styled.Social>
 			</Styled.ContactContainer>
 		</Styled.Contact>

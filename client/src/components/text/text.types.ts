@@ -1,5 +1,3 @@
-import React from 'react';
-
 export type TextVariant =
 	| 'h1'
 	| 'h2'

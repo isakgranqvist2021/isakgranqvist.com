@@ -13,45 +13,9 @@ const AboutContainer = styled(Container)`
 	display: flex;
 	height: 100%;
 
-	h3 {
-		font-size: 3.5rem;
-		margin-bottom: 1rem;
-		font-weight: 900;
-		letter-spacing: 1px;
-		color: #333;
-	}
-
-	p {
-		line-height: 1.7;
-		font-size: 1.1rem;
-		letter-spacing: 1.1px;
-
-		&:not(:last-of-type) {
-			margin-bottom: 1rem;
-		}
-	}
-
 	@media (max-width: 900px) {
 		flex-direction: column;
 		gap: 3rem;
-	}
-
-	@media (max-width: 900px) {
-		h3 {
-			font-size: 2.5rem;
-		}
-	}
-
-	@media (max-width: 400px) {
-		h3 {
-			font-size: 2rem;
-		}
-	}
-
-	@media (max-width: 320px) {
-		h3 {
-			font-size: 1.8rem;
-		}
 	}
 `;
 
