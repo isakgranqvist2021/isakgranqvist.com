@@ -6,7 +6,7 @@ namespace server
         {
             var settings = new Settings();
             var builder = WebApplication.CreateBuilder(args);
-            
+
             builder.Services.AddControllers();
 
             builder.Services.AddCors(options =>
@@ -24,7 +24,7 @@ namespace server
             app.UseHttpsRedirection();
 
             app.UseCors(settings.defaultCorsPolicy);
-            
+
             app.UseAuthorization();
 
             app.MapControllers();

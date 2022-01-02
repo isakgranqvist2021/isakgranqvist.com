@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 import { ButtonProps } from './button.types';
 
-const button = css`
+const button = css<ButtonProps>`
 	border-width: 1px;
 	border-style: solid;
 	padding: 0.8rem 1.5rem;
@@ -14,6 +14,13 @@ const button = css`
 	letter-spacing: 1.1px;
 	font-family: 'Arial';
 	transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+	min-width: 100px;
+
+	${(props) =>
+		props.disabled &&
+		css`
+			pointer-events: none;
+		`}
 
 	@media (max-width: 600px) {
 		width: 100%;

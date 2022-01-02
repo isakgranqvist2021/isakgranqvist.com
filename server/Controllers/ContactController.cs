@@ -3,23 +3,37 @@ using server.Models;
 using Newtonsoft.Json;
 
 namespace server.Controllers
-{   
-   [Route("api/contact")]
-   [ApiController]
-   public class ContactController : ControllerBase
+{
+    [Route("api/contact")]
+    [ApiController]
+    public class ContactController : ControllerBase
     {
         [HttpPost]
-        public ActionResult<string> SendMail([FromBody] ContactModel data)
+        public async Task<ActionResult<string>> SendMail([FromBody] ContactModel data)
         {
-            Console.WriteLine(data.Email);
+            try
+            {
+                if (data != null)
+                {
+                    await data.Send();
+                }
 
-            var response = new ResponseModel{
-                Message = "Mail has been sent",
-                Success = true,
-                Data = new Object{},
-            };
-
-            return JsonConvert.SerializeObject(response);
+                return JsonConvert.SerializeObject(new ResponseModel
+                {
+                    Message = "Your message has been sent",
+                    Success = true,
+                    Data = null,
+                });
+            }
+            catch (System.Exception)
+            {
+                return JsonConvert.SerializeObject(new ResponseModel
+                {
+                    Message = "An error has occured, please try again",
+                    Success = false,
+                    Data = null,
+                });
+            }
         }
     }
 }

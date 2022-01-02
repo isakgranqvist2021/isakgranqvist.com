@@ -6,5 +6,6 @@ export * from './input';
 export * from './label';
 export * from './link';
 export * from './nav';
+export * from './spinner';
 export * from './text';
 export * from './textarea';

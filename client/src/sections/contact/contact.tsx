@@ -1,13 +1,22 @@
 import { useEffect } from 'react';
 import AOS from 'aos';
 
-import { Alert, FormGroup, Input, Label, Textarea, Text } from 'components';
+import {
+	Alert,
+	FormGroup,
+	Input,
+	Label,
+	Textarea,
+	Text,
+	Spinner,
+} from 'components';
 
 import { useContactState } from './contact.helpers';
 import { Styled } from './contact.styled';
 
 export const Contact = () => {
-	const { values, alert, submit, setValue, clearAlert } = useContactState();
+	const { values, alert, isLoading, submit, setValue, clearAlert } =
+		useContactState();
 
 	useEffect(() => {
 		AOS.init({
@@ -25,6 +34,7 @@ export const Contact = () => {
 							id='email'
 							placeholder='Email'
 							autoComplete='email'
+							disabled={isLoading}
 							value={values.email}
 							onChange={(e) => setValue('email', e.target.value)}
 						/>
@@ -36,6 +46,7 @@ export const Contact = () => {
 							placeholder='Your name'
 							value={values.name}
 							autoComplete='name'
+							disabled={isLoading}
 							onChange={(e) => setValue('name', e.target.value)}
 						/>
 					</FormGroup>
@@ -45,13 +56,18 @@ export const Contact = () => {
 							id='message'
 							placeholder='Message'
 							value={values.message}
+							disabled={isLoading}
 							onChange={(e) => setValue('message', e.target.value)}></Textarea>
 					</FormGroup>
 
 					<Alert alert={alert} onClose={clearAlert} />
 
-					<Styled.SendButton outlined variant='secondary' onClick={submit}>
-						Send Message
+					<Styled.SendButton
+						outlined
+						variant='secondary'
+						disabled={isLoading}
+						onClick={submit}>
+						{isLoading ? <Spinner /> : 'Send Message'}
 					</Styled.SendButton>
 				</Styled.Form>
 				<Styled.Social>

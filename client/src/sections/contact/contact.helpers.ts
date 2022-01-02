@@ -1,41 +1,68 @@
 import { useState } from 'react';
 
-import { AlertModel, ContactModel, contactSchema } from 'models';
+import { ContactModel, contactSchema } from 'models';
 import { postContact } from 'services';
 
 import { INITIAL_FORM_STATE } from './contact.constants';
+import { ContactState } from './contact.types';
 
 export const useContactState = () => {
-	const [values, setValues] = useState<ContactModel>(INITIAL_FORM_STATE);
-	const [alert, setAlert] = useState<AlertModel | null>(null);
+	const [state, setState] = useState<ContactState>({
+		values: INITIAL_FORM_STATE,
+		alert: null,
+		isLoading: false,
+	});
 
 	const submit = async () => {
-		const result = contactSchema(values);
+		const result = contactSchema(state.values);
 
 		if (result) {
-			return setAlert({ message: result.message, severity: 'danger' });
+			return setState((prevState) => ({
+				...prevState,
+				alert: { message: result.message, severity: 'danger' },
+			}));
 		}
 
-		const response = await postContact(values);
+		setState((prevState) => ({
+			...prevState,
+			isLoading: true,
+		}));
 
-		setAlert({
-			message: response.message,
-			severity: response.success ? 'success' : 'danger',
-		});
+		const response = await postContact(state.values);
 
-		if (response.success) setValues(INITIAL_FORM_STATE);
+		setState((prevState) => ({
+			values: response.success ? INITIAL_FORM_STATE : prevState.values,
+			isLoading: false,
+			alert: {
+				message: response.message,
+				severity: response.success ? 'success' : 'danger',
+			},
+		}));
 	};
 
 	const setValue = (key: keyof ContactModel, value: string) => {
-		setValues({
-			...values,
-			[key]: value,
-		});
+		setState((prevState) => ({
+			...prevState,
+			values: {
+				...prevState.values,
+				[key]: value,
+			},
+		}));
 	};
 
 	const clearAlert = () => {
-		setAlert(null);
+		setState((prevState) => ({
+			...prevState,
+			alert: null,
+		}));
 	};
 
-	return { values, alert, submit, setValue, clearAlert };
+	return {
+		values: state.values,
+		alert: state.alert,
+		isLoading: state.isLoading,
+		submit,
+		setValue,
+		clearAlert,
+	};
 };
