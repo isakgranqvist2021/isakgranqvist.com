@@ -1,6 +1,6 @@
 namespace server.Models 
 {
-    public class ContactModal
+    public class ContactModel
     {
         public string? Email { get; set; }
         public string? Name { get; set; }

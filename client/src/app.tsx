@@ -8,6 +8,8 @@ import { Nav } from './components';
 import { Hero, Features, About, Contact, Projects, Footer } from './sections';
 import { GlobalStyles } from './theme';
 
+console.log(process.env);
+
 export const App = () => {
 	return (
 		<>
