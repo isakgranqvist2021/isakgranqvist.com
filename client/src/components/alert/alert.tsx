@@ -1,24 +1,19 @@
-import { useState } from 'react';
-
 import { Styled } from './alert.styled';
+import { AlertProps } from './alert.types';
 
-export const Alert = () => {
-	const [alert, setAlert] = useState({
-		type: 'success',
-		message: 'an error has occured',
-		show: false,
-	});
+export const Alert = (props: AlertProps) => {
+	const { alert, onClose } = props;
 
 	return (
-		<div>
-			{alert.show && (
-				<Styled.Alert className={['alert', '-', alert.type].join('')}>
+		<>
+			{alert && (
+				<Styled.Alert severity={alert.severity}>
 					<p>{alert.message}</p>
-					<span onClick={() => setAlert({ ...alert, show: false })}>
+					<span onClick={onClose}>
 						<span className='material-icons-outlined'>close</span>
 					</span>
 				</Styled.Alert>
 			)}
-		</div>
+		</>
 	);
 };

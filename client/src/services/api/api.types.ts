@@ -1,5 +1,5 @@
 export interface HttpRequest {
-	message: string | null;
+	message: string;
 	success: boolean;
 }
 

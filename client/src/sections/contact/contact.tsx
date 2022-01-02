@@ -1,20 +1,13 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import AOS from 'aos';
 
 import { Alert, FormGroup, Input, Label, Textarea, Text } from 'components';
-import { ContactModel } from 'models';
-import { postContact } from 'services';
 
-import { INITIAL_FORM_STATE } from './contact.constants';
+import { useContactState } from './contact.helpers';
 import { Styled } from './contact.styled';
 
 export const Contact = () => {
-	const [formData, setFormData] = useState<ContactModel>(INITIAL_FORM_STATE);
-
-	const submit = async () => {
-		const response = await postContact(formData);
-		if (response.success) setFormData(INITIAL_FORM_STATE);
-	};
+	const { values, alert, submit, setValue, clearAlert } = useContactState();
 
 	useEffect(() => {
 		AOS.init({
@@ -26,20 +19,14 @@ export const Contact = () => {
 		<Styled.Contact id='Contact'>
 			<Styled.ContactContainer>
 				<Styled.Form data-aos='fade-right'>
-					<Alert />
 					<FormGroup mb={32}>
 						<Label htmlFor='email'>Email</Label>
 						<Input
 							id='email'
 							placeholder='Email'
 							autoComplete='email'
-							value={formData.email}
-							onChange={(e) =>
-								setFormData({
-									...formData,
-									email: e.target.value,
-								})
-							}
+							value={values.email}
+							onChange={(e) => setValue('email', e.target.value)}
 						/>
 					</FormGroup>
 					<FormGroup mb={32}>
@@ -47,14 +34,9 @@ export const Contact = () => {
 						<Input
 							id='name'
 							placeholder='Your name'
-							value={formData.name}
+							value={values.name}
 							autoComplete='name'
-							onChange={(e) =>
-								setFormData({
-									...formData,
-									name: e.target.value,
-								})
-							}
+							onChange={(e) => setValue('name', e.target.value)}
 						/>
 					</FormGroup>
 					<FormGroup mb={10}>
@@ -62,14 +44,11 @@ export const Contact = () => {
 						<Textarea
 							id='message'
 							placeholder='Message'
-							value={formData.message}
-							onChange={(e) =>
-								setFormData({
-									...formData,
-									message: e.target.value,
-								})
-							}></Textarea>
+							value={values.message}
+							onChange={(e) => setValue('message', e.target.value)}></Textarea>
 					</FormGroup>
+
+					<Alert alert={alert} onClose={clearAlert} />
 
 					<Styled.SendButton outlined variant='secondary' onClick={submit}>
 						Send Message

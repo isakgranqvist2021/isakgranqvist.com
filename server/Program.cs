@@ -2,37 +2,32 @@ namespace server
 {
     class Program
     {
-
         public static void Main(string[] args)
         {
-            var corsPolicy = "_myAllowSpecificOrigins";
+            var settings = new Settings();
             var builder = WebApplication.CreateBuilder(args);
-
+            
             builder.Services.AddControllers();
-            builder.Services.AddEndpointsApiExplorer();
-            builder.Services.AddSwaggerGen();
 
             builder.Services.AddCors(options =>
             {
-                options.AddPolicy(name: corsPolicy, builder =>
+                options.AddPolicy(name: settings.defaultCorsPolicy, builder =>
                 {
-                    builder.WithOrigins("http://localhost:3000")
+                    builder.WithOrigins(settings.allowedOrigins)
                         .AllowAnyHeader()
                         .AllowAnyMethod();
                 });
             });
 
-
             var app = builder.Build();
 
             app.UseHttpsRedirection();
 
-            app.UseCors(corsPolicy);
+            app.UseCors(settings.defaultCorsPolicy);
             
             app.UseAuthorization();
 
             app.MapControllers();
-
 
             app.Run();
         }

@@ -1,6 +1,6 @@
 import { ContactModel } from 'models';
 
-import { GET, POST } from '../http';
+import { GET, POST } from 'services/http';
 
 import { GetProjects, PostContact } from './api.types';
 

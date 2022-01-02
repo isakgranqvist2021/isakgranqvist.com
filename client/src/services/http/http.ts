@@ -37,8 +37,6 @@ export const POST = async (options: PostRequestOptions) => {
 			},
 		});
 
-		console.log(response);
-
 		return await response.json();
 	} catch (err: any) {
 		return Promise.reject({

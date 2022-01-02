@@ -11,7 +11,9 @@ namespace server.Controllers
         [HttpPost]
         public ActionResult<string> SendMail([FromBody] ContactModel data)
         {
-            var response = new HttpResponseModel{
+            Console.WriteLine(data.Email);
+
+            var response = new ResponseModel{
                 Message = "Mail has been sent",
                 Success = true,
                 Data = new Object{},

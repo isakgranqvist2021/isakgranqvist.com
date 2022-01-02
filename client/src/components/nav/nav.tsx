@@ -1,6 +1,7 @@
 import { useState } from 'react';
 
-import { Container } from '../container';
+import { Container } from 'components/container';
+
 import { Styled } from './nav.styled';
 
 export const Nav = () => {

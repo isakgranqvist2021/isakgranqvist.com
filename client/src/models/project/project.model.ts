@@ -1,4 +1,4 @@
-import { ImageModel } from '../image';
+import { ImageModel } from 'models/image';
 
 export interface ProjectModel {
 	label: string;
