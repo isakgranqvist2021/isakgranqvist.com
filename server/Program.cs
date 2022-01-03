@@ -1,4 +1,4 @@
-namespace server
+namespace Server
 {
     class Program
     {
@@ -20,6 +20,8 @@ namespace server
             });
 
             var app = builder.Build();
+
+            app.UseStaticFiles();
 
             app.UseHttpsRedirection();
 

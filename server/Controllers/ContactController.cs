@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
-using server.Models;
 using Newtonsoft.Json;
+using Server.Models;
 
 namespace server.Controllers
 {

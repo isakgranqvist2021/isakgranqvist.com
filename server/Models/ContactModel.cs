@@ -2,7 +2,7 @@ using Newtonsoft.Json;
 using SendGrid;
 using SendGrid.Helpers.Mail;
 
-namespace server.Models
+namespace Server.Models
 {
     public class ContactModel
     {
