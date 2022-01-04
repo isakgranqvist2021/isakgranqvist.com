@@ -1,9 +1,14 @@
 import { ImageModel } from 'models/image';
 
+interface URL {
+	text: string;
+	href: string;
+}
+
 export interface ProjectModel {
 	label: string;
 	description: string;
 	images: ImageModel[];
-	href: string;
-	github: string;
+	website: URL | null;
+	github: URL | null;
 }

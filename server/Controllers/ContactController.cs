@@ -13,10 +13,12 @@ namespace server.Controllers
         {
             try
             {
-                if (data != null)
+                if (data == null) 
                 {
-                    await data.Send();
-                }
+                    throw new System.Exception();
+                } 
+
+                await data.Send();
 
                 return JsonConvert.SerializeObject(new ResponseModel
                 {
