@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Server.Controllers
 {
 
-    [Route("{**catchAll}")]
+    [Route("/")]
     [ApiController]
     public class Index : Controller
     {
@@ -12,7 +12,7 @@ namespace Server.Controllers
         [HttpGet]
         public ContentResult OnGet()
         {
-            var html = System.IO.File.ReadAllText("./public/index.html");
+            var html = System.IO.File.ReadAllText("./wwwroot/index.html");
 
             return new ContentResult
             {
