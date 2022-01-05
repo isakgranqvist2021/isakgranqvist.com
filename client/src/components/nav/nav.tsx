@@ -18,10 +18,7 @@ export const Nav = () => {
 		<Styled.Nav>
 			<Container className='container'>
 				<a href='#Home'>
-					<img
-						src='https://static.isakgranqvist.com/svg/logo.svg'
-						alt='Isak Granqvist Logo'
-					/>
+					<img src='/static/images/logo.svg' alt='Isak Granqvist Logo' />
 				</a>
 				<div className={['nav-links', open ? 'open' : ''].join(' ')}>
 					{links.map((link, i) => (

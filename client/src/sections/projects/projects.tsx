@@ -13,7 +13,6 @@ export const Projects = () => {
 			<Container>
 				<Swiper
 					modules={[Pagination, A11y]}
-					slidesPerGroup={3}
 					loopFillGroupWithBlank={true}
 					pagination={{ clickable: true }}
 					breakpoints={breakpoints}>

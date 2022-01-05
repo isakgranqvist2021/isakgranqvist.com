@@ -21,10 +21,6 @@ namespace Server
 
             var app = builder.Build();
 
-            app.UseStaticFiles();
-
-            app.UseHttpsRedirection();
-
             app.UseCors(settings.defaultCorsPolicy);
 
             app.UseAuthorization();

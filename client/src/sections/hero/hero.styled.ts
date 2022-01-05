@@ -53,7 +53,28 @@ const Phone = styled('img')`
 	position: absolute;
 	z-index: -1;
 	bottom: 60%;
-	left: 46%;
+	left: 60%;
+
+	@media (max-width: 1600px) {
+	}
+
+	@media (max-width: 1600px) {
+		bottom: 70%;
+	}
+
+	@media (max-width: 950px) {
+		bottom: 30px;
+		left: 65%;
+	}
+
+	@media (max-width: 600px) {
+		bottom: 60%;
+		left: 70%;
+	}
+
+	@media (max-width: 540px) {
+		bottom: 70%;
+	}
 `;
 
 export const Styled = {

@@ -81,30 +81,18 @@ export const Contact = () => {
 						<a
 							href='https://www.instagram.com/isakgranqvist2021/'
 							title='Instagram'>
-							<img
-								src='https://static.isakgranqvist.com/icons/instagram.svg'
-								alt='Instagram Icon'
-							/>
+							<img src='/static/icons/instagram.svg' alt='Instagram Icon' />
 						</a>
 						<a
 							href='https://www.linkedin.com/in/isak-granqvist-b1217a207/'
 							title='Linkedin'>
-							<img
-								src='https://static.isakgranqvist.com/icons/linkedin.svg'
-								alt='Linkedin Icon'
-							/>
+							<img src='/static/icons/linkedin.svg' alt='Linkedin Icon' />
 						</a>
 						<a href='https://github.com/isakgranqvist2021' title='Github'>
-							<img
-								src='https://static.isakgranqvist.com/icons/github.svg'
-								alt='Github Icon'
-							/>
+							<img src='/static/icons/github.svg' alt='Github Icon' />
 						</a>
 						<a href='mailto:contact@isakgranqvist.com' title='Send mail'>
-							<img
-								src='https://static.isakgranqvist.com/icons/email.svg'
-								alt='Email Icon'
-							/>
+							<img src='/static/icons/email.svg' alt='Email Icon' />
 						</a>
 					</Styled.SocialIcons>
 				</Styled.Social>
