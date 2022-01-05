@@ -17,7 +17,6 @@ const ContactContainer = styled(Container)`
 
 	@media (max-width: 1100px) {
 		flex-direction: column-reverse;
-		gap: 50px;
 	}
 
 	@media (max-width: 600px) {
@@ -45,19 +44,19 @@ const Social = styled('div')`
 	}
 
 	@media (max-width: 1100px) {
-		margin: 50px 0 0 0 !important;
+		margin: 0 0 100px 0 !important;
 		text-align: center;
+		display: flex;
+		flex-direction: column-reverse;
+	}
+
+	@media (max-width: 1100px) {
+		margin: 0 0 75px 0 !important;
 	}
 
 	@media (max-width: 500px) {
 		h3 {
 			font-size: 2rem;
-		}
-	}
-
-	@media (max-width: 500px) {
-		h3 {
-			max-width: 20ch;
 		}
 	}
 `;
@@ -92,10 +91,10 @@ const SocialIcons = styled('div')`
 
 	@media (max-width: 1100px) {
 		justify-content: center;
+		margin-top: 50px;
 	}
 
 	@media (max-width: 500px) {
-		margin-top: 25px;
 		a {
 			margin-bottom: 10px;
 		}
