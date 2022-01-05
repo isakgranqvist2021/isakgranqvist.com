@@ -8,6 +8,7 @@ namespace Server
         {
             "http://localhost:3000",
             "https://localhost:3000",
+            "https://isakgranqvist.com",
         };
     }
 }

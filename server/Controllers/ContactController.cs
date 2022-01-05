@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using Server.Models;
+using Server.Services;
 
 namespace server.Controllers
 {
@@ -8,17 +9,25 @@ namespace server.Controllers
     [ApiController]
     public class ContactController : ControllerBase
     {
+
+        MailService _mailService = new MailService();
+
         [HttpPost]
-        public async Task<ActionResult<string>> SendMail([FromBody] ContactModel data)
+        public async Task<ActionResult<string>> SendMail([FromBody] ContactModel mailData)
         {
             try
             {
-                if (data == null) 
+                if (mailData == null)
                 {
                     throw new System.Exception();
-                } 
+                }
 
-                await data.Send();
+                if (mailData.Name == null)
+                {
+
+                }
+
+                await mailData.ForwardToEmail();
 
                 return JsonConvert.SerializeObject(new ResponseModel
                 {
