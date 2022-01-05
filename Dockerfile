@@ -1,9 +1,14 @@
-FROM alpine
+FROM ubuntu
 
-COPY server /home/server
+RUN apt-get update
+RUN apt-get upgrade
 
-RUN apk update
-RUN apk upgrade
+EXPOSE 8081
+EXPOSE 8082
 
-RUN apk add bash icu-libs krb5-libs libgcc libintl libssl1.1 libstdc++ zlib \
-RUN apk add libgdiplus --repository https://dl-3.alpinelinux.org/alpine/edge/testing/
+WORKDIR /home/app
+
+COPY ./server ./
+
+# RUN dotnet dev-certs https
+# RUN dotnet build 
