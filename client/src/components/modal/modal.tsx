@@ -1,9 +1,8 @@
-import { ModalText } from './modal.constants';
 import { Styled } from './modal.styled';
 import { ModalProps } from './modal.types';
 
 export const Modal = (props: ModalProps) => {
-	const { open, title, onClose } = props;
+	const { open, title, body, footer, onClose } = props;
 
 	const onPreventClose = (e: React.MouseEvent<HTMLElement>) => {
 		e.stopPropagation();
@@ -17,12 +16,8 @@ export const Modal = (props: ModalProps) => {
 						<h3>{title}</h3>
 					</Styled.Modal.Header>
 				)}
-				<Styled.Modal.Content>
-					<ModalText />
-				</Styled.Modal.Content>
-				<Styled.Modal.Footer>
-					<p>Modal Footer</p>
-				</Styled.Modal.Footer>
+				<Styled.Modal.Content>{body}</Styled.Modal.Content>
+				{!!footer && <Styled.Modal.Footer>{footer}</Styled.Modal.Footer>}
 			</Styled.Modal.Body>
 		</Styled.Modal.Container>
 	);

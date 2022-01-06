@@ -8,6 +8,7 @@ import { Modal, useModalState } from 'components';
 import { GlobalStyles } from 'theme';
 
 import { Nav } from './nav';
+import { PrivacyPolicy } from './privacy-policy';
 import { Hero, Features, About, Contact, Projects, Footer } from './sections';
 
 export const App = () => {
@@ -24,7 +25,12 @@ export const App = () => {
 			<Contact />
 			<Footer onPrivacyClick={openModal} />
 
-			<Modal open={modalIsOpen} onClose={closeModal} title='Privacy Policy' />
+			<Modal
+				open={modalIsOpen}
+				onClose={closeModal}
+				title='Privacy Policy'
+				body={<PrivacyPolicy />}
+			/>
 		</>
 	);
 };

@@ -10,12 +10,12 @@ export const Nav = () => {
 	return (
 		<Styled.Nav>
 			<Container className='container'>
-				<Styled.Link href='#Home' style={{ padding: 0 }}>
+				<a href='#Home'>
 					<Styled.Logo
 						src='/static/images/logo.svg'
 						alt='Isak Granqvist Logo'
 					/>
-				</Styled.Link>
+				</a>
 				<Styled.NavLinks open={navIsOpen}>
 					{LINKS.map(({ selector, text }) => (
 						<Styled.Link key={selector} href={selector} onClick={closeNav}>

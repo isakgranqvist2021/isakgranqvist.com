@@ -29,6 +29,12 @@ const LinkGroup = styled('div')`
 	a {
 		line-height: 1.4;
 		color: #919191;
+		text-decoration: none;
+
+		&:hover {
+			text-decoration: underline;
+		}
+
 		&:not(:last-of-type) {
 			margin-right: 20px;
 		}

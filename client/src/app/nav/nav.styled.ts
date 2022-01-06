@@ -18,8 +18,6 @@ const Nav = styled('nav')`
 		justify-content: space-between;
 
 		@media (max-width: ${MOBILE_NAV_BREAKPOINT}) {
-			z-index: 15;
-			position: fixed;
 		}
 	}
 
