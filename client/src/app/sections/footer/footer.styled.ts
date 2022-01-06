@@ -14,16 +14,27 @@ const FooterContent = styled(Container)`
 	align-items: center;
 	color: #919191;
 
-	a {
-		color: #919191;
-	}
-
-	@media (max-width: 400px) {
+	@media (max-width: 480px) {
 		flex-direction: column;
 
 		p {
 			margin-top: 20px;
 		}
+	}
+`;
+
+const LinkGroup = styled('div')`
+	display: flex;
+
+	a {
+		line-height: 1.4;
+		color: #919191;
+		&:not(:last-of-type) {
+			margin-right: 20px;
+		}
+	}
+
+	@media (max-width: 480px) {
 		a {
 			display: block;
 			margin: 20px 0;
@@ -31,4 +42,4 @@ const FooterContent = styled(Container)`
 	}
 `;
 
-export const Styled = { Footer, FooterContent };
+export const Styled = { Footer, FooterContent, LinkGroup };

@@ -5,7 +5,6 @@ const Textarea = styled('textarea')`
 	padding: 0.66rem;
 	border: none;
 	outline: none;
-	border-radius: 0.25rem;
 	transition: all 300ms ease;
 	resize: none;
 	height: 11rem;

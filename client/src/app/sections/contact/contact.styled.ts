@@ -51,7 +51,7 @@ const Social = styled('div')`
 	}
 
 	@media (max-width: 1100px) {
-		margin: 0 0 75px 0 !important;
+		margin: 0 0 50px 0 !important;
 	}
 
 	@media (max-width: 500px) {

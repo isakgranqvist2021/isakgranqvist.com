@@ -4,9 +4,11 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'aos/dist/aos.css';
 
-import { Nav } from './components';
+import { Modal } from 'components';
+import { GlobalStyles } from 'theme';
+
+import { Nav } from './nav';
 import { Hero, Features, About, Contact, Projects, Footer } from './sections';
-import { GlobalStyles } from './theme';
 
 export const App = () => {
 	return (
@@ -19,6 +21,8 @@ export const App = () => {
 			<About />
 			<Contact />
 			<Footer />
+
+			<Modal />
 		</>
 	);
 };

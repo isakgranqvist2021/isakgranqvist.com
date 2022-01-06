@@ -34,12 +34,22 @@ const primary = styled('button')<ButtonProps>`
 	border-color: #cf3030;
 	color: #fff;
 
+	&:hover {
+		background-color: transparent;
+		color: #cf3030;
+	}
+
 	${(props) =>
 		props.outlined &&
 		css`
 			background-color: transparent;
 			border-color: #cf3030;
 			color: #cf3030;
+
+			&:hover {
+				background-color: #cf3030;
+				color: #fff;
+			}
 		`}
 `;
 
