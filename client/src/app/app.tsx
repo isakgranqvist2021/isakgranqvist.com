@@ -4,13 +4,15 @@ import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 import 'aos/dist/aos.css';
 
-import { Modal } from 'components';
+import { Modal, useModalState } from 'components';
 import { GlobalStyles } from 'theme';
 
 import { Nav } from './nav';
 import { Hero, Features, About, Contact, Projects, Footer } from './sections';
 
 export const App = () => {
+	const { modalIsOpen, openModal, closeModal } = useModalState();
+
 	return (
 		<>
 			<GlobalStyles />
@@ -20,9 +22,9 @@ export const App = () => {
 			<Projects />
 			<About />
 			<Contact />
-			<Footer />
+			<Footer onPrivacyClick={openModal} />
 
-			<Modal />
+			<Modal open={modalIsOpen} onClose={closeModal} title='Privacy Policy' />
 		</>
 	);
 };
