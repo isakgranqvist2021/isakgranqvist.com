@@ -7,6 +7,12 @@ const About = styled('div')`
 	min-height: 75vh;
 	display: flex;
 	align-items: center;
+	background-color: #333;
+
+	h2,
+	p {
+		color: #fff;
+	}
 `;
 
 const AboutContainer = styled(Container)`

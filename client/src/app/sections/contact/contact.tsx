@@ -64,7 +64,7 @@ export const Contact = () => {
 
 					<Styled.SendButton
 						outlined
-						variant='secondary'
+						variant='primary'
 						disabled={isLoading}
 						onClick={submit}>
 						{isLoading ? <Spinner /> : 'Send Message'}

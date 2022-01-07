@@ -1,3 +1,5 @@
+import { Icon } from 'components';
+
 import { Styled } from './modal.styled';
 import { ModalProps } from './modal.types';
 
@@ -14,6 +16,8 @@ export const Modal = (props: ModalProps) => {
 				{!!title && (
 					<Styled.Modal.Header>
 						<h3>{title}</h3>
+
+						<Icon onClick={onClose} icon='close' clickable />
 					</Styled.Modal.Header>
 				)}
 				<Styled.Modal.Content>{body}</Styled.Modal.Content>

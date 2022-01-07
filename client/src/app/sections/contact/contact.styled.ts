@@ -5,7 +5,7 @@ import { Button, Container } from 'components';
 const Contact = styled('div')`
 	padding: 100px 0;
 	overflow: hidden;
-	background-color: #333;
+	background-color: #fff;
 
 	@media (max-width: 600px) {
 		padding: 50px 0;
@@ -28,6 +28,15 @@ const Form = styled('form')`
 	width: 100%;
 	margin-right: 50px;
 
+	input,
+	textarea {
+		border: 1px solid lightgray;
+	}
+
+	label {
+		color: #333;
+	}
+
 	@media (max-width: 500px) {
 		margin-right: 0;
 	}
@@ -40,7 +49,7 @@ const Social = styled('div')`
 	h3 {
 		font-size: 3rem;
 		font-weight: 900;
-		color: #fff;
+		color: #333;
 	}
 
 	@media (max-width: 1100px) {
@@ -71,7 +80,6 @@ const SocialIcons = styled('div')`
 		padding: 1rem;
 		border-radius: 50%;
 		transition: all 200ms ease;
-		background-color: #fff;
 
 		&:hover {
 			box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),

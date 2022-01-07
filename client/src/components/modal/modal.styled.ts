@@ -41,6 +41,8 @@ const Modal = {
 		padding: 1rem;
 		background-color: rgb(207, 48, 48);
 		color: #fff;
+		display: flex;
+		justify-content: space-between;
 	`,
 	Content: styled('div')`
 		padding: 1rem;

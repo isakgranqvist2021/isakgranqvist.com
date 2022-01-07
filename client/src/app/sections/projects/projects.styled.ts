@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Projects = styled('div')`
-	padding: 50px 0;
+	padding: 150px 0;
 	border-bottom: 1px solid #f2f2f2;
 `;
 

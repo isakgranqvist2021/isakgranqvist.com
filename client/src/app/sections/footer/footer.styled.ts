@@ -30,6 +30,7 @@ const LinkGroup = styled('div')`
 		line-height: 1.4;
 		color: #919191;
 		text-decoration: none;
+		cursor: pointer;
 
 		&:hover {
 			text-decoration: underline;
