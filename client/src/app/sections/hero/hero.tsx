@@ -17,7 +17,7 @@ export const Hero = () => {
 	}, []);
 
 	return (
-		<Styled.Hero id='Home'>
+		<Styled.Hero id='Home' aria-label='Hero section' tabIndex={0}>
 			<Styled.HeroContainer>
 				<Styled.HeroContent>
 					<Text variant='h1'>
@@ -32,21 +32,26 @@ export const Hero = () => {
 					</Text>
 					<Styled.HeroActions>
 						<Button
+							aria-label='Bring me to contact'
 							outlined
 							data-aos='fade-right'
 							onClick={() => onClickHandler('#Contact')}>
 							Get in touch
 						</Button>
 						<Button
+							aria-label='Bring me to technologies'
 							data-aos='fade-left'
-							onClick={() => onClickHandler('#Features')}>
+							onClick={() => onClickHandler('#Technology')}>
 							Technology
 						</Button>
 					</Styled.HeroActions>
 				</Styled.HeroContent>
 			</Styled.HeroContainer>
-			<Styled.Phone src='/phone.svg' />
-			<Styled.Artboard src='/artboard.svg' />
+			<Styled.Phone src='/phone.svg' aria-label='Smartphone icon' />
+			<Styled.Artboard
+				src='/artboard.svg'
+				aria-label='Webpage image with icons'
+			/>
 		</Styled.Hero>
 	);
 };

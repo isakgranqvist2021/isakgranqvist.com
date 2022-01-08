@@ -11,7 +11,8 @@ export const GlobalStyles = createGlobalStyle`
         width: 100%;
         overflow-x: hidden; 
         font-family: 'Roboto', sans-serif;
-    }
+        scroll-behavior: smooth;
+     }
 
     input,
     textarea,

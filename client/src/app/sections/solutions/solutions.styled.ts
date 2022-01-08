@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const Features = styled('div')`
-	min-height: 50vh;
+	padding: 200px 0;
 	display: flex;
 	align-items: center;
 	background-color: #333;
@@ -11,7 +11,7 @@ const Features = styled('div')`
 	}
 `;
 
-const FeaturesGrid = styled('div')`
+const Grid = styled('div')`
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 2rem;
@@ -47,4 +47,4 @@ const CardIcon = styled('span')`
 	font-family: 'Material Icons Outlined';
 `;
 
-export const Styled = { Features, FeaturesGrid, Card, CardIcon };
+export const Styled = { Features, Grid, Card, CardIcon };

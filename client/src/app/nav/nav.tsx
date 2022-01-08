@@ -10,21 +10,29 @@ export const Nav = () => {
 	return (
 		<Styled.Nav>
 			<Container className='container'>
-				<a href='#Home'>
+				<a href='#Home' aria-label='Top of the page link'>
 					<Styled.Logo
+						aria-label='isakgranqvist.com company logo'
 						src='/static/images/logo.svg'
 						alt='Isak Granqvist Logo'
 					/>
 				</a>
 				<Styled.NavLinks open={navIsOpen}>
 					{LINKS.map(({ selector, text }) => (
-						<Styled.Link key={selector} href={selector} onClick={closeNav}>
+						<Styled.Link
+							aria-label={selector}
+							key={selector}
+							href={selector}
+							onClick={closeNav}>
 							{text}
 						</Styled.Link>
 					))}
 				</Styled.NavLinks>
 
-				<Styled.Bars.Container onClick={toggleNav} open={navIsOpen}>
+				<Styled.Bars.Container
+					aria-label='Menu icon'
+					onClick={toggleNav}
+					open={navIsOpen}>
 					<Styled.Bars.Line open={navIsOpen} />
 					<Styled.Bars.Line open={navIsOpen} />
 					<Styled.Bars.Line open={navIsOpen} />
