@@ -1,2 +1,4 @@
 export interface TextareaProps
-	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {}
+	extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+	hasError?: boolean;
+}

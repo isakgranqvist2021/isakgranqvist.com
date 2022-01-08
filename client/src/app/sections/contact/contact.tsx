@@ -15,8 +15,15 @@ import { useContactState } from './contact.helpers';
 import { Styled } from './contact.styled';
 
 export const Contact = () => {
-	const { values, alert, isLoading, submit, setValue, clearAlert } =
-		useContactState();
+	const {
+		values,
+		alert,
+		fieldWithError,
+		isLoading,
+		submit,
+		setValue,
+		clearAlert,
+	} = useContactState();
 
 	useEffect(() => {
 		AOS.init({
@@ -34,6 +41,7 @@ export const Contact = () => {
 							id='email'
 							placeholder='Email'
 							autoComplete='email'
+							hasError={fieldWithError === 'email'}
 							disabled={isLoading}
 							value={values.email}
 							onChange={(e) => setValue('email', e.target.value)}
@@ -44,6 +52,7 @@ export const Contact = () => {
 						<Input
 							id='name'
 							placeholder='Your name'
+							hasError={fieldWithError === 'name'}
 							value={values.name}
 							autoComplete='name'
 							disabled={isLoading}
@@ -55,6 +64,7 @@ export const Contact = () => {
 						<Textarea
 							id='message'
 							placeholder='Message'
+							hasError={fieldWithError === 'message'}
 							value={values.message}
 							disabled={isLoading}
 							onChange={(e) => setValue('message', e.target.value)}></Textarea>

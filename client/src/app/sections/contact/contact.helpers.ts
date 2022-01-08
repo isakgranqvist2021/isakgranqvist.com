@@ -11,20 +11,25 @@ export const useContactState = () => {
 		values: INITIAL_FORM_STATE,
 		alert: null,
 		isLoading: false,
+		fieldWithError: null,
 	});
 
 	const submit = async () => {
 		const result = contactSchema(state.values);
 
 		if (result) {
+			console.log(result);
+
 			return setState((prevState) => ({
 				...prevState,
+				fieldWithError: result.field,
 				alert: { message: result.message, severity: 'danger' },
 			}));
 		}
 
 		setState((prevState) => ({
 			...prevState,
+			fieldWithError: null,
 			isLoading: true,
 		}));
 
@@ -33,6 +38,7 @@ export const useContactState = () => {
 		setState((prevState) => ({
 			values: response.success ? INITIAL_FORM_STATE : prevState.values,
 			isLoading: false,
+			fieldWithError: null,
 			alert: {
 				message: response.message,
 				severity: response.success ? 'success' : 'danger',
@@ -58,9 +64,7 @@ export const useContactState = () => {
 	};
 
 	return {
-		values: state.values,
-		alert: state.alert,
-		isLoading: state.isLoading,
+		...state,
 		submit,
 		setValue,
 		clearAlert,
