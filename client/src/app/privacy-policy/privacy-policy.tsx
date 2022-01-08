@@ -2,7 +2,7 @@ import { Styled } from './privacy-policy.styled';
 
 export const PrivacyPolicy = () => {
 	return (
-		<Styled.PrivacyPolicy>
+		<Styled.PrivacyPolicy aria-label='Privacy policy'>
 			<h1>Privacy Policy for 980107-6473</h1>
 
 			<Styled.Header>

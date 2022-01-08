@@ -13,7 +13,7 @@ export const About = () => {
 	}, []);
 
 	return (
-		<Styled.About id='About'>
+		<Styled.About id='About' aria-label='About section' tabIndex={3}>
 			<Styled.AboutContainer>
 				<Styled.FlexItem>
 					<Text text='isakgranqvist.com' variant='h2' data-aos='fade-down' />
@@ -31,7 +31,7 @@ export const About = () => {
 						longevity.
 					</Text>
 				</Styled.FlexItem>
-				<Styled.FlexItem data-aos='fade-left'>
+				<Styled.FlexItem data-aos='fade-left' aria-label='Info icon'>
 					<svg
 						width='1162'
 						height='1162'

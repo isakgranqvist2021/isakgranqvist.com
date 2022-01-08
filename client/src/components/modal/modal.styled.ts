@@ -8,11 +8,13 @@ const Modal = {
 		inset: 0;
 		z-index: 16;
 		background-color: rgba(0, 0, 0, 0.5);
-		padding: 50px;
 		opacity: 0;
 		pointer-events: none;
 		transition: all 300ms ease;
 		overflow: hidden;
+		display: flex;
+		align-items: center;
+		justify-content: center;
 
 		${(props) =>
 			props.open &&
@@ -30,6 +32,21 @@ const Modal = {
 		display: flex;
 		flex-direction: column;
 		justify-content: space-between;
+		width: 50%;
+		height: 70%;
+
+		@media (max-width: 1100px) {
+			width: 60%;
+		}
+
+		@media (max-width: 900px) {
+			width: 75%;
+		}
+
+		@media (max-width: 900px) {
+			width: 90%;
+			height: 90%;
+		}
 
 		${(props) =>
 			props.open &&

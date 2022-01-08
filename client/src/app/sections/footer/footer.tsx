@@ -7,10 +7,14 @@ export const Footer = (props: FooterProps) => {
 	return (
 		<Styled.Footer>
 			<Styled.FooterContent>
-				<p>&copy; isakgranqvist.com 2021</p>
+				<p aria-label='Copyright text'>&copy; isakgranqvist.com 2021</p>
 				<Styled.LinkGroup>
-					<a onClick={onPrivacyClick}>Privacy Policy</a>
-					<a href='https://www.allabolag.se/980107SLKD/verksamhet'>
+					<a onClick={onPrivacyClick} aria-label='Privacy policy link'>
+						Privacy Policy
+					</a>
+					<a
+						href='https://www.allabolag.se/980107SLKD/verksamhet'
+						aria-label='Business info link'>
 						Business Info
 					</a>
 				</Styled.LinkGroup>

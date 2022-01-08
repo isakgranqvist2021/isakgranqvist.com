@@ -18,11 +18,13 @@ export const App = () => {
 		<>
 			<GlobalStyles />
 			<Nav />
+
 			<Hero />
 			<Features />
 			<Projects />
 			<About />
 			<Contact />
+
 			<Footer onPrivacyClick={openModal} />
 
 			<Modal

@@ -25,9 +25,9 @@ export const Contact = () => {
 	}, []);
 
 	return (
-		<Styled.Contact id='Contact'>
+		<Styled.Contact id='Contact' aria-label='Contact section' tabIndex={4}>
 			<Styled.ContactContainer>
-				<Styled.Form data-aos='fade-right'>
+				<Styled.Form data-aos='fade-right' aria-label='Contact form'>
 					<FormGroup mb={32}>
 						<Label htmlFor='email'>Email</Label>
 						<Input
@@ -70,7 +70,7 @@ export const Contact = () => {
 						{isLoading ? <Spinner /> : 'Send Message'}
 					</Styled.SendButton>
 				</Styled.Form>
-				<Styled.Social>
+				<Styled.Social aria-label='Social media icons'>
 					<Text
 						variant='h3'
 						text='You can also reach me through my social channels'
@@ -79,19 +79,27 @@ export const Contact = () => {
 
 					<Styled.SocialIcons data-aos='fade-up'>
 						<a
+							aria-label='Instagram link'
 							href='https://www.instagram.com/isakgranqvist2021/'
 							title='Instagram'>
 							<img src='/static/icons/instagram.svg' alt='Instagram Icon' />
 						</a>
 						<a
+							aria-label='Linkedin link'
 							href='https://www.linkedin.com/in/isak-granqvist-b1217a207/'
 							title='Linkedin'>
 							<img src='/static/icons/linkedin.svg' alt='Linkedin Icon' />
 						</a>
-						<a href='https://github.com/isakgranqvist2021' title='Github'>
+						<a
+							aria-label='Github link'
+							href='https://github.com/isakgranqvist2021'
+							title='Github'>
 							<img src='/static/icons/github.svg' alt='Github Icon' />
 						</a>
-						<a href='mailto:contact@isakgranqvist.com' title='Send mail'>
+						<a
+							aria-label='Email me link'
+							href='mailto:contact@isakgranqvist.com'
+							title='Send mail'>
 							<img src='/static/icons/email.svg' alt='Email Icon' />
 						</a>
 					</Styled.SocialIcons>

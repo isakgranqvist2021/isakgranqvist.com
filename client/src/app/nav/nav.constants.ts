@@ -1,6 +1,7 @@
 export const LINKS = [
 	{ text: 'home', selector: '#Home' },
-	{ text: 'Technology', selector: '#Features' },
+	{ text: 'solutions', selector: '#Solutions' },
+	{ text: 'technology', selector: '#Technology' },
 	{ text: 'about', selector: '#About' },
 	{ text: 'contact', selector: '#Contact' },
 ];
