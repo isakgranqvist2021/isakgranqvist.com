@@ -18,8 +18,6 @@ export const useContactState = () => {
 		const result = contactSchema(state.values);
 
 		if (result) {
-			console.log(result);
-
 			return setState((prevState) => ({
 				...prevState,
 				fieldWithError: result.field,

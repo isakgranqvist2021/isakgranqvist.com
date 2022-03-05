@@ -3,12 +3,11 @@
 
 # client
 client/node_modules
-client/build
 client/.env
+client/build
 
 # server
-server/bin
-server/obj
-server/Properties/launchSettings.json
-server/wwwroot
+server/node_modules
+server/.env
+server/dist
 
