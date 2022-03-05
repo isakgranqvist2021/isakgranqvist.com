@@ -8,5 +8,6 @@
 		"preserveConstEnums": true,
 		"sourceMap": false,
 		"esModuleInterop": true
-	}
+	},
+	"include": ["src", "package.json"]
 }
